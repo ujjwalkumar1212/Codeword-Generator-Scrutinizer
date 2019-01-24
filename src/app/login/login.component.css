@@ -1,0 +1,21 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }  
+
+  mat-card{
+    margin: 8em auto;
+    max-width: 18em;
+  }
+
+  .mat-raised-button{
+    background: green;
+    color: white;
+}
+
+  
