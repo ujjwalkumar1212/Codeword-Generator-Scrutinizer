@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgetpwdComponent } from './forgetpwd/forgetpwd.component';
-import { TestComponent } from './test/test.component';
+import { CodewordsetComponent } from './codewordset/codewordset.component';
 
 
 
@@ -29,7 +29,8 @@ import { TestComponent } from './test/test.component';
     DashboardComponent,
     RegisterComponent,
     ForgetpwdComponent,
-    TestComponent,
+    CodewordsetComponent,
+   
   ],
   imports: [
     BrowserModule,
