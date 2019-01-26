@@ -40,14 +40,9 @@ import { TestComponent } from './test/test.component';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-<<<<<<< HEAD
     MatInputModule,
     MatDialogModule
 
-=======
-    MatMenuModule,
-    MatInputModule
->>>>>>> e2172ef7f785627b216f7469fc8139151dcd9eae
 
   ],
   providers: [],
