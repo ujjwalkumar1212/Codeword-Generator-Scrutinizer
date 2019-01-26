@@ -7,6 +7,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgetpwdComponent } from './forgetpwd/forgetpwd.component';
+import { TestComponent } from './test/test.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ForgetpwdComponent } from './forgetpwd/forgetpwd.component';
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    ForgetpwdComponent
+    ForgetpwdComponent,
+    TestComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,9 @@ import { ForgetpwdComponent } from './forgetpwd/forgetpwd.component';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
+    
     
   ],
   providers: [],
