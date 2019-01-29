@@ -25,6 +25,7 @@ import { RegisterComponent } from './register/register.component';
 import { CodewordsetComponent } from './codewordset/codewordset.component';
 import { PasswordComponent } from './password/password.component';
 import { AddUserComponent, AddUserSnackBarComponent } from './add-user/add-user.component';
+import { CoursestudentComponent } from './coursestudent/coursestudent.component';
 
 
 
@@ -39,7 +40,8 @@ import { AddUserComponent, AddUserSnackBarComponent } from './add-user/add-user.
     CodewordsetComponent,
     PasswordComponent,
     AddUserComponent,
-    AddUserSnackBarComponent
+    AddUserSnackBarComponent,
+    CoursestudentComponent
    
   ],
   imports: [
