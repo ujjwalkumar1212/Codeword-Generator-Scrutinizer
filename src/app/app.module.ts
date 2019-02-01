@@ -37,7 +37,6 @@ import { CoursestudentComponent } from './coursestudent/coursestudent.component'
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    
     CodewordsetComponent,
     PasswordComponent,
     AddUserComponent,
