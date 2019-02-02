@@ -28,6 +28,7 @@ import { CodewordsetComponent } from './codewordset/codewordset.component';
 import { PasswordComponent } from './password/password.component';
 import { AddUserComponent, AddUserSnackBarComponent } from './add-user/add-user.component';
 import { CoursestudentComponent } from './coursestudent/coursestudent.component';
+import { CodewordComponent } from './codeword/codeword.component';
 
 
 
@@ -42,7 +43,8 @@ import { CoursestudentComponent } from './coursestudent/coursestudent.component'
     PasswordComponent,
     AddUserComponent,
     AddUserSnackBarComponent,
-    CoursestudentComponent
+    CoursestudentComponent,
+    CodewordComponent
    
   ],
   imports: [
