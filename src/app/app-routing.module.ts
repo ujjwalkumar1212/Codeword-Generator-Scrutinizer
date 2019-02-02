@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { PasswordComponent } from './password/password.component';
 import { CodewordsetComponent } from './codewordset/codewordset.component';
 import { CoursestudentComponent } from './coursestudent/coursestudent.component';
+import { CodewordComponent } from './codeword/codeword.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'link',component:PasswordComponent },
   {path:'login/link',redirectTo: '/link'},
   {path: 'codewordset',component:CodewordsetComponent },
+  {path: 'codeword',component:CodewordComponent },
   {path: 'coursestudent',component:CoursestudentComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
