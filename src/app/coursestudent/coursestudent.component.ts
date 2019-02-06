@@ -1,25 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator, MatTableDataSource} from '@angular/material';
+
 
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  Codeword: string;
-  Status: string;
+ 
+  email: string;
+  codeword: string;
+  acknowledge: boolean;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Anurag', Codeword: "Cricket", Status: 'Yes'},
-  {position: 2, name: 'Ujjawal', Codeword: "Tennis", Status: 'No'},
-  {position: 3, name: 'Chaitanya', Codeword: "Batminton", Status: 'Yes'},
-  {position: 4, name: 'Naveen', Codeword: "Apple", Status: 'Yes'},
-  {position: 5, name: 'Srimai', Codeword: "Banana", Status: 'No'},
-  {position: 6, name: 'Vyshnavi', Codeword: "Pink", Status: 'No'},
-  {position: 7, name: 'Sreelekha', Codeword: "Blue", Status: 'No'},
-  {position: 8, name: 'Sravya', Codeword: "Red", Status: 'Yes'},
-  {position: 9, name: 'Haris', Codeword: "Black", Status: 'Yes'},
-  {position: 10, name: 'Shiva', Codeword: "Rose", Status: 'Yes'},
+  {email: 's531519@nwmissouri.edu',  codeword: 'Africa', acknowledge: true},
+  {email: 's530742@nwmissouri.edu',  codeword: 'Almond', acknowledge: false},
+  {email: 's531495@nwmissouri.edu',  codeword: 'Anger', acknowledge: true},
+  {email: 's531367@nwmissouri.edu',  codeword: 'America', acknowledge: true},
+  {email: 's531496@nwmissouri.edu',  codeword: 'Bravo', acknowledge: false},
+  {email: 's531486@nwmissouri.edu',  codeword: 'Bank', acknowledge: true},
+  {email: 's531369@nwmissouri.edu',  codeword: 'Bounce', acknowledge: true},
+  {email: 's531499@nwmissouri.edu',  codeword: 'Bigger', acknowledge: false},
+  {email: 's531500@nwmissouri.edu',  codeword: 'Computer', acknowledge: true},
+  {email: 's531372@nwmissouri.edu',  codeword: 'Cancer', acknowledge: true},
+  {email: 's530473@nwmissouri.edu',  codeword: 'Chair', acknowledge: false},
+  {email: 's531439@nwmissouri.edu',  codeword: 'Center', acknowledge: true},
+
 ];
 
 @Component({
@@ -29,12 +34,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CoursestudentComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['email', 'codeword', 'acknowledge'];
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
-  displayedColumns: string[] = ['position', 'name', 'Codeword', 'Status'];
-  dataSource = ELEMENT_DATA;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
 }
