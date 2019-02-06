@@ -110,3 +110,11 @@
 2019-02-06T22:26:04.820Z - debug: 92 hootoriginal seeded
 2019-02-06T22:26:04.826Z - debug: 200 largeset seeded
 2019-02-06T22:26:04.828Z - info: END Seeder. Sample data read and verified.
+2019-02-06T23:30:08.995Z - info: START seeder.
+2019-02-06T23:30:09.010Z - debug: 2 dataCodewordset seeded
+2019-02-06T23:30:09.010Z - debug: 292 datacodeword seeded
+2019-02-06T23:30:09.011Z - debug: 6 datacourse seeded
+2019-02-06T23:30:09.011Z - debug: 114 dataCoursestudent seeded
+2019-02-06T23:30:09.012Z - debug: 92 hootoriginal seeded
+2019-02-06T23:30:09.012Z - debug: 200 largeset seeded
+2019-02-06T23:30:09.012Z - info: END Seeder. Sample data read and verified.
