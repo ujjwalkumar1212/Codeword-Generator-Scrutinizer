@@ -1,8 +1,20 @@
-#btn{
-    margin-left: 3em;
-    margin-top: 2em;
+.main-content{
+    margin: 1em 1em auto 1em;
 }
-#Shead{
-    margin-left: 13em;
-    
+table {
+    width: 100%;
+  }
+  th{
+    background: black;
+    color: white;
+    font-size: 18px;
+}
+  
+th.mat-sort-header-sorted {
+color: black;
+}
+
+.mat-raised-button{
+    background: green;
+    color: white;
 }

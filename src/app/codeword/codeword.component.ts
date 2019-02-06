@@ -1,22 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  
-}
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddUserComponent } from 'src/app/add-user/add-user.component';
+import { Router } from '@angular/router';
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen'},
-  {position: 2, name: 'Helium' },
-  {position: 3, name: 'Lithium'},
-  {position: 4, name: 'Beryllium'},
-  {position: 5, name: 'Boron'},
-  {position: 6, name: 'Carbon'},
-  {position: 7, name: 'Nitrogen'},
-  {position: 8, name: 'Oxygen'},
-  {position: 9, name: 'Fluorine'},
-  {position: 10, name: 'Neon'},
-];
+export interface PeriodicElement {
+  codeWords: string;
+ }
+
+ const ELEMENT_DATA: PeriodicElement[] = [{
+  codeWords: "Albania"
+}, {
+  codeWords: "Morocco"
+}, {
+  codeWords: "United States"
+}, {
+  codeWords: "Indonesia"
+}, {
+  codeWords: "Peru"
+}, {
+  codeWords: "Cape Verde"
+}, {
+  codeWords: "Canada"
+}, {
+  codeWords: "Venezuela"
+}, {
+  codeWords: "Kosovo"
+}, {
+  codeWords: "Iran"
+}, {
+  codeWords: "Ukraine"
+}, {
+  codeWords: "Sweden"
+}, {
+  codeWords: "Indonesia"
+}, {
+  codeWords: "Finland"
+}, {
+  codeWords: "Nigeria"
+}]
 
 
 @Component({
@@ -25,12 +50,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./codeword.component.css']
 })
 export class CodewordComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['name', 'btn1', 'btn2'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor() { }
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
+
+  rowClicked(row: any): void {
+    console.log(row);
+    this.router.navigate(['/codewordset'])
+  }
+
 
 }
