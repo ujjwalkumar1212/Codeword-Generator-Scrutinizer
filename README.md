@@ -1,33 +1,28 @@
-# Codeword
+# Project Charter Template
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+[Template for a Project Charter](https://profcase.github.io/project-charter-template) document used to formalize project understanding.
 
-## Development server
+[Markdown](https://daringfireball.net/projects/markdown/syntax) makes it easy to track associated history and contributions.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[GitHub Pages](https://pages.github.com/) makes it easy to publish for client review.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+How to run our Project?
+1. git clone https://github.com/chvnaveenkumar/CodeWord.git
 
-## Build
+Now open our project in Visual Studio and 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Use npm install if node.js is already installed.
+if node.js is not installed go to this link(https://nodejs.org/en/) and install node.js and hit the command
 
-## Running unit tests
+3. After step 2 set path to client (cd ..\views\) and use npm install command to install all the dependency modules in the project which is used in package.json.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. In views use command hit npm build run to run the project.
 
-## Running end-to-end tests
+5. Also do npm run dev.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+5. And get back use cd .. command to get back.
 
-## Further help
+6. Now start the Server using npm start
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## Credentials for Database:
-
-Username: ujjwalkumar121212@gmail.com
-
-Password: Ujjwal@1212
+Now open chrome and use localhost:3000
