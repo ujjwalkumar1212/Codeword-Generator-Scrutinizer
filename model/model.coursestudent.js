@@ -1,6 +1,4 @@
-/**
- * @author Vyshnavi Yalamareddy <S531383@nwmissouri.edu>
- */
+
 var mongoose = require('mongoose');
 var validator = require('validator');
 var CourseStudentModel = mongoose.model('CourseStudentModel', {

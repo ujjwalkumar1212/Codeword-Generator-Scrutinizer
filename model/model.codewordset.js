@@ -1,6 +1,3 @@
-/**
- *  @author Srimai Reddy Yanala <s531384@nwmissouri.edu>
-  */
 
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;

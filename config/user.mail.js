@@ -1,5 +1,5 @@
 /**
- * @author Naveen Kumar Chandaluri <S530742@nwmissouri.edu>
+ * @author Ujjawal Kumar <S530473@nwmissouri.edu>
  */
 const nodemailer = require('nodemailer');
 const _ = require('lodash');

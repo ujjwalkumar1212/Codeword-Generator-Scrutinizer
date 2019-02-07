@@ -1,6 +1,4 @@
-/**
- * @author Sravya Kancharla <S531500@nwmissouri.edu>
- */
+
 
  let getstudentDetails = (req,res) => {
     var body = _.pick(req.body,['EmailKey']);

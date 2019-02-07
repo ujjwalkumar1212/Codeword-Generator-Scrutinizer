@@ -1,6 +1,4 @@
-/**
- * @author Naveen Kumar Chandaluri <S530742@nwmissouri.edu>
- */
+
 const _ = require('lodash');
 const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');

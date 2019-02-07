@@ -1,6 +1,3 @@
-/**
- * @author Sreelekha Vijaya <S531382@nwmissouri.edu>
- */
 
 const _ = require('lodash');
 const bcrypt = require('bcryptjs');

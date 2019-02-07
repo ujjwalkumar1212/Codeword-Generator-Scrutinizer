@@ -1,6 +1,3 @@
-/**
- * @author Sravya Kancharla <S531500@nwmissouri.edu>
- */
 
 var mongoose = require('mongoose');
 var validator = require('validator');
