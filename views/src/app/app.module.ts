@@ -30,6 +30,7 @@ import { PasswordComponent } from './password/password.component';
 import { AddUserComponent, AddUserSnackBarComponent } from './add-user/add-user.component';
 import { CoursestudentComponent } from './coursestudent/coursestudent.component';
 import { CodewordComponent } from './codeword/codeword.component';
+import { CreateCourseComponent,CreateCouse1Component, } from './create-course/create-course.component';
 
 
 
@@ -45,7 +46,9 @@ import { CodewordComponent } from './codeword/codeword.component';
     AddUserComponent,
     AddUserSnackBarComponent,
     CoursestudentComponent,
-    CodewordComponent
+    CodewordComponent,
+    CreateCourseComponent,
+    CreateCouse1Component,
    
   ],
   imports: [
@@ -71,7 +74,9 @@ import { CodewordComponent } from './codeword/codeword.component';
   providers: [],
   entryComponents: [
     AddUserComponent,
-    AddUserSnackBarComponent
+    AddUserSnackBarComponent,
+    CreateCouse1Component,
+    CreateCourseComponent
         
   ],
   bootstrap: [AppComponent]

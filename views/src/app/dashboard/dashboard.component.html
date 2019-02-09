@@ -1,60 +1,37 @@
-<!-- Button trigger modal -->
-<button type="button" id="addcoursebtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  <span class="fa fa-plus"></span>
-  Add Course
-</button>
+<div class="main-content">
+  <button mat-raised-button (click)="openDialog1()"><i class="fas fa-plus"></i> Create Codeword Set</button>
+  <br>
+  <br>
+  <!-- Table filter -->
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+  </mat-form-field>
+  <br>
+  <!-- Table -->
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <!-- name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Codeword Set Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.codeWordSetName}} </td>
+    </ng-container>
 
+    <!-- contact Column -->
+    <ng-container matColumnDef="count">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Count </th>
+      <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+    </ng-container>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body" style="background-color: aqua">
-          <h5 class="card-title">Mobile Computing-Android</h5>
-          <pre>  1/25/2019      4/25/2019</pre>
-        </div>
-        <div class="card-body">
+    <!-- button Column -->
+    <ng-container matColumnDef="btn">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Show Details</th>
+      <!-- <td>hi</td> -->
+      <td mat-cell *matCellDef="let element"><button mat-stroked-button (click)="rowClicked(row)">Show Details <i class="fas fa-chevron-right"></i></button></td>
+    </ng-container>
 
-          <pre><a href="#">Pre Survey</a>   <a href="#">Post Survey</a></pre>
-          <pre>     <a href="#" class="btn btn-primary"><span class="fa fa-eye"></span></a>   <a href="#" class="btn btn-primary"><span class="fa fa-trash"></span></a></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body" style="background-color: aqua">
-            <h5 class="card-title">Survey of Algorithms</h5>
-            <pre>  1/25/2019      4/25/2019</pre>
-          </div>
-          <div class="card-body">
-  
-            <pre><a href="#">Pre Survey</a>   <a href="#">Post Survey</a></pre>
-            <pre>     <a href="#" class="btn btn-primary"><span class="fa fa-eye"></span></a>   <a href="#" class="btn btn-primary"><span class="fa fa-trash"></span></a></pre>
-          </div>
-        </div>
-      </div>
-
-  </div>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!-- pAGINATION -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons class="mat-elevation-z10"></mat-paginator>
 </div>
