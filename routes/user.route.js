@@ -23,9 +23,9 @@ router.post('/validateEmail', usersController.validateEmail);
 router.post('/sendmail', usersController.tempPassword);
 router.post('/changepassword', usersController.changePassword);
 router.post('/addnewCourse', courseController.addCourse);
-router.get('/getCourseList', courseController.getCourses)
-router.post('/addcodewordset',codewordsetController.addcodewordset)
-router.post('/getdataxlsx',codewordsetController.getDataFromXLS)
+router.get('/getCourseList', courseController.getCourses);
+router.post('/addcodewordset',codewordsetController.addcodewordset);
+router.post('/getdataxlsx',codewordsetController.getDataFromXLS);
 router.post('/addnewcodewords',multer().single('file'), codewordController.addcodewords)
 router.post('/getCodewords', codewordController.getCodewords)
 router.post('/deleteCodewords', codewordController.deleteCodewords)
@@ -40,5 +40,5 @@ router.post('/getcoursestudent', courseStudentController.getCourseStudent);
 router.get('/getstudentcodeword', courseStudentController.getstudentcodeword);
 router.post('/deletecoursestudent', courseStudentController.deletecoursestudent);
 router.post('/updatecoursestudent', courseStudentController.updatecoursestudent);
-router.post('/updateCourse', courseController.updateCourse)
+router.post('/updateCourse', courseController.updateCourse);
 module.exports = router;
