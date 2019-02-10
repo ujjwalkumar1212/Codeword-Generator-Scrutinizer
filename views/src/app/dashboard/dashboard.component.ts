@@ -14,6 +14,8 @@ export class DashboardComponent implements OnInit {
   constructor(public dialog: MatDialog, private router: Router) { }
   ngOnInit() {
   }
+
+  // Get call
   openDialog1(): void {
     const dialogRef = this.dialog.open(CreateCourseComponent, {
       width: '500px',
