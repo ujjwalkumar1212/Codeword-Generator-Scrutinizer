@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 var dbconnection=require("../DBconnection/connect-mongodb");
 var userschemadetails= require("../DB_schemas/userschema");
+var bcrypt = require("bcrypt");
 
 var userdetails = userschemadetails.userschema;
 var User= mongoose.model("User",userdetails);
@@ -20,7 +21,7 @@ function registeruser(request, callback){
     };
     var user=new User({
         emailID:request.email,
-        passwd:request.password,
+        passwd:bcrypt.hashSync(request.password,10),
         isInstructor:request.instructor
     });
     user.save()
