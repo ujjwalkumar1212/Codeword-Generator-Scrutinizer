@@ -1,13 +1,13 @@
 
-const _ = require('lodash');
-const bcrypt = require('bcryptjs');
+var _ = require('lodash');
+var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var { UserModel } = require('../model/model.user');
 var { mongoose } = require('./../config/database')
 var mailController = require('../config/user.mail.js')
-let XLSX = require('xlsx')
+var XLSX = require('xlsx')
 
-let signUp = (req,res) => {
+var signUp = (req,res) => {
     var body = _.pick(req.body,['email','password','instructor']);
     var gen_token = jwt.sign({email: body.email },'codewordnwmsu',{expiresIn:  1* 300 }).toString();
     body.token = gen_token;
@@ -32,7 +32,7 @@ let signUp = (req,res) => {
 }
 module.exports.signUp = signUp;
 
-let signIn = (req,res) => {
+var signIn = (req,res) => {
     var body = _.pick(req.body,['email','password']);
     console.log(body.email+"Controller user signin");
     UserModel.findOne({emailKey: body.email}, function (err, User) {
@@ -57,7 +57,7 @@ let signIn = (req,res) => {
 }
 module.exports.signIn = signIn;
 
-let details = (req,res) => {    
+var details = (req,res) => {    
     console.log('email'+ req.session.id);
     UserModel.findOne({_id: req.session.id}).then((user) => {
     if(!user){
@@ -69,7 +69,7 @@ let details = (req,res) => {
 }
 module.exports.details = details;
 
-let validateEmail = (req, res) => {
+var validateEmail = (req, res) => {
     var body = _.pick(req.body,['email']);
     console.log(body.email+"controller validateEmail");
     UserModel.findOne({ emailKey: body.email}).then((user) => {
@@ -88,7 +88,7 @@ let validateEmail = (req, res) => {
 }
 module.exports.validateEmail = validateEmail;
 
-let tempPassword = (req, res ) => {
+var tempPassword = (req, res ) => {
     var body = _.pick(req.body,['email']);
     console.log('Tempa'+ body.email);
     var chars = "abcdefghijklmnopqrstuvwxyz@#$%&*ABCDEFGHIJKLMNOP123456789";
@@ -113,7 +113,7 @@ let tempPassword = (req, res ) => {
 }
 module.exports.tempPassword = tempPassword;
 
-let changePassword = (req,res) => { 
+var changePassword = (req,res) => { 
     var body = _.pick(req.body,['password']);
     console.log("change password:"+ req.session.id+" Change Password:"+body.password); 
     var hashPassword="";

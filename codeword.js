@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var cors = require('cors');
+var register= require('./DB_Operations/register');
 require('./config/database');
 //const formidable = require('express-formidable');
 var userRouter = require('./routes/user.route');
@@ -23,6 +24,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(tokencheck.tokencheck);
+app.use(express.json());
+
+app.post("/register",function(request,response){
+    console.log("-----------------Register---------------");
+    register.registeruser(request.body, function(registerResponse){
+        response.send(registerResponse);
+    });
+
+});
 
 app.use('/codeword', userRouter);
 

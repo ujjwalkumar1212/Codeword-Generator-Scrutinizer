@@ -14,6 +14,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -67,7 +69,9 @@ import { CreateCourseComponent,CreateCouse1Component, } from './create-course/cr
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,    
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    HttpClientModule
 
 
   ],

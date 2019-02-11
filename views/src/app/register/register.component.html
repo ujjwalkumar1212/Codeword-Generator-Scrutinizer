@@ -8,22 +8,24 @@
   
   <mat-card-content id="content">
     <mat-form-field>
-      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <input matInput placeholder="Enter your email" [(ngModel)]="emailid" [formControl]="email" required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <br>
     <mat-form-field>
-        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Enter your password"[(ngModel)]="passwd" [type]="hide ? 'password' : 'text'">
     </mat-form-field>
     <br>
     <mat-form-field>
         <input matInput placeholder="Confirm your password" [type]="hide ? 'password' : 'text'">
     </mat-form-field>
+    <mat-checkbox ngModel name="instructor" #instructor="ngModel">Instructor</mat-checkbox>
+
 
      
   </mat-card-content>
   <mat-card-actions >
-    <button mat-raised-button color="primary" id="cfooter">REGISTER NOW</button>
+    <button mat-raised-button color="primary" id="cfooter" (click)="register(instructor)">REGISTER NOW</button>
     <p id="quest">Already have an account?
       <a mat-button routerLink="/">Login</a></p>
   </mat-card-actions>
