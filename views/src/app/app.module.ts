@@ -33,6 +33,7 @@ import { AddUserComponent, AddUserSnackBarComponent } from './add-user/add-user.
 import { CoursestudentComponent } from './coursestudent/coursestudent.component';
 import { CodewordComponent } from './codeword/codeword.component';
 import { CreateCourseComponent,CreateCouse1Component, } from './create-course/create-course.component';
+import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
 
 
 
@@ -51,6 +52,7 @@ import { CreateCourseComponent,CreateCouse1Component, } from './create-course/cr
     CodewordComponent,
     CreateCourseComponent,
     CreateCouse1Component,
+    StudentdashboardComponent,
    
   ],
   imports: [
