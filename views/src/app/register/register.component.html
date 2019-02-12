@@ -17,7 +17,7 @@
     </mat-form-field>
     <br>
     <mat-form-field>
-        <input matInput placeholder="Confirm your password" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Confirm your password" [(ngModel)]="cnfpasswd" [type]="hide ? 'password' : 'text'">
     </mat-form-field>
     <mat-checkbox ngModel name="instructor" #instructor="ngModel">Instructor</mat-checkbox>
 

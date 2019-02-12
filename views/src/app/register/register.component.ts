@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   emailid;
   passwd;
+  cnfpasswd;
 
 
 
@@ -29,7 +30,8 @@ export class RegisterComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   register(instructor) {
-    var isInstructor= false;
+    if(this.passwd==this.cnfpasswd){
+      var isInstructor= false;
     if(instructor.touched){
       isInstructor=true;
     }
@@ -53,6 +55,8 @@ export class RegisterComponent implements OnInit {
     // console.log(this.emailid);
     // console.log(this.passwd);
     // console.log(instructor);
+    }
+    
   }
 
   ngOnInit() {
