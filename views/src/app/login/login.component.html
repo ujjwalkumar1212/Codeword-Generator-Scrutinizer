@@ -1,44 +1,27 @@
 <mat-card class="mat-elevation-z8">
   <form class="example-form" (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm">
-      <h2>Login to Codeword App</h2>
-      <!-- {{ emailID.value }}
-      <br> -->
-      <p class="mat-body-2" *ngIf="errFlag">Enter both email and password</p>
-      <!-- <label for="email">Email </label> -->
-      <mat-form-field class="example-full-width">
-      <input 
-        matInput 
-        type="text" 
-        [ngModel]="email" 
-        name="email" 
-        #emailID="ngModel" 
-        placeholder="Email" 
-        required>
-      </mat-form-field>
-      <br>
-      <!-- <label for="password">Password </label> -->
-      <mat-form-field class="example-full-width">
-      <input 
-        matInput
-        type="password" 
-        [ngModel]="password" 
-        name="password" 
-        #pwd="ngModel"
-        placeholder="Password" 
-        required>
-      </mat-form-field>
-      <br>
-      <button mat-raised-button color="primary" type="submit" >Login</button>
-    </form>
-    <div>
-        <br>
-      <li>
+    <h2>Login to Codeword App</h2>
+
+    <p class="mat-body-2" *ngIf="errFlag">Invalid Email or Password</p>
+
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" [ngModel]="email" name="email" #emailID="ngModel" placeholder="Email" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <input matInput type="password" [ngModel]="password" name="password" #pwd="ngModel" placeholder="Password" required>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+  </form>
+  
+  <div>
+    <br>
+    <li>
       <a routerLinkActive="active" routerLink="forgotpassword">Forgot password</a>
-      </li>
-      <li>
+    </li>
+    <li>
       <a routerLinkActive="active" routerLink="register">Sign Up</a>
     </li>
-    
-    </div>
+  </div>
 </mat-card>
-
