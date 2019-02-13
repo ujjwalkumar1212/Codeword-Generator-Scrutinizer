@@ -5,10 +5,10 @@
 </mat-toolbar>
 
 
-<form class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
+<form id="loginForm" class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
   <!-- {{ emailID.value }}
   <br> -->
-  <p class="mat-body-2" *ngIf="errFlag">Enter both Name and Contact</p>
+  <!-- <p class="mat-body-2" *ngIf="errFlag">Enter both Name and Contact</p> -->
   <!-- <label for="email">Email </label> -->
   <mat-form-field class="example-full-width">
   <input 
@@ -21,10 +21,11 @@
     required>
   </mat-form-field>
   <br>
-  <input type="file">
+  <input (change)="previewFiles($event)" type="file">
   <br>
   <br>
-  <mat-toolbar class="alert-msg"><p>No File is uploaded. Waiting for user to upload the CodeWord Set.</p></mat-toolbar>
+  <mat-toolbar *ngIf="!isFileUploaded" class="alert-msg"><p>No File is uploaded. Waiting for user to upload the CodeWord Set.</p></mat-toolbar>
+  <mat-toolbar *ngIf="isFileUploaded" class="alert-msg"><p>There are {{ codeWordCount }} codewords in the Uploaded set.</p></mat-toolbar>
   <br>
   
   <!-- <button type="button"  class="btn btn-danger">CANCEL</button>
