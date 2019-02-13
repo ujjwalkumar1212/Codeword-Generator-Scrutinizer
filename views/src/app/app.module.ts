@@ -29,7 +29,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { CodewordsetComponent } from './codewordset/codewordset.component';
 import { PasswordComponent } from './password/password.component';
-import { AddUserComponent, AddUserSnackBarComponent } from './add-user/add-user.component';
+import { AddUserComponent, AddUserSnackBarComponent, HintDialog } from './add-user/add-user.component';
 import { CoursestudentComponent } from './coursestudent/coursestudent.component';
 import { CodewordComponent } from './codeword/codeword.component';
 import { CreateCourseComponent,CreateCouse1Component, } from './create-course/create-course.component';
@@ -48,6 +48,7 @@ import { StudentdashboardComponent } from './studentdashboard/studentdashboard.c
     PasswordComponent,
     AddUserComponent,
     AddUserSnackBarComponent,
+    HintDialog,
     CoursestudentComponent,
     CodewordComponent,
     CreateCourseComponent,
@@ -81,6 +82,7 @@ import { StudentdashboardComponent } from './studentdashboard/studentdashboard.c
   entryComponents: [
     AddUserComponent,
     AddUserSnackBarComponent,
+    HintDialog,
     CreateCouse1Component,
     CreateCourseComponent
         

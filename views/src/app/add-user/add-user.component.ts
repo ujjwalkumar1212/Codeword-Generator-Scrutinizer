@@ -87,6 +87,12 @@ export class AddUserComponent implements OnInit {
     this.dialogRef.close()
   }
 
+  openRulesDialog(): void {
+    const dialogRef = this.dialog.open(HintDialog, {
+      width: '350px',
+    });
+    }
+
 }
 
 @Component({
@@ -99,3 +105,9 @@ export class AddUserComponent implements OnInit {
   `],
 })
 export class AddUserSnackBarComponent {}
+
+@Component({
+  selector: 'hint-dialog',
+  templateUrl: 'hint-dialog.html',
+})
+export class HintDialog {}
