@@ -2,24 +2,26 @@
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-  }
+}
   
-  .example-full-width {
+.example-full-width {
     width: 100%;
-  }  
+}  
 
-  mat-card{
+mat-card{
     margin: 8em auto;
     max-width: 30em;
-  }
+}
 
-  .mat-raised-button{
+.mat-raised-button{
     background: green;
     color: white;
 }
+
 .spacer{
     flex: 1 1 auto;
 }
+
 .btn-create{
     margin-left: 1em;
     background: green;
@@ -30,11 +32,7 @@
     background: red;
     color: white;
 }
+
 p{
     font-size: 12px;
 }
-/* #quest{
-    padding-left: 3em;
-    padding-top: 0.5em;
-  } */
-  
