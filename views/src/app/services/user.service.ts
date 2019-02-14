@@ -18,4 +18,13 @@ export class UserService {
           + '/codeword/signin', data)
     }
 
+    signup(data){
+      return this.httpclient.post("http://localhost:3000"
+      + '/codeword/signup', data) 
+    }
+
+    // getCodewordSet(){
+    //   return this.httpclient.get("http://localhost:3000/getCodewordSet")
+    // }
+
 }

@@ -34,6 +34,7 @@ import { CoursestudentComponent } from './coursestudent/coursestudent.component'
 import { CodewordComponent } from './codeword/codeword.component';
 import { CreateCourseComponent,CreateCouse1Component, } from './create-course/create-course.component';
 import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 
@@ -54,6 +55,7 @@ import { StudentdashboardComponent } from './studentdashboard/studentdashboard.c
     CreateCourseComponent,
     CreateCouse1Component,
     StudentdashboardComponent,
+    SignUpComponent,
    
   ],
   imports: [
