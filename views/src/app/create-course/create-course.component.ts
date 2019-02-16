@@ -3,6 +3,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
 @Component({
   selector: 'app-create-course',
   templateUrl: './create-course.component.html',
@@ -11,11 +14,37 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CreateCourseComponent implements OnInit {
   errFlag = false;
   adduser = '';
+  addcoursestartURL;
+  addcourseendURL;
+  addcourseedate;
+  addcoursedate;
+  addcoursename;
+ 
   // constructor() { }
   constructor(public dialogRef: MatDialogRef<CreateCourseComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
-    public snackBar: MatSnackBar) { 
+    public snackBar: MatSnackBar, private http:HttpClient) { 
       this.adduser = { ...data};
+    }
+    course(sav){
+      var req={
+        name:this.addcoursename,
+        startDate:this.addcoursedate,
+        endDate:this.addcourseedate,
+        startURL:this.addcoursestartURL,
+        endURL:this.addcourseendURL,
+
+      }
+      let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+     
+
+    var signupFormJSON = JSON.stringify(req);
+    
+    this.http.post('http://localhost:3000/newcourse', signupFormJSON, { headers: headers })
+    .subscribe(function(response){
+      console.log(response);
+    })
     }
 
   ngOnInit() {
