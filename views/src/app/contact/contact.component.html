@@ -44,16 +44,17 @@
 
         <div class="row">
           <div class="col-md-6">
-          <button type="submit" class="btn btn-success">
+          <!-- <button type="submit" class="btn btn-success">
             <mat-icon>save</mat-icon>
            
-          </button>
-          
+          </button> -->
+          <button type="submit" class="cancel"  mat-button >submit</button>
           </div>
           <div class="col-md">
-          <button type="submit" class="btn btn-success">
+              <button class="create"  mat-button (click)="onNoClick()">cancel</button>
+          <!-- <button type="submit" class="btn btn-success">
             <mat-icon (click)="onNoClick()">cancel</mat-icon> 
-          </button>
+          </button> -->
         </div>
         </div>
       </div>
