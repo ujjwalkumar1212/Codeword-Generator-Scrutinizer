@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material';
 
 
 
@@ -35,6 +36,9 @@ import { CodewordComponent } from './codeword/codeword.component';
 import { CreateCourseComponent,CreateCouse1Component, } from './create-course/create-course.component';
 import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactService } from './service/contact.service';
 
 
 
@@ -56,6 +60,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     CreateCouse1Component,
     StudentdashboardComponent,
     SignUpComponent,
+    ContactComponent,
+    ContactListComponent,
    
   ],
   imports: [
@@ -76,17 +82,19 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FormsModule,    
     ReactiveFormsModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
 
 
   ],
-  providers: [],
-  entryComponents: [
+  providers: [ContactService],
+    entryComponents: [
     AddUserComponent,
     AddUserSnackBarComponent,
     HintDialog,
     CreateCouse1Component,
-    CreateCourseComponent
+    CreateCourseComponent,
+    ContactComponent,
         
   ],
   bootstrap: [AppComponent]

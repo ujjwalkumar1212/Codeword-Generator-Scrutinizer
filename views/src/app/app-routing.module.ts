@@ -9,7 +9,7 @@ import { CodewordsetComponent } from './codewordset/codewordset.component';
 import { CoursestudentComponent } from './coursestudent/coursestudent.component';
 import { CodewordComponent } from './codeword/codeword.component';
 import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
-
+import{ContactListComponent} from './contact-list/contact-list.component';
 
 
 
@@ -25,7 +25,8 @@ const routes: Routes = [
   {path: 'codewordset',component:CodewordsetComponent },
   {path: 'codeword',component:CodewordComponent },
   {path: 'coursestudent',component:CoursestudentComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full'}
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path:'contactlist', component:ContactListComponent}
 ];
 
 @NgModule({
