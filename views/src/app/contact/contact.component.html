@@ -1,0 +1,63 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Contact Information</mat-card-title>
+    </mat-toolbar>
+</mat-card-header>
+<mat-card-content>
+  <div class="container">
+    <form [formGroup]="_contactForm" (submit)="onSubmit()">
+      <div class="form-group">
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <label>Course Name</label>
+            <input type="text" formControlName="FirstName" class="form-control">
+          </div>
+        </div>
+
+          <div class="row">
+          <div class="col-md-6">
+            <label>Start Date</label>
+            <input  type="date"  class="form-control" formControlName="LastName" name="startDate"  placeholder="Start Date" required>
+            </div>
+            <div class="col-md-6">
+                <label>End Date</label>
+                  <input type="date"  class="form-control" formControlName="Contact"  name="startDate"  placeholder="End Date" required>
+           
+              </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <label>Start URL</label>
+             <input matInput type="text"  formControlName="Email"  placeholder="Select Survey Start URL" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label>End Url</label>
+           <input matInput type="text"   class="form-control" formControlName="End"  placeholder="Select Survey Start URL" class="form-control">
+          
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+          <button type="submit" class="btn btn-success">
+            <mat-icon>save</mat-icon>
+           
+          </button>
+          
+          </div>
+          <div class="col-md">
+          <button type="submit" class="btn btn-success">
+            <mat-icon (click)="onNoClick()">cancel</mat-icon> 
+          </button>
+        </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</mat-card-content>
