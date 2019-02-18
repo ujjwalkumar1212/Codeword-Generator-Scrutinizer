@@ -1,6 +1,6 @@
 <mat-card-header>
   <mat-toolbar class="toolbar">
-    <mat-card-title>Contact Information</mat-card-title>
+    <mat-card-title>Create New Course</mat-card-title>
     </mat-toolbar>
 </mat-card-header>
 <mat-card-content>
@@ -10,7 +10,7 @@
 
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <label>Course Name</label>
             <input type="text" formControlName="FirstName" class="form-control">
           </div>
@@ -43,14 +43,14 @@
         </div>
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-9">
           <!-- <button type="submit" class="btn btn-success">
             <mat-icon>save</mat-icon>
            
           </button> -->
           <button type="submit" class="cancel"  mat-button >submit</button>
           </div>
-          <div class="col-md">
+          <div class="col-md-3">
               <button class="create"  mat-button (click)="onNoClick()">cancel</button>
           <!-- <button type="submit" class="btn btn-success">
             <mat-icon (click)="onNoClick()">cancel</mat-icon> 
