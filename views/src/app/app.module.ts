@@ -17,6 +17,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -39,6 +40,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactService } from './service/contact.service';
+import { AddCourseComponent, AddCourseSnackBarComponent } from './add-course/add-course.component';
 
 
 
@@ -62,6 +64,8 @@ import { ContactService } from './service/contact.service';
     SignUpComponent,
     ContactComponent,
     ContactListComponent,
+    AddCourseComponent,
+    AddCourseSnackBarComponent
    
   ],
   imports: [
@@ -79,7 +83,8 @@ import { ContactService } from './service/contact.service';
     MatSnackBarModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule,    
+    FormsModule,
+    MatGridListModule,    
     ReactiveFormsModule,
     MatCheckboxModule,
     HttpClientModule,
@@ -95,6 +100,8 @@ import { ContactService } from './service/contact.service';
     CreateCouse1Component,
     CreateCourseComponent,
     ContactComponent,
+    AddCourseComponent,
+    AddCourseSnackBarComponent
         
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,47 @@
 <app-nav-bar></app-nav-bar>
+<br>
+
+<!-- Add Course button -->
 <div class="main-content">
-  <button mat-raised-button (click)="openDialog1()"><i class="fas fa-plus"></i> Create New Course</button>
-   </div>
+  <button mat-raised-button (click)="openDialog()"><i class="fas fa-plus"></i>Add Course</button>
+  <br>
+  <br>
+</div>
+
+<!-- New Mat card -->
+<mat-grid-list cols="4" rowHeight="350px">
+  <mat-grid-tile *ngFor="let element of courseData">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <h3> {{ element.courseNameKey }}</h3>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-toolbar>
+          <p>
+            {{ element.Startdate }}</p>
+          <span class="spacer"></span>
+          <p>
+            {{ element.Enddate }}
+          </p>
+        </mat-toolbar>
+      </mat-card-content>
+      <br>
+      <mat-card-content>
+        <mat-toolbar>
+          <p>
+            <a href="{{ element.PreSurveyURL }}">PreSurvey</a>
+          </p>
+          <span class="spacer"></span>
+          <p>
+            <a href="{{ element.PostSurveyURL }}">PostSurvey</a>
+          </p>
+        </mat-toolbar>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="rowClicked(row)"><i class="far fa-eye"></i> View</button>
+        <button mat-button><i class="fas fa-trash"></i> Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

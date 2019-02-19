@@ -9,6 +9,14 @@ th{
     color: white;
     font-size: 18px;
 }
+
+p {
+    font-size: 12px;
+    }
+
+    mat-grid-list{
+        max-width: auto;
+        margin: 1em 1em auto 1em;}
   
 th.mat-sort-header-sorted {
 color: black;
@@ -17,4 +25,8 @@ color: black;
 .mat-raised-button{
     background: green;
     color: white;
+}
+
+.spacer{
+    flex: 1 1 auto;
 }
