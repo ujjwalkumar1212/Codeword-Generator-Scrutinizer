@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'forgotpassword',component:PasswordComponent },
   {path:'login/forgotpassword',redirectTo: '/forgotpassword'},
   {path: 'codewordset',component:CodewordsetComponent },
-  {path: 'codeword',component:CodewordComponent },
+  {path: 'codeword/:id',component:CodewordComponent },
   {path: 'coursestudent',component:CoursestudentComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   {path:'contactlist', component:ContactListComponent}

@@ -27,7 +27,7 @@
     <ng-container matColumnDef="btn">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Show Details</th>
       <!-- <td>hi</td> -->
-      <td mat-cell *matCellDef="let element"><button mat-stroked-button (click)="rowClicked(row)">Show Details <i class="fas fa-chevron-right"></i></button></td>
+      <td mat-cell *matCellDef="let element"><button mat-stroked-button (click)="rowClicked(element)">Show Details <i class="fas fa-chevron-right"></i></button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
