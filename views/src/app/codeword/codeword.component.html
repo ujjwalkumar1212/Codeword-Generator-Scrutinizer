@@ -1,36 +1,32 @@
 <app-nav-bar></app-nav-bar>
 
 <div class="main-content">
-    <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
-    <br>
-    <br>
+  <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
+  <br>
+  <br>
   <!-- Table -->
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
-    
-        <!-- name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Codewords </th>
-          <td mat-cell *matCellDef="let element"> {{element.Codeword}} </td>
-        </ng-container>
-    
-            
-        <!-- button Column -->
-        <ng-container matColumnDef="btn1">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Edit</th>
-          <!-- <td>hi</td> -->
-          <td mat-cell *matCellDef="let element"><button mat-stroked-button>Edit <i class="fas fa-edit"></i></button></td>
-        </ng-container>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
 
-        <ng-container matColumnDef="btn2">
-            <th class="th" mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
-            <td mat-cell *matCellDef="let element"><button mat-stroked-button>Delete <i class="fas fa-trash"></i></button></td>
-          </ng-container>
-    
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      <!-- pAGINATION -->
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Codewords </th>
+      <td mat-cell *matCellDef="let element"> {{element.Codeword}} </td>
+    </ng-container>
+
+    <!-- Button Column -->
+    <ng-container matColumnDef="btn1">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Edit</th>
+      <td mat-cell *matCellDef="let element"><button mat-stroked-button>Edit <i class="fas fa-edit"></i></button></td>
+    </ng-container>
+    <ng-container matColumnDef="btn2">
+      <th class="th" mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
+      <td mat-cell *matCellDef="let element"><button mat-stroked-button>Delete <i class="fas fa-trash"></i></button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- Pagination -->
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons class="mat-elevation-z10"></mat-paginator>
 
 </div>
-
