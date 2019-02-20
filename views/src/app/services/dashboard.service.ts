@@ -28,10 +28,15 @@ export class DashboardService {
     }
 
     addNewCourse(data){
+        console.log(data, 'console from dashboard service')
         return this.httpclient.post("http://localhost:3000/codeword/addnewCourse",{
-            data: {
-                token: window.localStorage.getItem('token')                
-            }
+            token: window.localStorage.getItem('token'),
+            courseNameKey: data.name,
+            codeWordSetName: 'Larger set',
+            startDate: data.startDate,
+            endDate: data.endDate,
+            preSurveyURL: data.startURL,
+            postSurveyURL: data.endURL
         })
     }
 
