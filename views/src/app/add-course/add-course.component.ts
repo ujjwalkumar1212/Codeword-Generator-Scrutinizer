@@ -7,6 +7,10 @@ import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { DashboardService } from 'src/app/services/dashboard.service';
 
+export interface PeriodicElement {
+  codeWordSetName: string;
+  
+}
 
 @Component({
   selector: 'app-add-course',
@@ -16,6 +20,7 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 export class AddCourseComponent implements OnInit {
   errFlag = false;
   addcourse = '';
+  studentfile: any
   
   
 
@@ -27,13 +32,29 @@ export class AddCourseComponent implements OnInit {
 
     ngOnInit() {
       
+      
     }
+
+    
   
     save(data) {
+      
+      let courseDetails = {
+        courseNameKey: data.value.name,
+        codeWordSetName: data.value.codewordSetName,
+        startDate: data.value.startDate,
+        endDate: data.value.endDate,
+        preSurveyURL: data.value.startURL,
+        postSurveyURL: data.value.endURL
+      }
       if (data.valid) {
         console.log(data.value);
-        this.dashboardService.addNewCourse(data.value).subscribe((response : any) => {
+        this.dashboardService.addNewCourse(courseDetails).subscribe((response : any) => {
             // make sure success 
+            let data = new FormData();
+            data.append('file', this.studentfile)
+            data.append('CourseNameKey', courseDetails.courseNameKey)
+            data.append('CodeWordSetName', courseDetails.codeWordSetName)
         })
         
         // this.router.navigate(['/user'])
@@ -49,6 +70,11 @@ export class AddCourseComponent implements OnInit {
     } 
 
     // make a get call, then assign that after success
+
+    fileUpload(event: any){
+      this.studentfile = event.target.files[0];
+      
+    }
 
     
     

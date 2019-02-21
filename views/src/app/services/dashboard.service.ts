@@ -28,15 +28,18 @@ export class DashboardService {
     }
 
     addNewCourse(data){
-        console.log(data, 'console from dashboard service')
-        return this.httpclient.post("http://localhost:3000/codeword/addnewCourse",{
-            token: window.localStorage.getItem('token'),
-            courseNameKey: data.name,
-            codeWordSetName: 'Larger set',
-            startDate: data.startDate,
-            endDate: data.endDate,
-            preSurveyURL: data.startURL,
-            postSurveyURL: data.endURL
+        return this.httpclient.post("http://localhost:3000/codeword/addnewCourse",
+            // token: window.localStorage.getItem('token'),
+            // courseNameKey: data.name,
+            // codeWordSetName: 'Larger set',
+            // startDate: data.startDate,
+            // endDate: data.endDate,
+            // preSurveyURL: data.startURL,
+            // postSurveyURL: data.endURL
+            data,{
+                headers: {
+                    token: window.localStorage.getItem('token')                
+                }
         })
     }
 

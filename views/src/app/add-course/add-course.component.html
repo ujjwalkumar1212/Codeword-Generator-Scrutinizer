@@ -5,7 +5,7 @@
 </mat-toolbar>
 
 
-<form class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
+<form class="example-form" (ngSubmit)="save(courseForm)" #courseForm="ngForm">
   <!-- {{ emailID.value }}
     <br> -->
   <p class="mat-body-2" *ngIf="errFlag">Enter both Name and Contact</p>
@@ -25,7 +25,7 @@
     </mat-form-field>
   </mat-toolbar>
   <br>
-  <input type="file">
+  <input (change)="fileUpload($event)" type="file">
   <br>
   <!-- select -->
   <!-- <mat-form-field class="example-full-width">
@@ -34,9 +34,9 @@
 
   
   <mat-form-field>
-      <mat-select placeholder="Select Codeword Set"  required>
-        <mat-option *ngFor="let name of names" [value]="name.value">
-          {{name.value}}
+      <mat-select placeholder="Select Codeword Set" [(ngModel)]="addcourse.codewordSetName" name="codewordSetName" #codewordSetNameID="ngModel" required>
+        <mat-option *ngFor="let name of names" [value]="name.codewordSetName">
+          {{name.codewordSetName}}
         </mat-option>
       </mat-select>
       <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error> -->
@@ -65,7 +65,7 @@
 
    <mat-toolbar>
     <span class="spacer"></span>
-    <button class="btn-cancel" mat-raised-button (click)="rowClicked(row)">Cancel</button>
+    <button class="btn-cancel" type = "button" mat-raised-button (click)="rowClicked(row)">Cancel</button>
     <button class="btn-create" mat-raised-button>Create</button>
   </mat-toolbar>
 

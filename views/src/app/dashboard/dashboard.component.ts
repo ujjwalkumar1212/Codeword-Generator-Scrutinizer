@@ -41,7 +41,17 @@ export class DashboardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      });
+      console.log(result);
+      // this.dashboardService.addNewCourse(result)
+      //   .subscribe((data) => {
+      //     console.log(data);
+      //     console.log('success');
+      this.fetchCourse();
+      },
+      error => {
+        console.log('Error Occured');
+      }
+    )
   }
 
   rowClicked(row: any): void {
