@@ -44,11 +44,21 @@ export class DashboardService {
     }
 
     addCourseStudent(data){
-        return this.httpclient.post("http://localhost:3000/codeword/addcoursestudent",{
-            data: {
-                token: window.localStorage.getItem('token')                
-            }
-        })
+        return this.httpclient.post("http://localhost:3000/codeword/addcoursestudent",
+        data,
+        // {
+        //     data: {
+        //         token: window.localStorage.getItem('token')                
+        //     }
+        {headers: {
+            // 'Content-Type': 'multipart/form-data',
+            token: window.localStorage.getItem('token')
+          }
+        // data: {
+        //     token: window.localStorage.getItem('token')                
+        // }
+    }    
+    )
     }
 
     
