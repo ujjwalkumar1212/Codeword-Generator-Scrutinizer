@@ -27,7 +27,13 @@ export class CourseService {
         })
     }
 
-
+    deleteStudent(){}
+    
+    editStudent() { }
+    
+    editCourse() {} 
+     
+    
 
 
 
