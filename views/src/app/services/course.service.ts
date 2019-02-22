@@ -19,6 +19,14 @@ export class CourseService {
             })
     }
 
+    getCoursesData() {
+        return this.httpclient.get("http://localhost:3000/codeword/getCourseList", {
+            headers: {
+                token: window.localStorage.getItem('token')
+            }
+        })
+    }
+
 
 
 
