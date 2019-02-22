@@ -1,23 +1,20 @@
+<!-- Header of form -->
 <mat-toolbar>
-  <h2>New Course Details</h2>
+  <h2>Add Course Details</h2>
   <span class="spacer"></span>
-  <!-- <button mat-raised-button class="btn-color"><i class="far fa-eye"></i> Hint</button> -->
 </mat-toolbar>
 
-
+<!-- Body of form -->
 <form class="example-form" (ngSubmit)="save(courseForm)" #courseForm="ngForm">
-  <!-- {{ emailID.value }}
-    <br> -->
-  <p class="mat-body-2" *ngIf="errFlag">Enter both Name and Contact</p>
-  <!-- <label for="email">Email </label> -->
-
+  <p class="mat-body-2" *ngIf="errFlag">Fill all the required fields</p>
   <mat-form-field class="example-full-width">
     <input matInput type="text" [(ngModel)]="addcourse.name" name="name" #nameID="ngModel" placeholder="Course Name" required>
   </mat-form-field>
   <br>
   <mat-toolbar>
     <mat-form-field class="example-full-width">
-      <input matInput type="date" [(ngModel)]="addcourse.date" name="startDate" #startDateID="ngModel" placeholder="Start Date" required>
+      <input matInput type="date" [(ngModel)]="addcourse.date" name="startDate" #startDateID="ngModel" placeholder="Start Date"
+        required>
     </mat-form-field>
     <span class="spacer"></span>
     <mat-form-field class="example-full-width">
@@ -27,46 +24,29 @@
   <br>
   <input (change)="fileUpload($event)" type="file">
   <br>
-  <!-- select -->
-  <!-- <mat-form-field class="example-full-width">
-      <input matInput type="dropdown" [(ngModel)]="addcourse.codewordset" name="select" #nameID="ngModel" placeholder="Select Codeword Set" required>
-  </mat-form-field> -->
-
-  
   <mat-form-field>
-      <mat-select placeholder="Select Codeword Set" [(ngModel)]="addcourse.codewordSetName" name="codewordSetName" #codewordSetNameID="ngModel" required>
-        <mat-option *ngFor="let name of names" [value]="name.CodeWordSetName">
-          {{name.CodeWordSetName}}
-        </mat-option>
-      </mat-select>
-      <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error> -->
-      <!-- <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
-    </mat-form-field>
-
-  <!-- seelct ends -->
-  <br>
-  <mat-form-field class="example-full-width">
-      <input matInput type="text" [(ngModel)]="addcourse.startURL" name="startURL" #nameID="ngModel" placeholder="Select Survey Start URL" required>
+    <mat-select placeholder="Select Codeword Set" [(ngModel)]="addcourse.codewordSetName" name="codewordSetName" #codewordSetNameID="ngModel"
+      required>
+      <mat-option *ngFor="let name of names" [value]="name.CodeWordSetName">
+        {{name.CodeWordSetName}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
   <br>
   <mat-form-field class="example-full-width">
-      <input matInput type="text" [(ngModel)]="addcourse.endURL" name="endURL" #nameID="ngModel" placeholder="Select Survey End URL" required>
+    <input matInput type="text" [(ngModel)]="addcourse.startURL" name="startURL" #nameID="ngModel" placeholder="Select Survey Start URL"
+      required>
   </mat-form-field>
   <br>
-  <!-- <mat-form-field class="example-full-width">
-      <mat-select placeholder="Select">
-        <mat-option value="option">Option</mat-option>
-      </mat-select>
-    </mat-form-field> -->
-  <!-- <mat-toolbar class="alert-msg">
-    <p>No File is uploaded. Waiting for user to upload the CodeWord Set.</p>
-  </mat-toolbar>
-  <br> -->
-
-   <mat-toolbar>
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" [(ngModel)]="addcourse.endURL" name="endURL" #nameID="ngModel" placeholder="Select Survey End URL"
+      required>
+  </mat-form-field>
+  <br>
+  <!-- Footer of form -->
+  <mat-toolbar>
     <span class="spacer"></span>
-    <button class="btn-cancel" type = "button" mat-raised-button (click)="rowClicked(row)">Cancel</button>
+    <button class="btn-cancel" type="button" mat-raised-button (click)="rowClicked(row)">Cancel</button>
     <button class="btn-create" mat-raised-button>Create</button>
   </mat-toolbar>
-
 </form>

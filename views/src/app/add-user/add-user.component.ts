@@ -50,7 +50,6 @@ export class AddUserComponent implements OnInit {
   save(data) {
     if (data.valid) {
       console.log(data.value);
-      // this.router.navigate(['/user'])
       let sendData = {
         CodeWordSetName: data.value.name
       }

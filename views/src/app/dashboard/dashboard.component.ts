@@ -18,7 +18,6 @@ import { MatTableDataSource } from '@angular/material/table';
 export class DashboardComponent implements OnInit {
   courseData: any;
 
-  // constructor() { }
   constructor(public dialog: MatDialog, private router: Router, private dashboardService: DashboardService) { }
   ngOnInit() {
     this.fetchCourse();
@@ -35,17 +34,11 @@ export class DashboardComponent implements OnInit {
   // Get call
   openDialog(): void {
     const dialogRef = this.dialog.open(AddCourseComponent, {
-      width: '500px',
-      
+      width: '500px',      
     });
-
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
-      // this.dashboardService.addNewCourse(result)
-      //   .subscribe((data) => {
-      //     console.log(data);
-      //     console.log('success');
       this.fetchCourse();
       },
       error => {

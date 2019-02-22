@@ -4,38 +4,24 @@
   <button mat-raised-button class="btn-color" (click)="openRulesDialog()"><i class="far fa-eye"></i> Hint</button>
 </mat-toolbar>
 
-
 <form id="loginForm" class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
-  <!-- {{ emailID.value }}
-  <br> -->
-  <!-- <p class="mat-body-2" *ngIf="errFlag">Enter both Name and Contact</p> -->
-  <!-- <label for="email">Email </label> -->
   <mat-form-field class="example-full-width">
-  <input 
-    matInput 
-    type="text" 
-    [(ngModel)]="adduser.name" 
-    name="name" 
-    #nameID="ngModel" 
-    placeholder="Codeword Set Name" 
-    required>
+    <input matInput type="text" [(ngModel)]="adduser.name" name="name" #nameID="ngModel" placeholder="Codeword Set Name" required>
   </mat-form-field>
   <br>
   <input (change)="previewFiles($event)" type="file">
   <br>
   <br>
-  <mat-toolbar *ngIf="!isFileUploaded" class="alert-msg"><p>No File is uploaded. Waiting for user to upload the CodeWord Set.</p></mat-toolbar>
-  <mat-toolbar *ngIf="isFileUploaded" class="alert-msg"><p>There are {{ codeWordCount }} codewords in the Uploaded set.</p></mat-toolbar>
-  <br>
-  
-  <!-- <button type="button"  class="btn btn-danger">CANCEL</button>
-  <button type="button" class="btn btn-success">CREATE</button>
-  <button mat-raised-button class="md-icon-float md-button-right" type="submit" >Create</button> -->
-  <mat-toolbar>
-      <span class="spacer"></span>
-      <button class="btn-cancel" mat-raised-button (click)="rowClicked(row)">Cancel</button>
-      <button class="btn-create" mat-raised-button>Create</button>
+  <mat-toolbar *ngIf="!isFileUploaded" class="alert-msg">
+    <p>No File is uploaded. Waiting for user to upload the CodeWord Set.</p>
   </mat-toolbar>
-  
+  <mat-toolbar *ngIf="isFileUploaded" class="alert-msg">
+    <p>There are {{ codeWordCount }} codewords in the Uploaded set.</p>
+  </mat-toolbar>
+  <br>
+  <mat-toolbar>
+    <span class="spacer"></span>
+    <button class="btn-cancel" mat-raised-button (click)="rowClicked(row)">Cancel</button>
+    <button class="btn-create" mat-raised-button>Create</button>
+  </mat-toolbar>
 </form>
-

@@ -19,49 +19,32 @@ export class DashboardService {
 
     getCodewordsList() {
         return this.httpclient.get("http://localhost:3000/codeword/getCourseList", {
-            // CodeWordSetKey: data
-        //   } ,{
             headers: {
                 token: window.localStorage.getItem('token')
             }
         })
     }
 
-    addNewCourse(data){
+    addNewCourse(data) {
         return this.httpclient.post("http://localhost:3000/codeword/addnewCourse",
-            // token: window.localStorage.getItem('token'),
-            // courseNameKey: data.name,
-            // codeWordSetName: 'Larger set',
-            // startDate: data.startDate,
-            // endDate: data.endDate,
-            // preSurveyURL: data.startURL,
-            // postSurveyURL: data.endURL
-            data,{
+            data, {
                 headers: {
-                    token: window.localStorage.getItem('token')                
+                    token: window.localStorage.getItem('token')
                 }
-        })
+            })
     }
 
-    addCourseStudent(data){
+    addCourseStudent(data) {
         return this.httpclient.post("http://localhost:3000/codeword/addcoursestudent",
-        data,
-        // {
-        //     data: {
-        //         token: window.localStorage.getItem('token')                
-        //     }
-        {headers: {
-            // 'Content-Type': 'multipart/form-data',
-            token: window.localStorage.getItem('token')
-          }
-        // data: {
-        //     token: window.localStorage.getItem('token')                
-        // }
-    }    
-    )
+            data,
+            {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
     }
 
-    
+
 
 
 }
