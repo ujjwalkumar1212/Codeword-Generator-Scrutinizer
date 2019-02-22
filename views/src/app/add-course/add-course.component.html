@@ -35,8 +35,8 @@
   
   <mat-form-field>
       <mat-select placeholder="Select Codeword Set" [(ngModel)]="addcourse.codewordSetName" name="codewordSetName" #codewordSetNameID="ngModel" required>
-        <mat-option *ngFor="let name of names" [value]="name.codewordSetName">
-          {{name.codewordSetName}}
+        <mat-option *ngFor="let name of names" [value]="name.CodeWordSetName">
+          {{name.CodeWordSetName}}
         </mat-option>
       </mat-select>
       <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error> -->

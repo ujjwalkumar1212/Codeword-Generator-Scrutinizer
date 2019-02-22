@@ -31,7 +31,7 @@ export class AddCourseComponent implements OnInit {
     }
 
     ngOnInit() {
-      
+      this.loadCourseModel()
       
     }
 
@@ -49,19 +49,35 @@ export class AddCourseComponent implements OnInit {
       }
       if (data.valid) {
         console.log(data.value);
-        this.dashboardService.addNewCourse(courseDetails).subscribe((response : any) => {
+        this.dashboardService
+        .addNewCourse(courseDetails)
+        .subscribe((response : any) => {
             // make sure success 
             let data = new FormData();
             data.append('file', this.studentfile)
             data.append('CourseNameKey', courseDetails.courseNameKey)
             data.append('CodeWordSetName', courseDetails.codeWordSetName)
-        })
+            this.dashboardService
+            .addCourseStudent(data)
+            .subscribe((res: any) => {
+              // console.log(res.data)
+            
+            // this.router.navigate(['/user'])
+            this.snackBar.openFromComponent(AddCourseSnackBarComponent, {
+            duration: 750,
         
-        // this.router.navigate(['/user'])
-        this.snackBar.openFromComponent(AddCourseSnackBarComponent, {
-        duration: 750,
+       
       });
-        this.dialogRef.close()
+        this.dialogRef.close()},
+        err => {
+          console.log(err)
+        }
+      )
+    },
+    err => {
+      console.log(err)
+    })
+        
       } else {
         this.errFlag = true;
         data.reset
@@ -71,6 +87,16 @@ export class AddCourseComponent implements OnInit {
 
     // make a get call, then assign that after success
 
+    loadCourseModel () {
+      this.dashboardService
+      .getCodewordSet()
+      .subscribe((res: any) => {
+        this.names = res.data
+      }   
+        
+      )
+    }
+
     fileUpload(event: any){
       this.studentfile = event.target.files[0];
       
@@ -78,10 +104,12 @@ export class AddCourseComponent implements OnInit {
 
     
     
-    names: CodewordSetName[] = [
-      {value: "Small Codeword Set"},
-      {value: "Large Codeword Set"},
-    ];
+    names: any
+    
+    // CodewordSetName[] = [
+    //   {value: "Small Codeword Set"},
+    //   {value: "Large Codeword Set"},
+    // ];
   
 
     rowClicked(row: any): void {
