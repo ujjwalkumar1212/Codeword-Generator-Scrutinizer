@@ -41,6 +41,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactService } from './service/contact.service';
 import { AddCourseComponent, AddCourseSnackBarComponent } from './add-course/add-course.component';
+import { RegisterfeedbackComponent } from './registerfeedback/registerfeedback.component';
 
 
 
@@ -65,7 +66,8 @@ import { AddCourseComponent, AddCourseSnackBarComponent } from './add-course/add
     ContactComponent,
     ContactListComponent,
     AddCourseComponent,
-    AddCourseSnackBarComponent
+    AddCourseSnackBarComponent,
+    RegisterfeedbackComponent
    
   ],
   imports: [
