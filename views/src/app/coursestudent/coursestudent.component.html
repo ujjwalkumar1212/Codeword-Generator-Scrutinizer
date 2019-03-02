@@ -4,7 +4,7 @@
   <mat-toolbar>
     <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
     <span class="spacer"></span>
-    <h2>Acknowledged Status: </h2>
+    <h2>Acknowledged Status: {{ ( acknowledgedTrue / acknowledgedTotal )  * 100}}% </h2>
   </mat-toolbar> 
   <br> 
   <mat-card>
