@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'login/forgotpassword',redirectTo: '/forgotpassword'},
   {path: 'codewordset',component:CodewordsetComponent },
   {path: 'codeword/:id',component:CodewordComponent },
-  {path: 'coursestudent',component:CoursestudentComponent },
+  {path: 'coursestudent/:id',component:CoursestudentComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   {path:'contactlist', component:ContactListComponent}
 ];
