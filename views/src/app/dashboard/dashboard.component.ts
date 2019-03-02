@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
   }
 
   rowClicked(row: any): void {
-    console.log(row);
-    this.router.navigate(['/coursestudent'])
+    console.log(row.courseNameKey);
+    this.router.navigate(['/coursestudent', row.courseNameKey])
   }  
 }
