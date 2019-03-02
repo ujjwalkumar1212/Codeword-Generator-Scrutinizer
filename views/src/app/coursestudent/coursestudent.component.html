@@ -16,14 +16,11 @@
        &nbsp;<button mat-raised-button color="primary"><i class="fas fa-trash"></i> Delete</button>
      
     </mat-toolbar>
-      Start Date:
-      <br>
-      End Date:
-      <br>
-      Start URL:
-      <br>
-      End URL:
-      <br>
+    Start Date: {{ courseData.Startdate }} <br>
+    End Date: {{ courseData.Enddate }} <br>
+    Start Survey URL:{{ courseData.PreSurveyURL }}  <br>
+    End Survey URL: {{ courseData.PostSurveyURL }}  <br>
+    Number of Students: {{ totalStudents }} <br>
   </mat-card>
     <br>
 
