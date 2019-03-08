@@ -29,8 +29,13 @@ export class LoginComponent implements OnInit {
               .signin(data.value)
               .subscribe((res: any) => {
                 localStorage.setItem('token', res.token)
-                localStorage.setItem('status', res.isInstructor)
-                this.router.navigate(['/dashboard'])
+                if( res.isInstructor){
+                  this.router.navigate(['/dashboard'])
+                }
+                else{
+                  this.router.navigate(['/studentdashboard'])
+                }
+                
               },
             )
 
