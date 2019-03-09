@@ -1,36 +1,27 @@
 <app-nav-bar></app-nav-bar>
+<br>
 
 <div class="main-content">
   <mat-toolbar>
     <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
     <span class="spacer"></span>
-    <div class="col-md-6 col-lg-6 col-xs-0 col-sm-0">
-      <h3 style="font-weight:bold;text-align:left"> Course Name: {{ courseNameData }} </h3>
-  </div>
-  <div class="col-md-6 col-lg-6 col-xs-0 col-sm-0">
-      <h3 style="font-weight:bold;text-align:right"> Acknowledged Status: {{ acknowledged}}% </h3>
-  </div>
+    <button mat-raised-button color="primary"><i class="far fa-edit"></i> Edit</button>
   </mat-toolbar> 
   <br> 
   <mat-card>
     <mat-toolbar>
-       
       <h2>Course Name:</h2>
       <span class="spacer"></span>
-       <button mat-raised-button color="primary"><i class="far fa-edit"></i> Edit</button>
-       &nbsp;<button mat-raised-button color="primary"><i class="fas fa-trash"></i> Delete</button>
-     
+      <h2>Acknowledged Status:</h2>
     </mat-toolbar>
-    Start Date:  <input type="date" id="startDate" class="form-control" title="Atleast 6-15 characters" required v-model="selectstartDate" (click)="changeEndDate">
-
-    End Date: <div class="col-md-6"><div class="form-group"><input type="date" required id="endDate" class="form-control" v-model="selectendDate"></div>
-    Start Survey URL:{{ courseData.PreSurveyURL }}  <br>
-    End Survey URL: {{ courseData.PostSurveyURL }}  <br>
-    Number of Students: {{ totalStudents }} <br>
-  </div>
-  <button type="cancel" class="btn btn-primart" data-dismiss="modal">Cancel</button>
-<button type="create" class="btn btn-danger" >Save Changes</button>
-
+      Start Date:
+      <br>
+      End Date:
+      <br>
+      Start URL:
+      <br>
+      End URL:
+      <br>
   </mat-card>
     <br>
 
