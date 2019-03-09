@@ -79,3 +79,25 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+<form class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
+  <!-- {{ emailID.value }}
+    <br> -->
+  <p class="mat-body-2" *ngIf="errFlag">Enter both Name and Contact</p>
+  <!-- <label for="email">Email </label> -->
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" [(ngModel)]="addcoursename" name="name" #nameID="ngModel" placeholder="Course Name" required>
+  </mat-form-field>
+  <br>
+  <mat-toolbar>
+    <mat-form-field class="example-full-width">
+      <input matInput type="date" [(ngModel)]="addcoursedate" name="startDate" #startDateID="ngModel" placeholder="Start Date" required>
+    </mat-form-field>
+    <span class="spacer"></span>
+    <mat-form-field class="example-full-width">
+      <input matInput type="date" [(ngModel)]="addcourseedate" name="endDate" #endDateID="ngModel" placeholder="End Date" required>
+    </mat-form-field>
+  </mat-toolbar>
+  <br>
+  <input type="file">
+  <br>
