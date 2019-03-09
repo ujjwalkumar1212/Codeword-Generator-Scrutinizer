@@ -21,8 +21,9 @@
        &nbsp;<button mat-raised-button color="primary"><i class="fas fa-trash"></i> Delete</button>
      
     </mat-toolbar>
-    Start Date: {{ courseData.Startdate }} <br>
-    End Date: {{ courseData.Enddate }} <br>
+    Start Date:  <input type="date" id="startDate" class="form-control" title="Atleast 6-15 characters" required v-model="selectstartDate" @click="changeEndDate"></div></div>
+
+    End Date: <div class="col-md-6"><div class="form-group"><input type="date" required id="endDate" class="form-control" v-model="selectendDate"></div>
     Start Survey URL:{{ courseData.PreSurveyURL }}  <br>
     End Survey URL: {{ courseData.PostSurveyURL }}  <br>
     Number of Students: {{ totalStudents }} <br>
