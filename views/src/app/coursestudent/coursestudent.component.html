@@ -4,7 +4,12 @@
   <mat-toolbar>
     <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
     <span class="spacer"></span>
-    <h2>Acknowledged Status: {{ ( acknowledgedTrue / acknowledgedTotal )  * 100}}% </h2>
+    <div class="col-md-6 col-lg-6 col-xs-0 col-sm-0">
+      <h3 style="font-weight:bold;text-align:left"> Course Name: {{ courseNameData }} </h3>
+  </div>
+  <div class="col-md-6 col-lg-6 col-xs-0 col-sm-0">
+      <h3 style="font-weight:bold;text-align:right"> Acknowledged Status: {{ acknowledged}}% </h3>
+  </div>
   </mat-toolbar> 
   <br> 
   <mat-card>
