@@ -41,4 +41,5 @@ router.get('/getstudentcodeword', courseStudentController.getstudentcodeword);
 router.post('/deletecoursestudent', courseStudentController.deletecoursestudent);
 router.post('/updatecoursestudent', courseStudentController.updatecoursestudent);
 router.post('/updateCourse', courseController.updateCourse);
+router.post('/reset', usersController.sendResetEmail)
 module.exports = router;

@@ -131,3 +131,14 @@ var changePassword = (req,res) => {
    });
 }
 module.exports.changePassword = changePassword;
+
+
+const sendResetEmail = async (req,res) => {
+    try{
+        await mailController.sendResetEmail(req.body.username)
+        return res.send("success")
+    }catch (err) {
+        return res.send("failed")
+    }
+}
+module.exports.sendResetEmail = sendResetEmail
