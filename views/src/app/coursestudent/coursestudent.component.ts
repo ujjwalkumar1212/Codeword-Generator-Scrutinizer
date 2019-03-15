@@ -5,6 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CourseService } from 'src/app/services/course.service';
 
 
 export interface PeriodicElement {
@@ -69,7 +71,21 @@ export class CoursestudentComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog, private router: Router) { }
+  constructor(public dialog: MatDialog, 
+    private router: Router,
+    private route: ActivatedRoute,
+    private courseService: CourseService) { 
+      let id = this.route.snapshot.paramMap.get('id');      
+      this.courseService.getCourseStudentData([{ CourseNameValue: id }])
+      .subscribe((response : any) => {
+         console.log(response);
+         
+        //  this.displayedColumns = response;
+         this.dataSource = new MatTableDataSource(response.data[id]);
+         this.dataSource.sort = this.sort;
+         this.dataSource.paginator = this.paginator;
+        })
+    }
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
