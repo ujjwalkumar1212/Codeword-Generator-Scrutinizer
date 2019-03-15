@@ -76,7 +76,7 @@ export class CoursestudentComponent implements OnInit {
     private route: ActivatedRoute,
     private courseService: CourseService) { 
       let id = this.route.snapshot.paramMap.get('id');      
-      this.courseService.getCourseStudentData([{ CourseNameValue: id }])
+      this.courseService.getCourseStudentData([{ courseNameKey: id }])
       .subscribe((response : any) => {
          console.log(response);
          
