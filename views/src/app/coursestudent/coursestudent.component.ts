@@ -5,16 +5,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ViewChild } from '@angular/core';
-<<<<<<< HEAD
 import { DashboardService } from 'src/app/services/dashboard.service';
 import { ActivatedRoute } from '@angular/router';
 import { element } from '@angular/core/src/render3';
 import{ CourseService} from 'src/app/services/course.service'
-=======
-import { ActivatedRoute } from '@angular/router';
-import { CourseService } from 'src/app/services/course.service';
-
->>>>>>> 14e14ddce4e1d4224e7ad765495127d73152dad8
 
 export interface PeriodicElement {
   email: string;
