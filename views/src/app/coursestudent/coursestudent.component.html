@@ -14,6 +14,14 @@
     <mat-toolbar>
       <h2>Course Name:</h2>
       <span class="spacer"></span>
+
+      <li class="page-item" :class="{disabled: prevUrl === ''}">
+        <button class="page-link" @click="checkPage(prevUrl)">Previous</button>
+    </li>
+    <li class="page-item" :class="{disabled: nextUrl === ''}">
+        <button class="page-link" @click="checkPage(nextUrl)">Next</button>
+    </li>
+
       <h2>Acknowledged Status:</h2>
     </mat-toolbar>
       Start Date:
