@@ -1,12 +1,25 @@
+const _ = require('lodash');
+var { mongoose } = require('./../config/database')
+var { CourseStudentModel } = require('../model/model.coursestudent');
+var express = require('express');
+
+
+
+
+
 
 
  let getstudentDetails = (req,res) => {
-    var body = _.pick(req.body,['EmailKey']);
-    courseStudentModel.findOne({EmailKey: body.EmailKey}), function (err, course) {
+   console.log("hhjkhjkhjkhjkh "+req.params.emailID);
+
+ 
+    CourseStudentModel.find({EmailKey: req.params.emailID}, function (err, course) {
             if(err){
-                return res.json({ code: 200, message: 'Course Student not exist'});
+                
+                res.send(err)
             }
-            return course;
-        }
+            
+            return res.send(course);
+        });
     } 
 module.exports.getstudentDetails = getstudentDetails;

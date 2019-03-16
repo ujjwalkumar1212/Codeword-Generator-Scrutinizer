@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentdashboardService } from '../services/studentdashboard.service';
 
 @Component({
   selector: 'app-studentdashboard',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./studentdashboard.component.css']
 })
 export class StudentdashboardComponent implements OnInit {
-
-  constructor() { }
+email:String
+studentDetailList
+  constructor(private stdetailsservice: StudentdashboardService) { }
 
   ngOnInit() {
+
+   this.email= localStorage.getItem("email")
+   console.log("Local: "+this.email)
+   this.stdetailsservice.getStudentDeatils(this.email)
+    .subscribe(res => {
+      console.log(res)
+      this.studentDetailList= res
+    })
+
   }
 
 }

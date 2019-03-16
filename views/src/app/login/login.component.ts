@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
                   this.router.navigate(['/dashboard'])
                 }
                 else{
+                  localStorage.setItem('email', data.value.email)
                   this.router.navigate(['/studentdashboard'])
                 }
                 

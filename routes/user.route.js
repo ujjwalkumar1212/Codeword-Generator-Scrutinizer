@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var usersController = require('../controllers/controller.user')
+var studentDashboardController = require('../controllers/controller.studentdashboard')
 var courseController = require('../controllers/controller.course')
 var codewordsetController = require('../controllers/controller.codewordset')
 var codewordController = require('../controllers/controller.codeword')
@@ -44,4 +45,5 @@ router.post('/updateCourse', courseController.updateCourse);
 router.post('/reset', usersController.sendResetEmail)
 router.get('/resetpassword', usersController.resetPassword)
 router.post('/resetpassword', usersController.reset)
+router.get('/studentdashboard/:emailID',studentDashboardController.getstudentDetails)
 module.exports = router;

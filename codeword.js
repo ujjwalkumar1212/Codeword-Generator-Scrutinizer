@@ -35,6 +35,7 @@ app.post("/register",function(request,response){
 
 app.use('/codeword', userRouter);
 
+
 // initialize data ............................................
 require('./utils/seeder.js')(app)  // load seed data
 

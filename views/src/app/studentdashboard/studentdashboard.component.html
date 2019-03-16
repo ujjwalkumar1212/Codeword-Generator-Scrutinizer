@@ -20,18 +20,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Graduate Directed Project-1</td>
-            <td>Cricket</td>
+          <tr *ngFor="let detail of studentDetailList">
+            <td>{{detail.CourseNameKey}}</td>
+            <td>{{detail.Codeword}}</td>
           </tr>
-          <tr>
-            <td>Mobile Computing-Android</td>
-            <td>America</td>
-          </tr>
-          <tr>
-            <td>User Experience Design</td>
-            <td>Bearcat</td>
-          </tr>
+          
         </tbody>
       </table>
      
