@@ -11,7 +11,8 @@ export class CourseService {
     //API calls starts here
     getCourseStudentData(data) {
         return this.httpclient.post("http://localhost:3000/codeword/getcoursestudent", {
-            courseNameKey: data
+            // courseNameKey: data
+            CourseNameValue: data
         }, {
                 headers: {
                     token: window.localStorage.getItem('token')
