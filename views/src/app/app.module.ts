@@ -16,7 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 
@@ -42,6 +42,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { ContactService } from './service/contact.service';
 import { AddCourseComponent, AddCourseSnackBarComponent } from './add-course/add-course.component';
 import { RegisterfeedbackComponent } from './registerfeedback/registerfeedback.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 
@@ -67,7 +68,8 @@ import { RegisterfeedbackComponent } from './registerfeedback/registerfeedback.c
     ContactListComponent,
     AddCourseComponent,
     AddCourseSnackBarComponent,
-    RegisterfeedbackComponent
+    RegisterfeedbackComponent,
+    ResetpasswordComponent
    
   ],
   imports: [
@@ -91,8 +93,6 @@ import { RegisterfeedbackComponent } from './registerfeedback/registerfeedback.c
     MatCheckboxModule,
     HttpClientModule,
     MatIconModule
-
-
   ],
   providers: [ContactService],
     entryComponents: [

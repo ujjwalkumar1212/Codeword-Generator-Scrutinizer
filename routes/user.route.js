@@ -42,4 +42,6 @@ router.post('/deletecoursestudent', courseStudentController.deletecoursestudent)
 router.post('/updatecoursestudent', courseStudentController.updatecoursestudent);
 router.post('/updateCourse', courseController.updateCourse);
 router.post('/reset', usersController.sendResetEmail)
+router.get('/resetpassword', usersController.resetPassword)
+router.post('/resetpassword', usersController.reset)
 module.exports = router;

@@ -10,6 +10,7 @@ import { CoursestudentComponent } from './coursestudent/coursestudent.component'
 import { CodewordComponent } from './codeword/codeword.component';
 import { StudentdashboardComponent } from './studentdashboard/studentdashboard.component';
 import{ContactListComponent} from './contact-list/contact-list.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'forgotpassword',component:PasswordComponent },
   {path:'login/forgotpassword',redirectTo: '/forgotpassword'},
   {path: 'codewordset',component:CodewordsetComponent },
+  {path: 'codeword/resetpassword', component: ResetpasswordComponent },
   {path: 'codeword/:id',component:CodewordComponent },
   {path: 'coursestudent/:id',component:CoursestudentComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},

@@ -13,6 +13,7 @@
     "cors": "^2.8.4",
     "csv-reader": "^1.0.3",
     "debug": "~2.6.9",
+    "dotenv": "^7.0.0",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "express-formidable": "^1.2.0",

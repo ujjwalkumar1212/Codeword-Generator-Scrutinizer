@@ -5,6 +5,7 @@ var register= require('./DB_Operations/register');
 require('./config/database');
 //const formidable = require('express-formidable');
 var userRouter = require('./routes/user.route');
+require('dotenv').config();
 var app = express();
 const bodyParser = require('body-parser');
 var tokencheck = require('./middleware/tokencheck');
@@ -16,12 +17,10 @@ app.use(cors());
 // app.use(formidable());
 
 // view engine setup
-app.set('views', path.join(__dirname, './views/dist'));
-app.use(express.static(path.join(__dirname, './views/dist')));
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views/dist/codeword'));
+app.use(express.static(path.join(__dirname, 'views/dist/codeword')));
+app.engine("html", require('ejs').renderFile)
+app.set('view engine', 'html');
 
 app.use(tokencheck.tokencheck);
 app.use(express.json());

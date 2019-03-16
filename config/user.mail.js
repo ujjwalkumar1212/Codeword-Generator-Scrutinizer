@@ -59,27 +59,36 @@ const getConnection =  () => {
         port: 587,
         secure: false, 
         auth: {
-            user: decodeJson.email,
-            pass: decodeJson.password
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
         }
     })
 }
-
+const ejs = require('ejs')
+const path = require('path')
 /* Send reset email using username */
 const sendResetEmail = async (username) => {
-    const resettoken = jwt.sign({username}, "donttry", { expiresIn: '12h' })
-    let mailOptions = {
-        from: "CodeWord App",
-        to: username,
-        subject: 'Reset Password',
-        text: 'Hello, '+ username,
-        html: 'http://localhost:3000/codeword/resetpassword?token='+resettoken
-    }
-    try{
-        conn = await getConnection()
-        return  conn.sendMail(mailOptions)
-    } catch (err) {
-        console.log(err)
-    }
+    const resettoken = jwt.sign({username}, "codewordnwmsu", { expiresIn: '12h' })
+
+    ejs.renderFile(path.join(__dirname, '../public/mail.html'),
+    { link: 'http://localhost:3000/codeword/resetpassword?token='+ resettoken },
+     async (err, str) => {
+        if(err) throw err("failed")
+
+         let mailOptions = {
+             from: "CodeWord App",
+             to: username,
+             subject: 'Reset Password',
+             html: str
+         }
+
+         try{
+             conn = await getConnection()
+             return  conn.sendMail(mailOptions)
+         } catch (err) {
+             console.log(err)
+         }
+    })
+
 }
 module.exports.sendResetEmail = sendResetEmail

@@ -142,3 +142,25 @@ const sendResetEmail = async (req,res) => {
     }
 }
 module.exports.sendResetEmail = sendResetEmail
+
+const resetPassword = (req, res) => {
+   return  res.render(`index`)
+}
+module.exports.resetPassword = resetPassword
+
+const reset = (req,res) => {
+    UserModel.findOne({emailKey: req.session.username}, function (err, userModel) {
+        if(err) return res.json({ code: 200, message: 'Email id not registered!!'});
+        bcrypt.genSalt(10, (err,salt) => {
+            bcrypt.hash(req.body.password,salt,(err,hash) => {
+                userModel.password = hash
+                userModel.save().then((user) => {
+                    if(user) return res.json({ code: 200, message: true});           
+                }).catch((e) => {
+                    return res.json({ code: 400, message: e});        
+                })
+            })
+        })
+    })
+}
+module.exports.reset = reset
