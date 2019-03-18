@@ -8,6 +8,9 @@ import { StudentdashboardService } from '../services/studentdashboard.service';
 })
 export class StudentdashboardComponent implements OnInit {
 email:String
+codeword:String
+ack
+
 studentDetailList
   constructor(private stdetailsservice: StudentdashboardService) { }
 
@@ -20,7 +23,21 @@ studentDetailList
       console.log(res)
       this.studentDetailList= res
     })
+    
+    // this.verifyackstatus(this.studentDetailList.CourseNameKey);
+    
 
+  }
+
+  verifyackstatus(courseName){
+    console.log(courseName)
+    this.stdetailsservice.updateACK(this.email,courseName)    
+    .subscribe(res=>{
+      this.codeword=res["Codeword"] 
+      this.ack= res["Acknowledged"]
+          
+    })
+    this.ngOnInit()
   }
 
 }

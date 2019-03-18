@@ -5,31 +5,38 @@
 <br>
 
 <div class="main-content">
-   
+
   <mat-card>
     <mat-toolbar>
-            <h2>WELCOME TO STUDENT DASHBOARD</h2>
+      <h2>WELCOME TO STUDENT DASHBOARD</h2>
     </mat-toolbar>
-      
+
     <br>
-      <table class="table col-md-12 col-lg-12 col-xs-12 col-sm-12 table-striped table-bordered table-hover" >
-        <thead>
-          <tr>
-            <th>Course Name</th>
-            <th>Codeword</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let detail of studentDetailList">
-            <td>{{detail.CourseNameKey}}</td>
-            <td>{{detail.Codeword}}</td>
-          </tr>
+    <table class="table col-md-12 col-lg-12 col-xs-12 col-sm-12 table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Course Name</th>
+          <th>Codeword</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detail of studentDetailList">
+          <td>{{detail.CourseNameKey}}</td>
+            <!-- <td >
+            {{detail.Codeword}}
+              
           
-        </tbody>
-      </table>
-     
+          </td> -->
+          <td *ngIf="detail.Acknowledged; then codeword else codewordbutton"></td>
+          <ng-template #codeword>{{detail.Codeword}}</ng-template>
+          <ng-template #codewordbutton><button  mat-raised-button color="primary" (click)="verifyackstatus(detail.CourseNameKey)" >Reveal Codeword</button></ng-template>
+        </tr>
+
+
+      </tbody>
+    </table>
+
   </mat-card>
-    <br>
+  <br>
 
-     </div>
-
+</div>

@@ -13,4 +13,7 @@ export class StudentdashboardService {
     return this.httpclient.get("http://localhost:3000/codeword/studentdashboard/"+email)
     
   }
+  updateACK(email,courseNameKey){
+    return this.httpclient.get("http://localhost:3000/codeword/updateACK/" +email+"/"+courseNameKey)
+  }
 }

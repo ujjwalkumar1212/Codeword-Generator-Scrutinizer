@@ -46,4 +46,5 @@ router.post('/reset', usersController.sendResetEmail)
 router.get('/resetpassword', usersController.resetPassword)
 router.post('/resetpassword', usersController.reset)
 router.get('/studentdashboard/:emailID',studentDashboardController.getstudentDetails)
+router.get('/updateACK/:emailID/:CourseNameKey',studentDashboardController.updateACK)
 module.exports = router;
