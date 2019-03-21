@@ -692,3 +692,109 @@
 2019-03-17T15:41:56.751Z - debug: 92 hootoriginal seeded
 2019-03-17T15:41:56.752Z - debug: 200 largeset seeded
 2019-03-17T15:41:56.753Z - info: END Seeder. Sample data read and verified.
+2019-03-18T13:59:44.327Z - info: START seeder.
+2019-03-18T13:59:44.338Z - debug: 2 dataCodewordset seeded
+2019-03-18T13:59:44.338Z - debug: 292 datacodeword seeded
+2019-03-18T13:59:44.338Z - debug: 6 datacourse seeded
+2019-03-18T13:59:44.339Z - debug: 114 dataCoursestudent seeded
+2019-03-18T13:59:44.339Z - debug: 92 hootoriginal seeded
+2019-03-18T13:59:44.339Z - debug: 200 largeset seeded
+2019-03-18T13:59:44.339Z - info: END Seeder. Sample data read and verified.
+2019-03-18T14:41:03.733Z - error: uncaughtException: Cannot read property 'isInstructor' of null date=Mon Mar 18 2019 09:41:03 GMT-0500 (Central Daylight Time), pid=19448, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\a, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\a\bin\www], rss=74903552, heapTotal=61730816, heapUsed=47678168, external=21698668, loadavg=[0, 0, 0], uptime=333678.220236
+TypeError: Cannot read property 'isInstructor' of null
+    at C:\Users\S531373\Desktop\a\controllers\controller.user.js:42:26
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\model.js:4645:16
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:4004:12
+    at model.Query.Query._completeOne (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1915:12)
+    at Immediate.Query.base.findOne.call (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1975:10)
+    at Immediate._onImmediate (C:\Users\S531373\Desktop\a\node_modules\mquery\lib\utils.js:116:16)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+2019-03-18T14:41:04.056Z - error: uncaughtException: Cannot read property 'isInstructor' of null date=Mon Mar 18 2019 09:41:04 GMT-0500 (Central Daylight Time), pid=19448, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\a, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\a\bin\www], rss=76259328, heapTotal=61730816, heapUsed=47811064, external=21706100, loadavg=[0, 0, 0], uptime=333678.5471087
+TypeError: Cannot read property 'isInstructor' of null
+    at C:\Users\S531373\Desktop\a\controllers\controller.user.js:42:26
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\model.js:4645:16
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:4004:12
+    at model.Query.Query._completeOne (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1915:12)
+    at Immediate.Query.base.findOne.call (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1975:10)
+    at Immediate._onImmediate (C:\Users\S531373\Desktop\a\node_modules\mquery\lib\utils.js:116:16)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+2019-03-18T14:41:04.164Z - error: uncaughtException: Cannot read property 'isInstructor' of null date=Mon Mar 18 2019 09:41:04 GMT-0500 (Central Daylight Time), pid=19448, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\a, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\a\bin\www], rss=76267520, heapTotal=61730816, heapUsed=47639832, external=21715457, loadavg=[0, 0, 0], uptime=333678.654301
+TypeError: Cannot read property 'isInstructor' of null
+    at C:\Users\S531373\Desktop\a\controllers\controller.user.js:42:26
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\model.js:4645:16
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:4004:12
+    at model.Query.Query._completeOne (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1915:12)
+    at Immediate.Query.base.findOne.call (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1975:10)
+    at Immediate._onImmediate (C:\Users\S531373\Desktop\a\node_modules\mquery\lib\utils.js:116:16)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+2019-03-18T14:43:03.740Z - error: uncaughtException: Cannot read property 'isInstructor' of null date=Mon Mar 18 2019 09:43:03 GMT-0500 (Central Daylight Time), pid=19448, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\a, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\a\bin\www], rss=67272704, heapTotal=53342208, heapUsed=47751632, external=21752007, loadavg=[0, 0, 0], uptime=333798.2672285
+TypeError: Cannot read property 'isInstructor' of null
+    at C:\Users\S531373\Desktop\a\controllers\controller.user.js:42:26
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\model.js:4645:16
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:4004:12
+    at model.Query.Query._completeOne (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1915:12)
+    at Immediate.Query.base.findOne.call (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1975:10)
+    at Immediate._onImmediate (C:\Users\S531373\Desktop\a\node_modules\mquery\lib\utils.js:116:16)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+2019-03-18T14:43:03.755Z - error: uncaughtException: Cannot read property 'isInstructor' of null date=Mon Mar 18 2019 09:43:03 GMT-0500 (Central Daylight Time), pid=19448, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\a, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\a\bin\www], rss=66449408, heapTotal=53342208, heapUsed=46941472, external=21720386, loadavg=[0, 0, 0], uptime=333798.283389
+TypeError: Cannot read property 'isInstructor' of null
+    at C:\Users\S531373\Desktop\a\controllers\controller.user.js:42:26
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\model.js:4645:16
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:4004:12
+    at model.Query.Query._completeOne (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1915:12)
+    at Immediate.Query.base.findOne.call (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1975:10)
+    at Immediate._onImmediate (C:\Users\S531373\Desktop\a\node_modules\mquery\lib\utils.js:116:16)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+2019-03-18T14:43:04.292Z - error: uncaughtException: Cannot read property 'isInstructor' of null date=Mon Mar 18 2019 09:43:04 GMT-0500 (Central Daylight Time), pid=19448, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\a, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\a\bin\www], rss=66629632, heapTotal=53342208, heapUsed=47118456, external=21729586, loadavg=[0, 0, 0], uptime=333798.8184034
+TypeError: Cannot read property 'isInstructor' of null
+    at C:\Users\S531373\Desktop\a\controllers\controller.user.js:42:26
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\model.js:4645:16
+    at C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:4004:12
+    at model.Query.Query._completeOne (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1915:12)
+    at Immediate.Query.base.findOne.call (C:\Users\S531373\Desktop\a\node_modules\mongoose\lib\query.js:1975:10)
+    at Immediate._onImmediate (C:\Users\S531373\Desktop\a\node_modules\mquery\lib\utils.js:116:16)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
+2019-03-19T14:22:31.095Z - info: START seeder.
+2019-03-19T14:22:31.113Z - debug: 2 dataCodewordset seeded
+2019-03-19T14:22:31.114Z - debug: 292 datacodeword seeded
+2019-03-19T14:22:31.114Z - debug: 6 datacourse seeded
+2019-03-19T14:22:31.114Z - debug: 114 dataCoursestudent seeded
+2019-03-19T14:22:31.115Z - debug: 92 hootoriginal seeded
+2019-03-19T14:22:31.115Z - debug: 200 largeset seeded
+2019-03-19T14:22:31.116Z - info: END Seeder. Sample data read and verified.
+2019-03-19T15:34:10.960Z - info: START seeder.
+2019-03-19T15:34:10.982Z - debug: 2 dataCodewordset seeded
+2019-03-19T15:34:10.982Z - debug: 292 datacodeword seeded
+2019-03-19T15:34:10.983Z - debug: 6 datacourse seeded
+2019-03-19T15:34:10.983Z - debug: 114 dataCoursestudent seeded
+2019-03-19T15:34:10.983Z - debug: 92 hootoriginal seeded
+2019-03-19T15:34:10.984Z - debug: 200 largeset seeded
+2019-03-19T15:34:10.984Z - info: END Seeder. Sample data read and verified.
+2019-03-20T14:09:51.662Z - info: START seeder.
+2019-03-20T14:09:51.684Z - debug: 2 dataCodewordset seeded
+2019-03-20T14:09:51.684Z - debug: 292 datacodeword seeded
+2019-03-20T14:09:51.685Z - debug: 6 datacourse seeded
+2019-03-20T14:09:51.685Z - debug: 114 dataCoursestudent seeded
+2019-03-20T14:09:51.685Z - debug: 92 hootoriginal seeded
+2019-03-20T14:09:51.685Z - debug: 200 largeset seeded
+2019-03-20T14:09:51.686Z - info: END Seeder. Sample data read and verified.
+2019-03-21T18:30:32.183Z - info: START seeder.
+2019-03-21T18:30:32.205Z - debug: 2 dataCodewordset seeded
+2019-03-21T18:30:32.205Z - debug: 292 datacodeword seeded
+2019-03-21T18:30:32.205Z - debug: 6 datacourse seeded
+2019-03-21T18:30:32.206Z - debug: 114 dataCoursestudent seeded
+2019-03-21T18:30:32.206Z - debug: 92 hootoriginal seeded
+2019-03-21T18:30:32.206Z - debug: 200 largeset seeded
+2019-03-21T18:30:32.207Z - info: END Seeder. Sample data read and verified.

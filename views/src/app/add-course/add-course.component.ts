@@ -18,6 +18,7 @@ export interface PeriodicElement {
 })
 
 export class AddCourseComponent implements OnInit {
+      
   errFlag = false;
   addcourse = '';
   studentfile: any
@@ -44,6 +45,7 @@ export class AddCourseComponent implements OnInit {
     }
     if (data.valid) {
       console.log(data.value);
+      console.log(data.endDate);
       this.dashboardService
         .addNewCourse(courseDetails)
         .subscribe((response: any) => {
