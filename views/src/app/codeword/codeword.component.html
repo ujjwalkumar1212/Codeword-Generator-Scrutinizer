@@ -4,6 +4,10 @@
   <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
   <br>
   <br>
+  <button mat-raised-button (click)="openDialog()"><i class="fas fa-plus"></i> Add Codewords</button>
+  <br>
+  <br>
+  
   <!-- Table -->
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
 
