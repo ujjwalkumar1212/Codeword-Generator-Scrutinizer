@@ -21,9 +21,9 @@
       <br>
       End Date:
       <br>
-      Pre Survey URL:
-       <br>
-       Post Survey URL:
+      Start Survey URL: <a v-bind:href="'http://'+courseData.PreSurveyURL" class="card-link" target="_blank">{{ courseData.PreSurveyURL }} </a> <br>
+      End Survey URL: <a v-bind:href="'http://'+courseData.PostSurveyURL" class="card-link" target="_blank">{{ courseData.PostSurveyURL }} </a> <br>
+     
      <br>
   </mat-card>
     <br>
