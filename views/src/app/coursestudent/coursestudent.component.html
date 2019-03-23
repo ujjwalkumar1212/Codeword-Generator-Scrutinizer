@@ -15,15 +15,15 @@
       <h2>Course Name:</h2>
       <span class="spacer"></span>
 
-      <h2>Acknowledged Status:</h2>
+      <h3 style="font-weight:bold;text-align:right"> Acknowledged Status: {{ acknowledged.toFixed(2) }}% </h3>
     </mat-toolbar>
       Start Date:
       <br>
       End Date:
       <br>
-      Start Survey URL: <a v-bind:href="'http://'+courseData.PreSurveyURL" class="card-link" target="_blank">{{ courseData.PreSurveyURL }} </a> <br>
-      End Survey URL: <a v-bind:href="'http://'+courseData.PostSurveyURL" class="card-link" target="_blank">{{ courseData.PostSurveyURL }} </a> <br>
-     
+      Pre Survey URL:
+       <br>
+       Post Survey URL:
      <br>
   </mat-card>
     <br>
