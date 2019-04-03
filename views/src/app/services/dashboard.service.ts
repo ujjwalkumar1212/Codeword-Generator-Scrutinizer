@@ -44,7 +44,25 @@ export class DashboardService {
             })
     }
 
-
+    getCourse(data){
+        return this.httpclient.post("http://localhost:3000/codeword/getcourse",{
+        CourseNameValue: data
+    }, {
+            headers: {
+                token: window.localStorage.getItem('token')
+            }
+        })
+    }
+    chaithanya(data){
+        return this.httpclient.post("http://localhost:3000/codeword/chaithanya",{
+            CourseNamekey: data
+        }, {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
+        } 
+    // }
 
 
 }

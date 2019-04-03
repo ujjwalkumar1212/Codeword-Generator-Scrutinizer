@@ -15,50 +15,10 @@ import{ CourseService} from 'src/app/services/course.service'
 export interface PeriodicElement {
   email: string;
   name: string;
-  codeword: string;
+  Codeword: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [{
-  email: "sspennock0@addthis.com",
-  name: "Sonnie Spennock",
-  codeword: "Myanmar"
-}, {
-  email: "lhacking1@msn.com",
-  name: "Letisha Hacking",
-  codeword: "China"
-}, {
-  email: "dminet2@google.fr",
-  name: "Dorise Minet",
-  codeword: "Poland"
-}, {
-  email: "ssolomonides3@ucoz.ru",
-  name: "Selestina Solomonides",
-  codeword: "Brazil"
-}, {
-  email: "ahenzley4@google.com.br",
-  name: "Anthiathia Henzley",
-  codeword: "Portugal"
-}, {
-  email: "mkleinplatz5@w3.org",
-  name: "Marjie Kleinplatz",
-  codeword: "Philippines"
-}, {
-  email: "ewilmington6@sogou.com",
-  name: "Erika Wilmington",
-  codeword: "Thailand"
-}, {
-  email: "alafflin7@miitbeian.gov.cn",
-  name: "Angie Lafflin",
-  codeword: "Indonesia"
-}, {
-  email: "rwharton8@apache.org",
-  name: "Randall Wharton",
-  codeword: "Ukraine"
-}, {
-  email: "bodreain9@scribd.com",
-  name: "Brande O'Dreain",
-  codeword: "China"
-}]
+
 
 
 @Component({
@@ -69,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [{
 export class CoursestudentComponent implements OnInit {
   courseData: any;
   displayedColumns: string[] = ['email', 'name', 'codeword'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource;
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -78,35 +38,49 @@ export class CoursestudentComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     console.log("111111111111111111111");
     console.log(id);
-    this.courseservice.getCourseStudentData(id)
+    // this.courseservice.getCourseStudentData(id)
+    this.dashboardService.chaithanya(id)
       .subscribe((response: any) => {
+        console.log("22222222222222222");
         console.log(response)
         this.courseData = response.data;
         console.log("22222222222222222");
         console.log(this.courseData);
         console.log(response);
-        // this.dataSource = new MatTableDataSource(response.data[id]);
-        // this.dataSource.sort = this.sort;
-        // this.dataSource.paginator = this.paginator;
+        this.dataSource = new MatTableDataSource(response.data[id]);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      })
+      this.courseservice.getCourseStudentData(id)
+      .subscribe((response: any) => {
+        console.log("22222222222222222");
+        console.log(response)
+        this.courseData = response.data;
+        console.log("22222222222222222");
+        console.log(this.courseData);
+        console.log(response);
+        this.dataSource = new MatTableDataSource(response.data[id]);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       })
   }
 
   ngOnInit() {
-    this.fetchCourse();
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+    // this.fetchCourse();
+    // this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
   }
-  fetchCourse() {
-    this.dashboardService.getCodewordsList()
-    .subscribe((response : any) => {
-      this.courseData = response.data;
-        console.log(this.courseData)
-        })
-   }
+  // fetchCourse() {
+  //   this.dashboardService.getCodewordsList()
+  //   .subscribe((response : any) => {
+  //     this.courseData = response.data;
+  //       console.log(this.courseData)
+  //       })
+  //  }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue;
-  }
+  // applyFilter(filterValue: string) {
+  //   this.dataSource.filter = filterValue;
+  // }
 
  
   rowClicked(row: any): void {

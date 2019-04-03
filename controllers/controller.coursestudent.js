@@ -91,6 +91,31 @@ let getCourseStudent = (req,res) => {
 
 module.exports.getCourseStudent = getCourseStudent;
 
+let chaithanya=(req,res) =>{
+    // let drCaseDataRead = fs.readFileSync('./data/data.coursestudent.json'); 
+    // let drCaseData = JSON.parse(drCaseDataRead);  
+    // var body = _.pick(req.body,['CourseNameValue']);    
+    // CourseModel.findOne({CourseNameKey: body.CourseNameValue}, function (err, Course) {
+    //     if(err){
+    //         return res.json({ code: 200, message: 'No courses created!!'});
+    //     }
+    //     if (Course)
+    //     //code by anurag
+    //         return res.json({ code: 200, data: Course, drCaseData : _.filter(drCaseData, { 'CourseNameKey':  body.CourseNameValue}) });
+    //     }).catch((e) => {
+    //     return res.json({ code: 400, message: e });
+    //     }) 
+    var body = _.pick(req.body,['CourseNameValue']); 
+    console.log(body.CourseNameValue);
+    CourseModel.findOne({CourseNameKey: body.CourseNameValue}, function (err, courses) {
+        if (courses)
+            return res.json({ code: 200, data: courses });
+        }).catch((e) => {
+        return res.json({ code: 400, message: e });
+        })
+}
+module.exports.chaithanya = chaithanya;
+
 let deletecoursestudent=(req,res) =>{
     var body = _.pick(req.body,['CourseNameKey','EmailKey']);  
     CourseStudentModel.deleteOne({CourseNameKey: body.CourseNameKey,EmailKey: body.EmailKey}, function(err,deletecoursestudent){

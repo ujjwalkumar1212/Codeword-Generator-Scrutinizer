@@ -7,6 +7,7 @@ var courseController = require('../controllers/controller.course')
 var codewordsetController = require('../controllers/controller.codewordset')
 var codewordController = require('../controllers/controller.codeword')
 var courseStudentController = require('../controllers/controller.coursestudent')
+var instructordasrboard=require('../controllers/controller.instructordahsboard')
 const bodyParser = require('body-parser');
 let multer = require('multer')
 
@@ -45,6 +46,8 @@ router.post('/updateCourse', courseController.updateCourse);
 router.post('/reset', usersController.sendResetEmail)
 router.get('/resetpassword', usersController.resetPassword)
 router.post('/resetpassword', usersController.reset)
+router.post('/getcourse',instructordasrboard.getcourse)
 router.get('/studentdashboard/:emailID',studentDashboardController.getstudentDetails)
 router.get('/updateACK/:emailID/:CourseNameKey',studentDashboardController.updateACK)
+router.post('/chaithanya',courseStudentController.chaithanya)
 module.exports = router;
