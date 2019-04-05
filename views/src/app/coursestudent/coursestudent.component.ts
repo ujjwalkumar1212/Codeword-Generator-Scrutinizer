@@ -28,6 +28,7 @@ export interface PeriodicElement {
 })
 export class CoursestudentComponent implements OnInit {
   courseData: any;
+  studentData:any;
   displayedColumns: string[] = ['email', 'name', 'codeword'];
   dataSource = new MatTableDataSource;
 
@@ -36,15 +37,15 @@ export class CoursestudentComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private router: Router,private route: ActivatedRoute,private dashboardService: DashboardService,private courseservice: CourseService ) { 
     let id = this.route.snapshot.paramMap.get('id');
-    console.log("111111111111111111111");
+    // console.log("111111111111111111111");
     console.log(id);
     // this.courseservice.getCourseStudentData(id)
     this.dashboardService.chaithanya(id)
       .subscribe((response: any) => {
-        console.log("22222222222222222");
+        // console.log("22222222222222222");
         console.log(response)
         this.courseData = response.data;
-        console.log("22222222222222222");
+        // console.log("22222222222222222");
         console.log(this.courseData);
         console.log(response);
         this.dataSource = new MatTableDataSource(response.data[id]);
@@ -53,12 +54,12 @@ export class CoursestudentComponent implements OnInit {
       })
       this.courseservice.getCourseStudentData(id)
       .subscribe((response: any) => {
-        console.log("22222222222222222");
-        console.log(response)
-        this.courseData = response.data;
-        console.log("22222222222222222");
-        console.log(this.courseData);
-        console.log(response);
+        // console.log("22222222222222222");
+        // console.log(response)
+        this.studentData = response.data;
+        // console.log("22222222222222222");
+        console.log(this.studentData);
+        // console.log(response);
         this.dataSource = new MatTableDataSource(response.data[id]);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
