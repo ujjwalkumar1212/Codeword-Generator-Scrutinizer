@@ -926,3 +926,11 @@ TypeError: Cannot read property 'isInstructor' of null
 2019-04-03T14:21:01.283Z - debug: 92 hootoriginal seeded
 2019-04-03T14:21:01.283Z - debug: 200 largeset seeded
 2019-04-03T14:21:01.284Z - info: END Seeder. Sample data read and verified.
+2019-04-03T14:40:07.791Z - info: START seeder.
+2019-04-03T14:40:07.819Z - debug: 2 dataCodewordset seeded
+2019-04-03T14:40:07.819Z - debug: 292 datacodeword seeded
+2019-04-03T14:40:07.820Z - debug: 6 datacourse seeded
+2019-04-03T14:40:07.821Z - debug: 114 dataCoursestudent seeded
+2019-04-03T14:40:07.822Z - debug: 92 hootoriginal seeded
+2019-04-03T14:40:07.823Z - debug: 200 largeset seeded
+2019-04-03T14:40:07.823Z - info: END Seeder. Sample data read and verified.
