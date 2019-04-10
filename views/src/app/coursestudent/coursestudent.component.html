@@ -1,57 +1,56 @@
 <app-nav-bar></app-nav-bar>
 <br>
 
-<div class="main-content">
+<mat-toolbar>
+  <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
+  <span class="spacer"></span>
+  <button mat-raised-button color="primary"><i class="far fa-edit"></i> Edit</button>
+  &nbsp;&nbsp;
+  <button mat-raised-button color="primary"><i class="fas fa-trash"></i> Deletet</button>
+</mat-toolbar> 
+<br> 
+<mat-card>
   <mat-toolbar>
-    <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
-    <span class="spacer"></span>
-    <button mat-raised-button color="primary"><i class="far fa-edit"></i> Edit</button>
-    &nbsp;&nbsp;
-    <button mat-raised-button color="primary"><i class="fas fa-trash"></i> Deletet</button>
-  </mat-toolbar> 
-  <br> 
-  <mat-card>
-    <mat-toolbar>
       <h2>Course Name:{{courseData.courseNameKey}}</h2>
       <span class="spacer"></span>
       <h2>Acknowledged Status:</h2>
     </mat-toolbar>
     Start Date:{{courseData.Startdate}}
-      <br>
+    <br>
       End Date:{{courseData.Enddate}}
       <br>
       Pre Survey URL:{{courseData.PreSurveyURL}}
        <br>
        Post Survey URL:{{courseData.PostSurveyURL}}
      <br>
-  </mat-card>
+    </mat-card>
     <br>
-
+    
+<div class="main-content">
     <!-- Table -->
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
+  <table mat-table [dataSource]="dataSource" matSort>
       
-          <!-- name Column -->
+          <!-- Email Column -->
           <ng-container matColumnDef="email">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-            <td mat-cell *matCellDef="let element"> {{studentData.EmailKey}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.EmailKey}} </td>
           </ng-container>
-      
-          <!-- contact Column -->
+          
+          <!-- Name Column -->
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-            <td mat-cell *matCellDef="let element"> {{studentData.StudentName}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.StudentName}} </td>
           </ng-container>
 
-           <!-- name Column -->
+           <!-- Codeword Column -->
            <ng-container matColumnDef="codeword">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Codeword </th>
-              <td mat-cell *matCellDef="let element"> {{studentData.Codeword}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.Codeword}} </td>
             </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
         <!-- pAGINATION -->
-        <mat-paginator [pageSizeOptions]="[2, 5, 10, 20]" showFirstLastButtons class="mat-elevation-z10"></mat-paginator>
+        <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstClassButtons ></mat-paginator> -->
     </div>
-

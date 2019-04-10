@@ -1,25 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator, MatSort, MatTableDataSource } from "@angular/material";
 import { ViewChild } from '@angular/core';
 //import { ActivatedRoute } from '@angular/router';
 //import { CourseService } from 'src/app/services/course.service';
 import { DashboardService } from 'src/app/services/dashboard.service';
 import { ActivatedRoute } from '@angular/router';
 import { element } from '@angular/core/src/render3';
-import{ CourseService} from 'src/app/services/course.service'
+import { CourseService } from 'src/app/services/course.service'
 
 export interface PeriodicElement {
-  email: string;
-  name: string;
+  EmailKey: string;
+  StudentName: string;
   Codeword: string;
 }
-
-
-
 
 @Component({
   selector: 'app-coursestudent',
@@ -28,35 +23,30 @@ export interface PeriodicElement {
 })
 export class CoursestudentComponent implements OnInit {
   courseData: any;
-  studentData:any;
   displayedColumns: string[] = ['email', 'name', 'codeword'];
-  dataSource = new MatTableDataSource;
+  dataSource = new MatTableDataSource<PeriodicElement>(null);
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  constructor(public dialog: MatDialog, private router: Router,private route: ActivatedRoute,private dashboardService: DashboardService,private courseservice: CourseService ) { 
-    let id = this.route.snapshot.paramMap.get('id');
-       console.log(id);
-        this.dashboardService.chaithanya(id)
-      .subscribe((response: any) => {
-               this.courseData = response.data;
-               console.log(this.courseData);
-                this.dataSource = new MatTableDataSource(response.data[id]);
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      })
-      this.courseservice.getCourseStudentData(id)
-      .subscribe((response: any) => {
-        this.studentData = response.data;
-        console.log(this.studentData);
-        this.dataSource = new MatTableDataSource(response.data[id]);
-        this.dataSource.sort = this.sort;
-        this.dataSource.paginator = this.paginator;
-      })
+  
+  constructor(public dialog: MatDialog, private router: Router, private route: ActivatedRoute,
+    private dashboardService: DashboardService, private courseservice: CourseService) {
   }
 
+
   ngOnInit() {
+
+    let id = this.route.snapshot.paramMap.get('id');
+      this.dashboardService.chaithanya(id)
+        .subscribe((response: any) => {
+          this.courseData = response.data;
+        })
+      this.courseservice.getCourseStudentData(id)
+      .subscribe((response: any) => {
+        this.dataSource = response.data;
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort; 
+      })
     // this.fetchCourse();
     // this.dataSource.sort = this.sort;
     // this.dataSource.paginator = this.paginator;
@@ -73,10 +63,10 @@ export class CoursestudentComponent implements OnInit {
   //   this.dataSource.filter = filterValue;
   // }
 
- 
+
   rowClicked(row: any): void {
     // console.log(row.courseNameKey);
     console.log("cherukuru");
     this.router.navigate(['/dashboard'])
-  }  
+  }
 }
