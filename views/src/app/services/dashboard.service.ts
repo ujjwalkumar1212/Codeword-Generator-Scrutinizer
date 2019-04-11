@@ -55,7 +55,8 @@ export class DashboardService {
     }
     chaithanya(data){
         return this.httpclient.post("http://localhost:3000/codeword/chaithanya",{
-            CourseNamekey: data
+            // CourseNamekey: data
+            CourseNameValue: data
         }, {
                 headers: {
                     token: window.localStorage.getItem('token')

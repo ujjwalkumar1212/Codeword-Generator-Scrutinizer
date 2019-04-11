@@ -40,6 +40,7 @@ export class CoursestudentComponent implements OnInit {
       this.dashboardService.chaithanya(id)
         .subscribe((response: any) => {
           this.courseData = response.data;
+          console.log(this.courseData);
         })
       this.courseservice.getCourseStudentData(id)
       .subscribe((response: any) => {
