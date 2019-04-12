@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CodewordsetService } from 'src/app/services/codewordset.service';
+import { AddCodewordComponent } from 'src/app/add-codeword/add-codeword.component';
 
 export interface PeriodicElement {
   codeWords: string;
@@ -37,6 +38,51 @@ export class CodewordComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.fetchData();
+  }
+
+  // fetchData() {
+  //   this.codewordsetService.getCodewordSet()
+  //     .subscribe((response: any) => {
+  //       let tempDataset = response.data;
+  //       this.codewordsetService.getCodewords(tempDataset)
+  //         .subscribe((response) => {
+  //           let resData = response['data'];
+  //           let dataT = []
+  //           for (var k in resData) {
+  //             dataT.push({
+  //               codeWordSetName: k,
+  //               count: resData[k].length,
+  //               items: resData[k]
+  //             })
+  //           }
+  //           console.log(dataT)
+  //           this.dataSource.data = dataT;
+
+  //           this.dataSource.sort = this.sort;
+  //           this.dataSource.paginator = this.paginator;
+  //         })
+  //     })
+  //     ;
+  // }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddCodewordComponent, {
+      width: '500px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      this.codewordsetService.saveCodewords(result)
+        .subscribe((data) => {
+          console.log(data);
+          console.log('success');
+          // this.fetchData();
+        },
+        error => {
+          console.log('Error Occured');
+        });
+    });
   }
 
   rowClicked(row: any): void {
