@@ -82,7 +82,7 @@ export class AddCodewordComponent implements OnInit {
 
   }
 
-  rowClicked(row: any): void {
+  rowClicked1(row: any): void {
     console.log(row);
     this.dialogRef.close()
   }
