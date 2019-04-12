@@ -105,14 +105,30 @@ let chaithanya=(req,res) =>{
     //     }).catch((e) => {
     //     return res.json({ code: 400, message: e });
     //     }) 
-    var body = _.pick(req.body,['CourseNameValue']); 
-    console.log(body.CourseNameValue);
-    CourseModel.findOne({CourseNameKey: body.CourseNameValue}, function (err, courses) {
-        if (courses)
+    // var body = _.pick(req.body,['CourseNameValue']); 
+    var body = _.pick(req.body,['CourseNameValue','email','codeWordSet','Startdate','Enddate','PreSurveyURL','PostSurveyURL']);
+    // console.log(body.CourseNameValue);
+    CourseModel.findOne({courseNameKey: body.CourseNameValue}, function (err, courses) {
+        // console.log(CourseNameValue);
+        console.log(body.CourseNameValue);
+        console.log(courses);
+        if (courses){
             return res.json({ code: 200, data: courses });
+        }
+        if(err){
+            return res.json({ code: 200, message: 'Not found'});
+        }
         }).catch((e) => {
         return res.json({ code: 400, message: e });
         })
+    // var body = _.pick(req.body,['courseNameKey','email','codeWordSet','Startdate','Enddate','PreSurveyURL','PostSurveyURL']);
+
+    // CourseModel.findOne({courseName: body.courseNameKey}, function (err, course) {
+    //     if(err){
+    //         return res.json({ code: 200, message: 'Course Doesnt Exist'});
+    //     }
+    //     return course;
+    // })
 }
 module.exports.chaithanya = chaithanya;
 
