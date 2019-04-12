@@ -1148,3 +1148,11 @@ ReferenceError: CourseNameValue is not defined
 2019-04-12T02:19:21.990Z - debug: 92 hootoriginal seeded
 2019-04-12T02:19:21.993Z - debug: 200 largeset seeded
 2019-04-12T02:19:21.994Z - info: END Seeder. Sample data read and verified.
+2019-04-12T02:24:30.288Z - info: START seeder.
+2019-04-12T02:24:30.302Z - debug: 2 dataCodewordset seeded
+2019-04-12T02:24:30.303Z - debug: 292 datacodeword seeded
+2019-04-12T02:24:30.304Z - debug: 6 datacourse seeded
+2019-04-12T02:24:30.305Z - debug: 114 dataCoursestudent seeded
+2019-04-12T02:24:30.306Z - debug: 92 hootoriginal seeded
+2019-04-12T02:24:30.306Z - debug: 200 largeset seeded
+2019-04-12T02:24:30.307Z - info: END Seeder. Sample data read and verified.
