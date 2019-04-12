@@ -43,6 +43,7 @@ import { ContactService } from './service/contact.service';
 import { AddCourseComponent, AddCourseSnackBarComponent } from './add-course/add-course.component';
 import { RegisterfeedbackComponent } from './registerfeedback/registerfeedback.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { AddCodewordComponent, AddCodewordSnackBarComponent } from './add-codeword/add-codeword.component';
 
 
 
@@ -69,7 +70,9 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     AddCourseComponent,
     AddCourseSnackBarComponent,
     RegisterfeedbackComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    AddCodewordComponent,
+    AddCodewordSnackBarComponent
    
   ],
   imports: [
@@ -103,7 +106,9 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     CreateCourseComponent,
     ContactComponent,
     AddCourseComponent,
-    AddCourseSnackBarComponent
+    AddCourseSnackBarComponent,
+    AddCodewordComponent,
+    AddCodewordSnackBarComponent
         
   ],
   bootstrap: [AppComponent]
