@@ -22,6 +22,10 @@ export class AddCourseComponent implements OnInit {
   errFlag = false;
   addcourse = '';
   studentfile: any
+  startdate: Date = new Date();
+ 
+    
+
 
   constructor(public dialogRef: MatDialogRef<AddCourseComponent>,
     @Inject(MAT_DIALOG_DATA) public data,

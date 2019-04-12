@@ -2,6 +2,7 @@ const _ = require('lodash');
 var { mongoose } = require('./../config/database')
 var { CourseStudentModel } = require('../model/model.coursestudent');
 var express = require('express');
+var { CourseModel } = require('../model/model.course');
 
 
 
@@ -34,5 +35,17 @@ let updateACK= (req,res) => {
              return res.send(course);
          });
      } 
+
+     let countACK=(req,res)=>{
+        CourseStudentModel.find({CourseNameKey:req.params.CourseNameKey},function(err,resp){
+                
+            if(err){res.send(err)}
+                
+
+                return res.send(resp);
+
+        })
+     }
      module.exports.updateACK = updateACK;
+     module.exports.countACK = countACK;
 module.exports.getstudentDetails = getstudentDetails;

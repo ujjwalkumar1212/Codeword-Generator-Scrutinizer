@@ -50,4 +50,5 @@ router.post('/getcourse',instructordasrboard.getcourse)
 router.get('/studentdashboard/:emailID',studentDashboardController.getstudentDetails)
 router.get('/updateACK/:emailID/:CourseNameKey',studentDashboardController.updateACK)
 router.post('/chaithanya',courseStudentController.chaithanya)
+router.get('/coursedetails/:CourseNameKey',studentDashboardController.countACK)
 module.exports = router;

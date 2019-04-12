@@ -14,6 +14,14 @@ export class StudentdashboardService {
     
   }
   updateACK(email,courseNameKey){
+    console.log("+++++++++++++++++++++++++");
+    console.log(email);
+    console.log(courseNameKey);
+
     return this.httpclient.get("http://localhost:3000/codeword/updateACK/" +email+"/"+courseNameKey)
+  }
+
+  countAck(courseNameKey){
+    return this.httpclient.get("http://localhost:3000/codeword/coursedetails/"+courseNameKey) 
   }
 }
