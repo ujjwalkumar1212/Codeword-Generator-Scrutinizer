@@ -28,7 +28,7 @@ export class CoursestudentComponent implements OnInit {
   ackCount:number=0;
   totalstudents:number=0;
   courseData: any;
-  displayedColumns: string[] = ['email', 'name', 'codeword'];
+  displayedColumns: string[] = ['email', 'name', 'codeword', 'btn1','btn2'];
   dataSource = new MatTableDataSource<PeriodicElement>(null);
 
   @ViewChild(MatSort) sort: MatSort;

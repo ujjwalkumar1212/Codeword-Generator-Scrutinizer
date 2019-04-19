@@ -1119,3 +1119,51 @@ ReferenceError: CourseNameValue is not defined
 2019-04-12T02:48:36.021Z - debug: 92 hootoriginal seeded
 2019-04-12T02:48:36.021Z - debug: 200 largeset seeded
 2019-04-12T02:48:36.022Z - info: END Seeder. Sample data read and verified.
+2019-04-12T04:26:55.828Z - info: START seeder.
+2019-04-12T04:26:55.866Z - debug: 2 dataCodewordset seeded
+2019-04-12T04:26:55.867Z - debug: 292 datacodeword seeded
+2019-04-12T04:26:55.870Z - debug: 6 datacourse seeded
+2019-04-12T04:26:55.873Z - debug: 114 dataCoursestudent seeded
+2019-04-12T04:26:55.874Z - debug: 92 hootoriginal seeded
+2019-04-12T04:26:55.876Z - debug: 200 largeset seeded
+2019-04-12T04:26:55.877Z - info: END Seeder. Sample data read and verified.
+2019-04-12T04:33:26.225Z - info: START seeder.
+2019-04-12T04:33:26.242Z - debug: 2 dataCodewordset seeded
+2019-04-12T04:33:26.243Z - debug: 292 datacodeword seeded
+2019-04-12T04:33:26.243Z - debug: 6 datacourse seeded
+2019-04-12T04:33:26.244Z - debug: 114 dataCoursestudent seeded
+2019-04-12T04:33:26.245Z - debug: 92 hootoriginal seeded
+2019-04-12T04:33:26.245Z - debug: 200 largeset seeded
+2019-04-12T04:33:26.246Z - info: END Seeder. Sample data read and verified.
+2019-04-12T04:38:51.552Z - info: START seeder.
+2019-04-12T04:38:51.564Z - debug: 2 dataCodewordset seeded
+2019-04-12T04:38:51.564Z - debug: 292 datacodeword seeded
+2019-04-12T04:38:51.565Z - debug: 6 datacourse seeded
+2019-04-12T04:38:51.565Z - debug: 114 dataCoursestudent seeded
+2019-04-12T04:38:51.566Z - debug: 92 hootoriginal seeded
+2019-04-12T04:38:51.567Z - debug: 200 largeset seeded
+2019-04-12T04:38:51.568Z - info: END Seeder. Sample data read and verified.
+2019-04-12T04:39:55.834Z - info: START seeder.
+2019-04-12T04:39:55.847Z - debug: 2 dataCodewordset seeded
+2019-04-12T04:39:55.848Z - debug: 292 datacodeword seeded
+2019-04-12T04:39:55.848Z - debug: 6 datacourse seeded
+2019-04-12T04:39:55.849Z - debug: 114 dataCoursestudent seeded
+2019-04-12T04:39:55.849Z - debug: 92 hootoriginal seeded
+2019-04-12T04:39:55.850Z - debug: 200 largeset seeded
+2019-04-12T04:39:55.850Z - info: END Seeder. Sample data read and verified.
+2019-04-19T14:10:16.661Z - info: START seeder.
+2019-04-19T14:10:16.683Z - debug: 2 dataCodewordset seeded
+2019-04-19T14:10:16.685Z - debug: 292 datacodeword seeded
+2019-04-19T14:10:16.686Z - debug: 6 datacourse seeded
+2019-04-19T14:10:16.686Z - debug: 114 dataCoursestudent seeded
+2019-04-19T14:10:16.687Z - debug: 92 hootoriginal seeded
+2019-04-19T14:10:16.688Z - debug: 200 largeset seeded
+2019-04-19T14:10:16.690Z - info: END Seeder. Sample data read and verified.
+2019-04-19T14:13:15.159Z - error: uncaughtException: Cannot set property 'password' of null date=Fri Apr 19 2019 09:13:15 GMT-0500 (Central Daylight Time), pid=17840, uid=null, gid=null, cwd=C:\Users\S531373\Desktop\GDPII\Codeword-Generator-Scrutinizer, execPath=C:\Program Files\nodejs\node.exe, version=v8.9.4, argv=[C:\Program Files\nodejs\node.exe, C:\Users\S531373\Desktop\GDPII\Codeword-Generator-Scrutinizer\bin\www], rss=76378112, heapTotal=50720768, heapUsed=45847216, external=21567616, loadavg=[0, 0, 0], uptime=342280.6481702
+TypeError: Cannot set property 'password' of null
+    at bcrypt.hash (C:\Users\S531373\Desktop\GDPII\Codeword-Generator-Scrutinizer\controllers\controller.user.js:156:36)
+    at C:\Users\S531373\Desktop\GDPII\Codeword-Generator-Scrutinizer\node_modules\bcryptjs\dist\bcrypt.js:1353:21
+    at Immediate.next [as _onImmediate] (C:\Users\S531373\Desktop\GDPII\Codeword-Generator-Scrutinizer\node_modules\bcryptjs\dist\bcrypt.js:1233:21)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)
