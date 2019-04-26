@@ -44,6 +44,8 @@ import { AddCourseComponent, AddCourseSnackBarComponent } from './add-course/add
 import { RegisterfeedbackComponent } from './registerfeedback/registerfeedback.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { AddCodewordComponent, AddCodewordSnackBarComponent } from './add-codeword/add-codeword.component';
+import { EditcodewordsetComponent } from './editcodewordset/editcodewordset.component';
+import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordset.component';
 
 
 
@@ -72,11 +74,14 @@ import { AddCodewordComponent, AddCodewordSnackBarComponent } from './add-codewo
     RegisterfeedbackComponent,
     ResetpasswordComponent,
     AddCodewordComponent,
-    AddCodewordSnackBarComponent
+    AddCodewordSnackBarComponent,
+    EditcodewordsetComponent,
+    DeletecodewordsetComponent
    
   ],
   imports: [
     BrowserModule,
+   
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -108,7 +113,9 @@ import { AddCodewordComponent, AddCodewordSnackBarComponent } from './add-codewo
     AddCourseComponent,
     AddCourseSnackBarComponent,
     AddCodewordComponent,
-    AddCodewordSnackBarComponent
+    AddCodewordSnackBarComponent,
+    EditcodewordsetComponent,
+    DeletecodewordsetComponent
         
   ],
   bootstrap: [AppComponent]

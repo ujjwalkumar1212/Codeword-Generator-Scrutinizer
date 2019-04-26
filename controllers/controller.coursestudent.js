@@ -133,8 +133,9 @@ let chaithanya=(req,res) =>{
 module.exports.chaithanya = chaithanya;
 
 let deletecoursestudent=(req,res) =>{
-    var body = _.pick(req.body,['CourseNameKey','EmailKey']);  
-    CourseStudentModel.deleteOne({CourseNameKey: body.CourseNameKey,EmailKey: body.EmailKey}, function(err,deletecoursestudent){
+    
+    var body = _.pick(req.body,['EmailKey']);  
+    CourseStudentModel.deleteOne({EmailKey: body.EmailKey}, function(err,deletecoursestudent){
         if(err){
             return res.json({ code:200, message:'Deletion of the EmailKey'});
         }

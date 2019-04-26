@@ -63,6 +63,17 @@ export class DashboardService {
                 }
             })
         } 
+
+        deletecoursestudent(data){
+            return this.httpclient.post("http://localhost:3000/codeword/deletecoursestudent",{
+            // CourseNamekey: data
+            EmailKey: data
+        }, {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
+        }
     // }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ParamMap } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, MatSort, MatTableDataSource } from "@angular/material";
 import { ViewChild } from '@angular/core';
@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 import { element } from '@angular/core/src/render3';
 import { CourseService } from 'src/app/services/course.service'
 import { StudentdashboardService } from '../services/studentdashboard.service';
+import { EditcodewordsetComponent } from '../editcodewordset/editcodewordset.component';
+import{ DeletecodewordsetComponent} from '../deletecodewordset/deletecodewordset.component';
+
 
 export interface PeriodicElement {
   EmailKey: string;
@@ -23,6 +26,7 @@ export interface PeriodicElement {
   styleUrls: ['./coursestudent.component.css']
 })
 export class CoursestudentComponent implements OnInit {
+  public it;
   responseArray;
   ack:boolean;
   ackCount:number=0;
@@ -35,15 +39,31 @@ export class CoursestudentComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   
   constructor(public dialog: MatDialog, private router: Router, private route: ActivatedRoute,
-    private dashboardService: DashboardService, private courseservice: CourseService,private stdetailsservice: StudentdashboardService) {
+    private dashboardService: DashboardService, private courseservice: CourseService,private stdetailsservice: StudentdashboardService,) {
   }
 
 
   ngOnInit() {
-
+    
    
 
-    let id = this.route.snapshot.paramMap.get('id');
+    // let id = this.route.snapshot.paramMap.get('id');
+ this.route.paramMap.subscribe((params:ParamMap)=>{
+let t=params.get('id');
+this.it=t;
+});
+
+
+
+
+
+
+
+
+
+
+
+let id=this.it;
       this.dashboardService.chaithanya(id)
         .subscribe((response: any) => {
           this.courseData = response.data;
@@ -96,10 +116,59 @@ export class CoursestudentComponent implements OnInit {
   //   this.dataSource.filter = filterValue;
   // }
 
+delete(id){
+  // let id=element.EmailKey;
 
+  console.log("cherkuru +2222222")
+  this.dashboardService.deletecoursestudent(id)
+    .subscribe((response: any) => {
+    console.log(response)
+      console.log("cherkuru")
+      console.log(id);
+       
+    })
+
+    
+}
   rowClicked(row: any): void {
     // console.log(row.courseNameKey);
     console.log("cherukuru");
     this.router.navigate(['/dashboard'])
+  }
+
+
+
+  editContact(element: any): void {
+    // this.service.pop
+    // const contact = this._contactService.getAllContacts().find(c => c.ID === row.EmailKey);
+    const dialogRef = this.dialog.open(EditcodewordsetComponent, {
+      width: '500px',
+     
+    
+    });
+    console.log(element.EmailKey);
+    //  this.router.navigate(['/coursestudent', e.EmailKey])
+   
+    
+  }
+
+  
+  deleteContact(element: any): void {
+   let id=element.EmailKey;
+   let d=element.courseNameKey
+   console.log(id);
+   this.delete(id);
+   const dialogRef = this.dialog.open(DeletecodewordsetComponent, {
+    width: '500px',
+   
+  
+  });
+    this.router.navigate(['/coursestudent', element.courseNameKey])
+  // this.popup.options= {
+  //   color: "red"
+    
+  //    }
+    
+  //    this.popup.show();
   }
 }
