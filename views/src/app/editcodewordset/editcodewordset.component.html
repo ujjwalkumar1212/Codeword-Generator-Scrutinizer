@@ -1,0 +1,30 @@
+
+<mat-toolbar>
+  <h2>Edit Student Name</h2>
+  <span class="spacer"></span>
+  <!-- <button mat-raised-button class="btn-color" (click)="openRulesDialog()"><i class="far fa-eye"></i> Hint</button> -->
+</mat-toolbar>
+
+<form id="loginForm" class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
+  <!-- <mat-form-field class="example-full-width">
+    <input matInput type="text" [(ngModel)]="adduser.name" name="name" #nameID="ngModel" placeholder="Codeword Set Name" required>
+  </mat-form-field> -->
+  <h1 mat-dialog-title>Student Name</h1>
+<div mat-dialog-content>
+ 
+   <P>
+      
+    <mat-form-field appearance="legacy">
+      <mat-label>Student Name</mat-label>
+      <input matInput placeholder="Placeholder">
+         </mat-form-field>
+      </P>
+ 
+</div>
+
+  <mat-toolbar>
+    <span class="spacer"></span>
+    <button class="btn-cancel" mat-raised-button (click)="rowClicked1(row)">Cancel</button>
+    <button class="btn-create" mat-raised-button>Create</button>
+  </mat-toolbar>
+</form>

@@ -1,0 +1,36 @@
+input.non::-webkit-outer-spin-button,
+input.non::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.non {
+    -moz-appearance: textfield;
+  }
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.btn-color{
+    background: #6ec8ff;
+}
+
+.btn-create{
+    margin-left: 1em;
+    background: green;
+    color: white;
+}
+
+.btn-cancel{
+    background: red;
+    color: white;
+}
+
+mat-toolbar{
+    background: white;
+}
+
+.alert-msg{
+    background: powderblue;
+    font-size: 14px;
+}
