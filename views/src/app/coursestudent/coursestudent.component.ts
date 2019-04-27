@@ -46,7 +46,8 @@ export class CoursestudentComponent implements OnInit {
     this.fetchData()
   }
   fetchData() {
-
+    this.ackCount = 0;
+    this.totalstudents = 0;
     // let id = this.route.snapshot.paramMap.get('id');
     this.route.paramMap.subscribe((params: ParamMap) => {
       let t = params.get('id');

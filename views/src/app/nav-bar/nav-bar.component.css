@@ -10,9 +10,9 @@ a:hover{
     color: #f8faf8;
     text-decoration: underline;
 }
-.mat-toolbar{
-    background: black;
-    color: white;
+.nav-custom{
+  background: black !important;
+    color: white !important;
     margin-bottom: 1em;
 }
 

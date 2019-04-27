@@ -21,3 +21,25 @@ color: black;
     background: green;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .main-content{
+        margin: 1em 1em auto 1em;
+    }
+    
+    th.mat-header-cell, td.mat-cell {
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .mat-stroked-button, .mat-paginator-outer-container{
+      text-align: center;
+      font-size: 10px;
+    }
+
+    th.mat-header-cell:last-of-type,
+    th.mat-cell:last-of-type,
+    td.mat-cell:first-of-type {
+        padding: 0em;
+    }
+}

@@ -1,7 +1,31 @@
-<mat-toolbar class="mat-elevation-z8">Codewords
+<!-- <mat-toolbar class="mat-elevation-z8">Codewords
   <span class="example-spacer"></span>
   <a mat-button routerLink="/dashboard">Dashboard</a>
   <a mat-button routerLink="/codewordset">Codeword Set</a>
-  <!-- <a mat-button routerLink="/codeword">Codeword</a> -->
   <button mat-raised-button color="warn" class="example-icon" routerLink="/">Logout</button>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<nav class="navbar navbar-expand-md navbar-dark mat-elevation-z8  nav-custom">
+  <div style="width:100%">
+  <span class="navbar-brand">Codewords</span>
+  
+  <button class="navbar-toggler hidden-sm-up float-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+  
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse my-md-2" id="navbarsDefault">
+    <span class="example-spacer hidden-xs"></span>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown" ngbDropdown>
+        <a mat-button routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a mat-button routerLink="/codewordset">Codeword Set</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <button mat-raised-button color="warn" class="example-icon" routerLink="/">Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>

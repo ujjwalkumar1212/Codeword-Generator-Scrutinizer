@@ -27,3 +27,25 @@ th.mat-sort-header-sorted {
     background: #f1f1f1;
     padding: 1em 1em 0.5em 1em;
   }
+
+  @media (max-width: 768px) {
+    .main-content{
+        margin: 1em 1em auto 1em;
+    }
+    
+    th.mat-header-cell, td.mat-cell {
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .mat-stroked-button, .mat-paginator-outer-container{
+      text-align: center;
+      font-size: 10px;
+    }
+
+    th.mat-header-cell:last-of-type,
+    th.mat-cell:last-of-type,
+    td.mat-cell:first-of-type {
+        padding: 0em;
+    }
+}

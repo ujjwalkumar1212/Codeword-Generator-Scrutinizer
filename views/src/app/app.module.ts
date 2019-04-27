@@ -49,6 +49,7 @@ import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordse
 
 import {MatNativeDateModule} from '@angular/material';
 import { UpdateCodewordComponent } from './update-codeword/update-codeword.component'
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { UpdateCodewordComponent } from './update-codeword/update-codeword.compo
   imports: [
     BrowserModule,
     MatMomentDateModule,
+    NgbModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

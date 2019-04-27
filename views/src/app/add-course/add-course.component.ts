@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { DashboardService } from 'src/app/services/dashboard.service';
 import * as moment from 'moment';
+import { MatDatepickerInputEvent } from '@angular/material';
 
 export interface PeriodicElement {
   codeWordSetName: string;
@@ -25,9 +26,17 @@ export class AddCourseComponent implements OnInit {
   studentfile: any
   startdate: Date = new Date();
   minDate = new Date();
-  maxDate = new Date(2020, 27, 4);
+  minDate2 = new Date();
     
 
+
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.minDate2 = this.addcourse.date;
+    console.log(this.addcourse.date.getTime())
+    if(this.addcourse.date.getTime() > this.addcourse.enddate.getTime()){
+      this.addcourse.enddate = this.addcourse.date;
+    }
+  }
 
   constructor(public dialogRef: MatDialogRef<AddCourseComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
@@ -38,8 +47,10 @@ export class AddCourseComponent implements OnInit {
 
   ngOnInit() {
     this.loadCourseModel()
-    this.addcourse.date = moment()
-    // this.addcourse.enddate = new Date(moment.add('4',))
+    let curDate = new Date();
+    curDate.setDate(curDate.getDate() + 120);
+    this.addcourse.date = new Date();
+    this.addcourse.enddate = curDate;
   }
 
   // Add Course
