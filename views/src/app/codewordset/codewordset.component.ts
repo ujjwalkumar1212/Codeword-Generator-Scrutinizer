@@ -65,7 +65,7 @@ export class CodewordsetComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddUserComponent, {
-      width: '500px',
+      width: '510px',
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
