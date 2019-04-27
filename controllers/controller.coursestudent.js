@@ -134,10 +134,10 @@ module.exports.chaithanya = chaithanya;
 
 let deletecoursestudent=(req,res) =>{
     
-    var body = _.pick(req.body,['EmailKey']);  
-    CourseStudentModel.deleteOne({EmailKey: body.EmailKey}, function(err,deletecoursestudent){
+    var body = _.pick(req.body,['_id']);  
+    CourseStudentModel.deleteOne({_id: req.body.EmailKey._id}, function(err,deletecoursestudent){
         if(err){
-            return res.json({ code:200, message:'Deletion of the EmailKey'});
+            return res.json({ code:200, message:'Deletion of the _id'});
         }
         return res.json({ code: 400, message: 'Deleted Student Successfully!'})
     })
@@ -146,8 +146,8 @@ let deletecoursestudent=(req,res) =>{
 module.exports.deletecoursestudent=deletecoursestudent;
 
 let updatecoursestudent=(req,res) =>{
-    var body = _.pick(req.body,['_id','NewEmailKey','Newstudentkey']);  
-        CourseStudentModel.updateOne({_id: body._id}, { $set: { "StudentName" : body.Newstudentkey,"EmailKey":body.NewEmailKey } }, function(err,updatecoursestudent){
+    var body = _.pick(req.body,['_id','EmailKey','StudentName']);  
+        CourseStudentModel.updateOne({_id: body._id}, { $set: { "StudentName" : body.StudentName,"EmailKey":body.EmailKey } }, function(err,updatecoursestudent){
         if(err){
             return res.json({ code:200, message:err});
         }
