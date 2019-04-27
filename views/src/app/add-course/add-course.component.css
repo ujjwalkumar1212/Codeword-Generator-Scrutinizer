@@ -30,3 +30,7 @@ mat-toolbar{
     background: powderblue;
     font-size: 14px;
 }
+
+.mat-dialog-title {
+     margin: 0 !important;
+}

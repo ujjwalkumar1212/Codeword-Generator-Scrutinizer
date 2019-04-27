@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
   // Get call
   openDialog(): void {
     const dialogRef = this.dialog.open(AddCourseComponent, {
-      width: '500px',      
+      width: '550px',      
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

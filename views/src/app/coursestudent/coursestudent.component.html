@@ -10,11 +10,14 @@
 </mat-toolbar> 
 <br> 
 <mat-card>
-  <mat-toolbar>
-      <h2>Course Name:{{courseData.courseNameKey}}</h2>
-      <span class="spacer"></span>
-      <h2>Acknowledged Status:{{ackCount}}/{{totalstudents}}</h2>
-    </mat-toolbar>
+  <div class="row header">
+      <div class="col-sm-6">
+      <h4>Course Name:{{courseData.courseNameKey}}</h4>
+      </div>
+      <div class="col-sm-6">
+      <h4 class=" float-sm-right">Acknowledged Status:{{ackCount}}/{{totalstudents}} ({{ackCount/totalstudents | percent:'.0-2'}})</h4>
+      </div>
+    </div>
     Start Date:{{courseData.Startdate}}
     <br>
       End Date:{{courseData.Enddate}}

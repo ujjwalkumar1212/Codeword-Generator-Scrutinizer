@@ -1,8 +1,8 @@
-<mat-toolbar>
-  <h2>Create Codeword Set</h2>
-  <span class="spacer"></span>
-  <button mat-raised-button class="btn-color" (click)="openRulesDialog()"><i class="far fa-eye"></i> Hint</button>
-</mat-toolbar>
+<div class="row">
+  <h4 class="col-sm-8">Create Codeword Set</h4>
+  
+  <button class="col-sm-4" mat-raised-button class="btn-color" (click)="openRulesDialog()"><i class="far fa-eye"></i> Hint</button>
+</div>
 
 <form id="loginForm" class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
   <mat-form-field class="example-full-width">
@@ -13,12 +13,12 @@
   <input (change)="previewFiles($event)" type="file">
   <br>
   <br>
-  <mat-toolbar *ngIf="!isFileUploaded" class="alert-msg">
-    <p>No File is uploaded. Waiting for user to upload the CodeWord Set.</p>
-  </mat-toolbar>
-  <mat-toolbar *ngIf="isFileUploaded" class="alert-msg">
-    <p>There are {{ codeWordCount }} codewords in the Uploaded set.</p>
-  </mat-toolbar>
+  <div *ngIf="!isFileUploaded" class="row alert-msg">
+    No File is uploaded. Waiting for user to upload the CodeWord Set.
+  </div>
+  <div *ngIf="isFileUploaded" class="row alert-msg">
+    There are {{ codeWordCount }} codewords in the Uploaded set.
+  </div>
   <br>
   <mat-toolbar>
     <span class="spacer"></span>

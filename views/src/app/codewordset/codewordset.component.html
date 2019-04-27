@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<div class="main-content">
+<div class="mx-2">
   <button mat-raised-button (click)="openDialog()"><i class="fas fa-plus"></i> Create Codeword Set</button>
   <br>
   <br>
@@ -12,23 +12,25 @@
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z10">
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="name" class="col-sm-4">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Codeword Set Name </th>
       <td mat-cell *matCellDef="let element"> {{element.codeWordSetName}} </td>
     </ng-container>
 
     <!-- Contact Column -->
-    <ng-container matColumnDef="count">
+    <ng-container matColumnDef="count"  class="col-sm-4">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Count </th>
       <td mat-cell *matCellDef="let element"> {{element.count}} </td>
     </ng-container>
 
     <!-- Button Column -->
-    <ng-container matColumnDef="btn">
+    <ng-container matColumnDef="btn"  class="col-sm-4">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Show Details</th>
-      <td mat-cell *matCellDef="let element"><button mat-stroked-button (click)="rowClicked(element)">Show Details <i class="fas fa-chevron-right"></i></button></td>
+      <td mat-cell *matCellDef="let element">
+        <button mat-stroked-button (click)="rowClicked(element)">Show Details <i class="fas fa-chevron-right"></i></button>
+      </td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"> </tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 

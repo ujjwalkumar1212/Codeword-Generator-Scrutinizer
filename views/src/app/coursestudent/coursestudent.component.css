@@ -22,3 +22,8 @@ th.mat-sort-header-sorted {
       background: green;
       color: white;
   }
+
+  .header{
+    background: #f1f1f1;
+    padding: 1em 1em 0.5em 1em;
+  }
