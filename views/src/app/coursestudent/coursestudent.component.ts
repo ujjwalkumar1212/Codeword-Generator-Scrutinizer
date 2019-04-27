@@ -32,7 +32,7 @@ export class CoursestudentComponent implements OnInit {
   ackCount: number = 0;
   totalstudents: number = 0;
   courseData: any;
-  displayedColumns: string[] = ['email', 'name', 'codeword', 'btn1', 'btn2'];
+  displayedColumns: string[] = ['email', 'name', 'btn1', 'btn2'];
   dataSource = new MatTableDataSource<PeriodicElement>(null);
 
   @ViewChild(MatSort) sort: MatSort;
@@ -42,27 +42,16 @@ export class CoursestudentComponent implements OnInit {
     private dashboardService: DashboardService, private courseservice: CourseService, private stdetailsservice: StudentdashboardService, ) {
   }
 
-
-  ngOnInit() {
-
-
+  ngOnInit(){
+    this.fetchData()
+  }
+  fetchData() {
 
     // let id = this.route.snapshot.paramMap.get('id');
     this.route.paramMap.subscribe((params: ParamMap) => {
       let t = params.get('id');
       this.it = t;
     });
-
-
-
-
-
-
-
-
-
-
-
     let id = this.it;
     this.dashboardService.chaithanya(id)
       .subscribe((response: any) => {
@@ -71,24 +60,11 @@ export class CoursestudentComponent implements OnInit {
         console.log(this.courseData);
         this.stdetailsservice.countAck(this.courseData.courseNameKey)
           .subscribe(res => {
-
-            console.log("*******************");
-            console.log(res);
             this.responseArray = res;
-
-
-
             for (let i = 0; i < this.responseArray.length; i++) {
               if (this.responseArray[i].Acknowledged) { this.ackCount++ }
-            }
-            console.log(this.ackCount);
-            console.log(this.responseArray.length);
-            this.totalstudents = this.responseArray.length;
-            // this.ack= res["Acknowledged"];
-
-            // if(this.ack==true){
-            //   this.ackCount++;
-            // }        
+            };
+            this.totalstudents = this.responseArray.length; 
 
           })
 
@@ -100,36 +76,9 @@ export class CoursestudentComponent implements OnInit {
         this.dataSource.sort = this.sort;
       })
 
-    // this.fetchCourse();
-    // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
   }
-  // fetchCourse() {
-  //   this.dashboardService.getCodewordsList()
-  //   .subscribe((response : any) => {
-  //     this.courseData = response.data;
-  //       console.log(this.courseData)
-  //       })
-  //  }
 
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue;
-  // }
-
-  delete(id) {
-    // let id=element.EmailKey;
-
-    console.log("cherkuru +2222222")
-    this.dashboardService.deletecoursestudent(id)
-      .subscribe((response: any) => {
-        console.log(response)
-        console.log("cherkuru")
-        console.log(id);
-
-      })
-
-
-  }
+  
   rowClicked(row: any): void {
     // console.log(row.courseNameKey);
     console.log("cherukuru");
@@ -143,10 +92,24 @@ export class CoursestudentComponent implements OnInit {
     // const contact = this._contactService.getAllContacts().find(c => c.ID === row.EmailKey);
     const dialogRef = this.dialog.open(EditcodewordsetComponent, {
       width: '500px',
-
+      data : element
 
     });
-    console.log(element.EmailKey);
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result && result.isCanceled) return true;
+      this.courseservice.updateCourseStudent(result.userData)
+        .subscribe((data) => {
+          console.log(data);
+          console.log('success');
+          this.fetchData();
+        },
+        error => {
+          console.log('Error Occured');
+        });
+    });
     //  this.router.navigate(['/coursestudent', e.EmailKey])
 
 
@@ -154,21 +117,19 @@ export class CoursestudentComponent implements OnInit {
 
 
   deleteContact(element: any): void {
-    let id = element.EmailKey;
-    let d = element.courseNameKey
-    console.log(id);
-    this.delete(id);
+ 
     const dialogRef = this.dialog.open(DeletecodewordsetComponent, {
-      width: '500px',
-
-
+      width: '500px'
     });
-    this.router.navigate(['/coursestudent', element.courseNameKey])
-    // this.popup.options= {
-    //   color: "red"
-
-    //    }
-
-    //    this.popup.show();
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result && result.isCanceled) return true;
+      this.dashboardService.deletecoursestudent(element)
+      .subscribe((response: any) => {
+        console.log(response)
+        this.fetchData();
+      })
+    });
   }
 }

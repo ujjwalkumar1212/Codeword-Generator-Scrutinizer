@@ -28,11 +28,25 @@ export class CourseService {
         })
     }
 
-    deleteStudent(){}
+    deleteStudent(data){
+        return this.httpclient.post("http://localhost:3000/codeword/deletecoursestudent", data, {
+            headers: {
+                token: window.localStorage.getItem('token')
+            }
+        })
+    }
     
-    editStudent() { }
+    updateCourseStudent(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/updatecoursestudent", data, {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
+     }
     
-    editCourse() {} 
+    editCourse() {
+        
+    } 
      
     
 

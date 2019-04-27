@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -18,8 +18,16 @@ import { StudentdashboardService } from '../services/studentdashboard.service';
 })
 export class EditcodewordsetComponent implements OnInit {
   courseData: any;
+  addslot: any;
 
-  constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<EditcodewordsetComponent>,private router: Router, private route: ActivatedRoute,private dashboardService: DashboardService,) { }
+  constructor(public dialog: MatDialog, 
+    public dialogRef: MatDialogRef<EditcodewordsetComponent>,
+    private router: Router, private route: ActivatedRoute,
+    private dashboardService: DashboardService,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data) { 
+      this.addslot = { ...data}
+      console.log(this.addslot)
+    }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
@@ -27,11 +35,24 @@ export class EditcodewordsetComponent implements OnInit {
    
   }
  
-
   
 
   rowClicked1(row: any): void {
     console.log(row);
     this.dialogRef.close()
+  }
+
+  onNoClick(data): void {
+
+    this.dialogRef.close({isCanceled : true});
+    
+  }
+  editCodeword(data){
+    console.log('save called')
+    if(data.valid){
+      data.isCanceled = false;
+      data.userData = this.addslot
+      this.dialogRef.close(data);
+    }
   }
 }

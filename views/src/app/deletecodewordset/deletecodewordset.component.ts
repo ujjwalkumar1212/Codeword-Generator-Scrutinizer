@@ -23,15 +23,13 @@ export class DeletecodewordsetComponent implements OnInit {
 
   ngOnInit() {
   }
-  rowClicked1(row: any): void {
-    console.log(row);
-    this.dialogRef.close()
+  onNoClick(data): void {
+
+    this.dialogRef.close({isCanceled : true});
+    
   }
 
-  rowClicked(row: any): void {
-    // console.log(row.courseNameKey);
-    // console.log("cherukuru");
-    this.dialogRef.close()
-    this.router.navigate(['/coursestudent'])
+  save(row: any): void {
+    this.dialogRef.close({isCanceled : false});
   }
 }

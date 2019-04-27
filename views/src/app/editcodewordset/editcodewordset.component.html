@@ -1,30 +1,20 @@
-
-<mat-toolbar>
-  <h2>Edit Student Name</h2>
-  <span class="spacer"></span>
-  <!-- <button mat-raised-button class="btn-color" (click)="openRulesDialog()"><i class="far fa-eye"></i> Hint</button> -->
-</mat-toolbar>
-
-<form id="loginForm" class="example-form" (ngSubmit)="save(loginForm)" #loginForm="ngForm">
-  <!-- <mat-form-field class="example-full-width">
-    <input matInput type="text" [(ngModel)]="adduser.name" name="name" #nameID="ngModel" placeholder="Codeword Set Name" required>
-  </mat-form-field> -->
-  <h1 mat-dialog-title>Student Name</h1>
-<div mat-dialog-content>
- 
-   <P>
-      
-    <mat-form-field appearance="legacy">
-      <mat-label>Student Name</mat-label>
-      <input matInput placeholder="Placeholder">
-         </mat-form-field>
-      </P>
- 
-</div>
-
-  <mat-toolbar>
-    <span class="spacer"></span>
-    <button class="btn-cancel" mat-raised-button (click)="rowClicked1(row)">Cancel</button>
-    <button class="btn-create" mat-raised-button>Create</button>
-  </mat-toolbar>
-</form>
+<form class="example-form mt1" #signInForm="ngForm"  (ngSubmit)="editCodeword(signInForm)" autocomplete="off">
+  <h1 mat-dialog-title>Update Student</h1>
+  <div mat-dialog-content>
+              <mat-form-field class="example-full-width">
+                <input name="name" [(ngModel)]="addslot.EmailKey" #name="ngModel" matInput placeholder="Email" >
+                <mat-error *ngIf="name.invalid">Please enter email</mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="example-full-width">
+                <input name="name2" [(ngModel)]="addslot.StudentName" #name2="ngModel" matInput placeholder="Name" >
+                <mat-error *ngIf="name2.invalid">Please enter name</mat-error>
+              </mat-form-field>
+  
+  </div>
+  <div mat-dialog-actions>
+    <button class="mt1" type="submit"  mat-raised-button color="primary" >Save</button>
+    <button class="mt1" type="button" (click)="onNoClick()" mat-raised-button color="primary" >Cancel</button>
+  </div>
+  
+  </form>
