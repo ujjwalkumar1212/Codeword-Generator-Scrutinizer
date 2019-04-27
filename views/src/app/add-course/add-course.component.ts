@@ -23,7 +23,8 @@ export class AddCourseComponent implements OnInit {
   addcourse = '';
   studentfile: any
   startdate: Date = new Date();
- 
+  minDate = new Date();
+  maxDate = new Date(2020, 27, 4);
     
 
 

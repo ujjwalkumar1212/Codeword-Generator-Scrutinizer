@@ -45,8 +45,8 @@ let getCodewords = (req,res) => {
 module.exports.getCodewords = getCodewords;
 
 let updatecodeword=(req,res) =>{
-    var body = _.pick(req.body,['CodeWordSetName','Codeword']);  
-    CodeWord.updateOne({CodeWordSetName: body.CodeWordSetName}, { $set: { "Codeword" : body.Codeword } }, function(err, updatecodeword){
+    var body = _.pick(req.body,['_id','Codeword']);  
+    CodeWord.updateOne({_id: body._id}, { $set: { "Codeword" : body.Codeword } }, function(err, updatecodeword){
         if(err){
             return res.json({ code:200, message:'StudentName is updated'});
         }
@@ -57,8 +57,8 @@ let updatecodeword=(req,res) =>{
 module.exports.updatecodeword=updatecodeword;
 
 let deleteCodewords=(req,res) =>{
-    var body = _.pick(req.body,['CodeWordSetName','Codeword']);  
-    CodeWord.deleteOne({Codeword: body.Codeword}, function(err,deleteCodewords){
+    var body = _.pick(req.body,['_id','Codeword']);  
+    CodeWord.deleteOne({_id: body._id}, function(err,deleteCodewords){
         if(err){
             return res.json({ code:200, message:'Deletion of codewords'});
         }

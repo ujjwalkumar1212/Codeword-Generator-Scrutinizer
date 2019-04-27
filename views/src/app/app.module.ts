@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 // import { PasswordComponent } from './password/password.component';
 
@@ -47,7 +47,8 @@ import { AddCodewordComponent, AddCodewordSnackBarComponent } from './add-codewo
 import { EditcodewordsetComponent } from './editcodewordset/editcodewordset.component';
 import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordset.component';
 
-
+import {MatNativeDateModule} from '@angular/material';
+import { UpdateCodewordComponent } from './update-codeword/update-codeword.component'
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordse
     AddCodewordComponent,
     AddCodewordSnackBarComponent,
     EditcodewordsetComponent,
-    DeletecodewordsetComponent
+    DeletecodewordsetComponent,
+    UpdateCodewordComponent
    
   ],
   imports: [
@@ -100,7 +102,9 @@ import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordse
     ReactiveFormsModule,
     MatCheckboxModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [ContactService],
     entryComponents: [
@@ -115,7 +119,8 @@ import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordse
     AddCodewordComponent,
     AddCodewordSnackBarComponent,
     EditcodewordsetComponent,
-    DeletecodewordsetComponent
+    DeletecodewordsetComponent,
+    UpdateCodewordComponent
         
   ],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@
   <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
   <br>
   <br>
-  <button mat-raised-button (click)="openDialog()"><i class="fas fa-plus"></i> Add Codewords</button>
+  <button mat-raised-button (click)="openDialog(row)"><i class="fas fa-plus"></i> Add Codewords</button>
   <br>
   <br>
   
@@ -20,11 +20,11 @@
     <!-- Button Column -->
     <ng-container matColumnDef="btn1">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Edit</th>
-      <td mat-cell *matCellDef="let element"><button mat-stroked-button>Edit <i class="fas fa-edit"></i></button></td>
+      <td mat-cell *matCellDef="let element" (click)="editCodeword(element)"><button mat-stroked-button>Edit <i class="fas fa-edit"></i></button></td>
     </ng-container>
     <ng-container matColumnDef="btn2">
       <th class="th" mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
-      <td mat-cell *matCellDef="let element"><button mat-stroked-button>Delete <i class="fas fa-trash"></i></button></td>
+      <td mat-cell *matCellDef="let element" (click)="deleteCodewords(element)"><button mat-stroked-button>Delete <i class="fas fa-trash"></i></button></td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

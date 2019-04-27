@@ -8,6 +8,8 @@
   <!-- <mat-form-field class="example-full-width">
     <input matInput type="text" [(ngModel)]="adduser.name" name="name" #nameID="ngModel" placeholder="Codeword Set Name" required>
   </mat-form-field> -->
+  Name : {{data}}
+  <br>
   <br>
   Upload Codeword Set(Excel File)
   <input (change)="previewFiles($event)" type="file">
@@ -22,7 +24,7 @@
   <br>
   <mat-toolbar>
     <span class="spacer"></span>
-    <button class="btn-cancel" mat-raised-button (click)="rowClicked1(row)">Cancel</button>
+    <button class="btn-cancel" mat-raised-button  type="button" (click)="onNoClick()">Cancel</button>
     <button class="btn-create" mat-raised-button>Create</button>
   </mat-toolbar>
 </form>

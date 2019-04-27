@@ -46,4 +46,20 @@ export class CodewordsetService {
             }
         })
     }
+
+    updateCodeword(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/updatecodeword",data ,{
+            headers: {
+                token: window.localStorage.getItem('token')
+            }
+        })
+    }
+
+    deleteCodewords(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/deleteCodewords",data ,{
+            headers: {
+                token: window.localStorage.getItem('token')
+            }
+        })
+    }
 }

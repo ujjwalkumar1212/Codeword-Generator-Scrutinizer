@@ -1,0 +1,15 @@
+<form class="example-form mt1" #signInForm="ngForm"  (ngSubmit)="login(signInForm)" autocomplete="off">
+  <h1 mat-dialog-title>Update Codeword</h1>
+  <div mat-dialog-content>
+              <mat-form-field class="example-full-width">
+                <input name="name" [(ngModel)]="addslot.Codeword" #name="ngModel" matInput placeholder="Name" >
+                <mat-error *ngIf="name.invalid">Please enter name</mat-error>
+              </mat-form-field>
+  
+  </div>
+  <div mat-dialog-actions>
+    <button class="mt1" type="submit"  mat-raised-button color="primary" >Save</button>
+    <button class="mt1" type="button" (click)="onNoClick()" mat-raised-button color="primary" >Cancel</button>
+  </div>
+  
+  </form>

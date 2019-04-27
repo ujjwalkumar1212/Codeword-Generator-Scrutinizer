@@ -46,14 +46,20 @@ export class AddCodewordComponent implements OnInit {
       })
   }
 
-  save(data) {
-    if (data.valid) {
-      console.log(data.value);
+  onNoClick(data): void {
+
+    this.dialogRef.close({isCanceled : true});
+    
+  }
+
+  save() {
+    if (this.tcodeWordSetData) {
+
       // let sendData = {
       //   CodeWordSetName: data.value.name
       // }
       let sendData2 = {
-        CodeWordSetName: data.value.name,
+        CodeWordSetName: this.data,
         Codewords: this.tcodeWordSetData
       }
       // this.codeWordSetService
@@ -77,7 +83,6 @@ export class AddCodewordComponent implements OnInit {
 // )
     } else {
       this.errFlag = true;
-      data.reset
     }
 
   }

@@ -70,6 +70,7 @@ export class CodewordsetComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
+      if(result && result.isCanceled) return true;
       this.codewordsetService.saveCodewordSet(result)
         .subscribe((data) => {
           console.log(data);

@@ -18,13 +18,19 @@
 
   <!-- <mat-toolbar> -->
     <mat-form-field class="example-full-width">
-      <input matInput type="date" [(ngModel)]="addcourse.date"  name="startDate" #startDateID="ngModel" placeholder="Start Date"
-         required>
+      <!-- <input matInput type="date" [(ngModel)]="addcourse.date"  name="startDate" #startDateID="ngModel" placeholder="Start Date"
+         required> -->
+         <input matInput [(ngModel)]="addcourse.date"  name="startDate" #startDateID="ngModel" [min]="minDate" [matDatepicker]="picker" placeholder="Start Date" required>
+         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <!-- <span class="spacer"></span> -->
     <mat-form-field class="example-full-width">
-      <input matInput type="date" [(ngModel)]="addcourse.enddate" name="endDate" #endDateID="ngModel" placeholder="End Date" required>
+      <!-- <input matInput type="date" [(ngModel)]="addcourse.enddate" name="endDate" #endDateID="ngModel" placeholder="End Date" required> -->
+      <input matInput [(ngModel)]="addcourse.enddate"  name="endDate" #endDateID="ngModel" [min]="minDate" [matDatepicker]="picker2" placeholder="End Date" required>
+         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+         <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
   <!-- </mat-toolbar> -->
   <br>

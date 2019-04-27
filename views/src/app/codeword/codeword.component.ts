@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CodewordsetService } from 'src/app/services/codewordset.service';
 import { AddCodewordComponent } from 'src/app/add-codeword/add-codeword.component';
+import { UpdateCodewordComponent } from '../update-codeword/update-codeword.component';
 
 export interface PeriodicElement {
   codeWords: string;
@@ -26,7 +27,17 @@ export class CodewordComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog, private router: Router, private route: ActivatedRoute, private codewordsetService: CodewordsetService) {
+  constructor(public dialog: MatDialog, 
+    private router: Router, private route: ActivatedRoute, 
+    private codewordsetService: CodewordsetService) {
+   this.fetchData();
+  }
+
+  ngOnInit() {
+    // this.fetchData();
+  }
+
+  fetchData() {
     let id = this.route.snapshot.paramMap.get('id');
     this.codewordsetService.getCodewords([{ CodeWordSetName: id }])
       .subscribe((response: any) => {
@@ -37,57 +48,63 @@ export class CodewordComponent implements OnInit {
       })
   }
 
-  ngOnInit() {
-    // this.fetchData();
-  }
-
-  // fetchData() {
-  //   this.codewordsetService.getCodewordSet()
-  //     .subscribe((response: any) => {
-  //       let tempDataset = response.data;
-  //       this.codewordsetService.getCodewords(tempDataset)
-  //         .subscribe((response) => {
-  //           let resData = response['data'];
-  //           let dataT = []
-  //           for (var k in resData) {
-  //             dataT.push({
-  //               codeWordSetName: k,
-  //               count: resData[k].length,
-  //               items: resData[k]
-  //             })
-  //           }
-  //           console.log(dataT)
-  //           this.dataSource.data = dataT;
-
-  //           this.dataSource.sort = this.sort;
-  //           this.dataSource.paginator = this.paginator;
-  //         })
-  //     })
-  //     ;
-  // }
-
   openDialog(): void {
+    let id = this.route.snapshot.paramMap.get('id');
     const dialogRef = this.dialog.open(AddCodewordComponent, {
       width: '500px',
+      data : id
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
-      this.codewordsetService.saveCodewords(result)
-        .subscribe((data) => {
-          console.log(data);
-          console.log('success');
-          // this.fetchData();
-        },
-        error => {
-          console.log('Error Occured');
-        });
+      if(result && result.isCanceled) return true;
+      this.fetchData();
+      // this.codewordsetService.saveCodewords(result)
+      //   .subscribe((data) => {
+      //     console.log(data);
+      //     console.log('success');
+      //     // this.fetchData();
+      //   },
+      //   error => {
+      //     console.log('Error Occured');
+      //   });
     });
   }
 
   rowClicked(row: any): void {
     console.log(row);
     this.router.navigate(['/codewordset'])
+  }
+  deleteCodewords(row){
+    this.codewordsetService.deleteCodewords(row)
+    .subscribe((data) => {
+      this.fetchData();
+    },
+    error => {
+      console.log('Error Occured');
+    });
+  }
+
+  editCodeword(row){
+    console.log(row)
+    const dialogRef = this.dialog.open(UpdateCodewordComponent, {
+      width: '500px',
+      data : row
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result.isCanceled) return true;
+      this.codewordsetService.updateCodeword(result.userData)
+        .subscribe((data) => {
+          console.log(data);
+          console.log('success');
+          this.fetchData();
+        },
+        error => {
+          console.log('Error Occured');
+        });
+    });
   }
 
 }
