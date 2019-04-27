@@ -38,7 +38,11 @@ export class CodewordComponent implements OnInit {
   }
 
   fetchData() {
+    
     let id = this.route.snapshot.paramMap.get('id');
+    if(id == "Large Codeword Set" || id == "Small Codeword Set"){
+      this.displayedColumns = ['name']
+    }
     this.codewordsetService.getCodewords([{ CodeWordSetName: id }])
       .subscribe((response: any) => {
         console.log(response);
