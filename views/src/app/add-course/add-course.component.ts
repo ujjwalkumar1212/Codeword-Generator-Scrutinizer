@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import * as moment from 'moment';
 
 export interface PeriodicElement {
   codeWordSetName: string;
@@ -20,7 +21,7 @@ export interface PeriodicElement {
 export class AddCourseComponent implements OnInit {
       
   errFlag = false;
-  addcourse = '';
+  addcourse :any;
   studentfile: any
   startdate: Date = new Date();
   minDate = new Date();
@@ -32,10 +33,13 @@ export class AddCourseComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data,
     public snackBar: MatSnackBar, private dashboardService: DashboardService) {
     this.addcourse = { ...data };
+    
   }
 
   ngOnInit() {
     this.loadCourseModel()
+    this.addcourse.date = moment()
+    // this.addcourse.enddate = new Date(moment.add('4',))
   }
 
   // Add Course

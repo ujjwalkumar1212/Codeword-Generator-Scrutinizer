@@ -18,7 +18,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter, MatMomentDateModule} from '@angular/material-moment-adapter';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
 // import { PasswordComponent } from './password/password.component';
@@ -83,7 +83,7 @@ import { UpdateCodewordComponent } from './update-codeword/update-codeword.compo
   ],
   imports: [
     BrowserModule,
-   
+    MatMomentDateModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

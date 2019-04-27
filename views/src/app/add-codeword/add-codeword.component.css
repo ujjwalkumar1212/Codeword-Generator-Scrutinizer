@@ -33,4 +33,6 @@ mat-toolbar{
 .alert-msg{
     background: powderblue;
     font-size: 14px;
+    text-align: center;
+    padding: 1em;
 }

@@ -1,13 +1,6 @@
 <mat-dialog-content>
 
     <h4 mat-dialog-title>Add Course Details</h4>
-<!-- Header of form -->
-<!-- <mat-toolbar>
-  <h2></h2>
-  <span class="spacer"></span>
-</mat-toolbar> -->
-
-<!-- Body of form -->
 <form class="example-form" (ngSubmit)="save(courseForm)" #courseForm="ngForm">
   <p class="mat-body-2" *ngIf="errFlag">Fill all the required fields</p>
   <mat-form-field class="example-full-width">
