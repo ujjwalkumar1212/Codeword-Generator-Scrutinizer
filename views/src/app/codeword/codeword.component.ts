@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CodewordsetService } from 'src/app/services/codewordset.service';
 import { AddCodewordComponent } from 'src/app/add-codeword/add-codeword.component';
 import { UpdateCodewordComponent } from '../update-codeword/update-codeword.component';
+import { PermernantDelComponent } from '../permernant-del/permernant-del.component';
 
 export interface PeriodicElement {
   codeWords: string;
@@ -111,4 +112,26 @@ export class CodewordComponent implements OnInit {
     });
   }
 
+  deleteCodeWordSet(): void {
+    // this.service.pop
+    // const contact = this._contactService.getAllContacts().find(c => c.ID === row.EmailKey);
+    const dialogRef = this.dialog.open(PermernantDelComponent, {
+      width: '500px',
+      data : {message : 'Are you sure you want to delete Course? '}
+
+    });
+    let id = this.route.snapshot.paramMap.get('id');
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result && result.isCanceled) return true;
+      this.codewordsetService.deleteCodeWordSet({id : id})
+      .subscribe((response: any) => {
+        console.log(response)
+        this.router.navigate(['/codewordset'])
+      })
+     
+    });
+    //  this.router.navigate(['/dashboard', e.EmailKey])
+  }
 }

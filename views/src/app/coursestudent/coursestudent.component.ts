@@ -12,6 +12,7 @@ import { CourseService } from 'src/app/services/course.service'
 import { StudentdashboardService } from '../services/studentdashboard.service';
 import { EditcodewordsetComponent } from '../editcodewordset/editcodewordset.component';
 import { DeletecodewordsetComponent } from '../deletecodewordset/deletecodewordset.component';
+import { PermernantDelComponent } from '../permernant-del/permernant-del.component';
 
 
 export interface PeriodicElement {
@@ -112,31 +113,29 @@ export class CoursestudentComponent implements OnInit {
         });
     });
     //  this.router.navigate(['/coursestudent', e.EmailKey])
-
-
   }
 
-  deleteCourse(){
-    const dialogRef = this.dialog.open(EditcodewordsetComponent, {
+  deleteCourse(): void {
+    // this.service.pop
+    // const contact = this._contactService.getAllContacts().find(c => c.ID === row.EmailKey);
+    const dialogRef = this.dialog.open(PermernantDelComponent, {
       width: '500px',
-      data : element
+      data : {message : 'Are you sure you want to delete Course? '}
 
     });
-    
+    let id = this.it;
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log(result);
       if(result && result.isCanceled) return true;
-      this.courseservice.updateCourseStudent(result.userData)
-        .subscribe((data) => {
-          console.log(data);
-          console.log('success');
-          this.fetchData();
-        },
-        error => {
-          console.log('Error Occured');
-        });
+      this.dashboardService.deleteCourse({CourseNameKey : id})
+      .subscribe((response: any) => {
+        console.log(response)
+        this.router.navigate(['/dashboard'])
+      })
+     
     });
+    //  this.router.navigate(['/dashboard', e.EmailKey])
   }
 
 

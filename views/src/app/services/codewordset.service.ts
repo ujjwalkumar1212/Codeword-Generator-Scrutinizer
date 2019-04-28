@@ -62,4 +62,12 @@ export class CodewordsetService {
             }
         })
     }
+
+    deleteCodeWordSet(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/deletecodewordset",data ,{
+            headers: {
+                token: window.localStorage.getItem('token')
+            }
+        })
+    }
 }

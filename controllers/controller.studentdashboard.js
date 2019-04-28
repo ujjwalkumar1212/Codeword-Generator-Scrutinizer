@@ -45,3 +45,17 @@ let countACK = (req, res) => {
 module.exports.updateACK = updateACK;
 module.exports.countACK = countACK;
 module.exports.getstudentDetails = getstudentDetails;
+
+
+let deleteCourseStudents = (req, res) => {
+    CourseStudentModel.deleteMany({ CourseNameKey: req.body.CourseNameKey }, function (err, resp) {
+
+        if (err) { res.send(err) }
+
+
+        return res.send(resp);
+
+    })
+}
+
+module.exports.deleteCourseStudents = deleteCourseStudents;

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { Component, OnInit, Optional, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-permernant-del',
@@ -9,7 +9,8 @@ import { MatDialog, MatDialogRef } from '@angular/material';
 export class PermernantDelComponent implements OnInit {
 
   constructor(public dialog: MatDialog,
-     public dialogRef: MatDialogRef<PermernantDelComponent>) { }
+     public dialogRef: MatDialogRef<PermernantDelComponent>,
+     @Optional() @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
   }

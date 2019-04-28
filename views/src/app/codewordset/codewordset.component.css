@@ -21,7 +21,9 @@ color: black;
     background: green;
     color: white;
 }
-
+.spacer{
+    flex: 1 1 auto;
+  }
 @media (max-width: 768px) {
     .main-content{
         margin: 1em 1em auto 1em;

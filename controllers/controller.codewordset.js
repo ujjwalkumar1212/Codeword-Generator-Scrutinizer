@@ -34,6 +34,8 @@ let getDataFromXLS = (req, res) => {
                 }
             }).then(jsonArray => {
                 console.log(_.map(jsonArray[0],'codeword'))
+                let xlsData = _.map(jsonArray[0],'codeword');
+                
                 return res.status(200).json({ data: _.map(jsonArray[0],'codeword'), count: jsonArray[0].length })
             })
     })
@@ -58,6 +60,16 @@ let addcodewordset = (req, res) => {
     })
 }
 module.exports.addcodewordset = addcodewordset;
+
+let deletecodewordset = (req, res,next) => {
+    Codewordset.deleteOne({ CodeWordSetName : req.body.id} ).then((codes) => {
+        next()
+    }).catch((e) => {
+        console.log(e);
+        return res.json({ code: 400, message: e });
+    })
+}
+module.exports.deletecodewordset = deletecodewordset;
 
 let getcodewordset = (req, res) => {
     Codewordset.find({ $or: [{CodeWordCreator: req.session.email}, {defaultRow: true},{CodeWordCreator: 'twosets' }] } ).then((codes) => {

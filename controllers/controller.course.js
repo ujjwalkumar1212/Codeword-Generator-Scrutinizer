@@ -63,13 +63,15 @@ let getCoursesAckData = (req, res) => {
 }
 module.exports.getCoursesAckData = getCoursesAckData;
 
-let deleteCourse = (req, res) => {
+let deleteCourse = (req, res,next )=> {
     var body = _.pick(req.body, ['CourseNameKey']);
     CourseModel.deleteOne({ courseNameKey: body.CourseNameKey, emailKey: req.session.email }, function (err, deletecourse) {
         if (err) {
             return res.json({ code: 200, message: 'Deletion of course' });
+            
         }
-        return res.json({ code: 400, message: true })
+        next()
+        // return res.json({ code: 400, message: true })
     })
 }
 

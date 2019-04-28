@@ -67,3 +67,15 @@ let deleteCodewords=(req,res) =>{
 }
 
 module.exports.deleteCodewords=deleteCodewords;
+
+let deleteCodewordsForSet=(req,res) =>{
+    
+    CodeWord.deleteMany({CodeWordSetName: req.body.id}, function(err,deleteCodewordsForSet){
+        if(err){
+            return res.json({ code:400, message:'Deletion of codewords'});
+        }
+        return res.json({ code: 200, message:true})
+    })
+}
+
+module.exports.deleteCodewordsForSet=deleteCodewordsForSet;

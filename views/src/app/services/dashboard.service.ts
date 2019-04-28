@@ -44,17 +44,17 @@ export class DashboardService {
             })
     }
 
-    getCourse(data){
-        return this.httpclient.post("http://localhost:3000/codeword/getcourse",{
-        CourseNameValue: data
-    }, {
-            headers: {
-                token: window.localStorage.getItem('token')
-            }
-        })
+    getCourse(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/getcourse", {
+            CourseNameValue: data
+        }, {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
     }
-    chaithanya(data){
-        return this.httpclient.post("http://localhost:3000/codeword/chaithanya",{
+    chaithanya(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/chaithanya", {
             // CourseNamekey: data
             CourseNameValue: data
         }, {
@@ -62,10 +62,10 @@ export class DashboardService {
                     token: window.localStorage.getItem('token')
                 }
             })
-        } 
+    }
 
-        deletecoursestudent(data){
-            return this.httpclient.post("http://localhost:3000/codeword/deletecoursestudent",{
+    deletecoursestudent(data) {
+        return this.httpclient.post("http://localhost:3000/codeword/deletecoursestudent", {
             // CourseNamekey: data
             EmailKey: data
         }, {
@@ -73,8 +73,18 @@ export class DashboardService {
                     token: window.localStorage.getItem('token')
                 }
             })
-        }
+    }
     // }
+
+    deleteCourse(data){
+        return this.httpclient.post("http://localhost:3000/codeword/deleteCourse",
+            data,
+            {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
+    }
 
 
 }

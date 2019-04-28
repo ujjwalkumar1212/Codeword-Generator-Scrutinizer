@@ -27,13 +27,14 @@ router.post('/changepassword', usersController.changePassword);
 router.post('/addnewCourse', courseController.addCourse);
 router.get('/getCourseList', courseController.getCourses,courseController.getCoursesAckData);
 router.post('/addcodewordset',codewordsetController.addcodewordset);
+router.post('/deletecodewordset',codewordsetController.deletecodewordset,codewordController.deleteCodewordsForSet);
 router.post('/getdataxlsx',codewordsetController.getDataFromXLS);
 router.post('/addnewcodewords',multer().single('file'), codewordController.addcodewords)
 router.post('/getCodewords', codewordController.getCodewords)
 router.post('/deleteCodewords', codewordController.deleteCodewords)
 router.post('/updatecodeword', codewordController.updatecodeword);
 router.get('/getcodewordset', codewordsetController.getcodewordset)
-router.post('/deleteCourse', courseController.deleteCourse)
+router.post('/deleteCourse', courseController.deleteCourse,studentDashboardController.deleteCourseStudents)
 // router.post('/addcodewords',multer().single('file'), codewordController.addcodewords);
 // router.post('/getdataxlsx',codewordsetController.getDataFromXLS);
 // router.post('/addnewcodewords', codewordController.addcodewords);

@@ -124,7 +124,8 @@ import { PermernantDelComponent } from './permernant-del/permernant-del.componen
     AddCodewordSnackBarComponent,
     EditcodewordsetComponent,
     DeletecodewordsetComponent,
-    UpdateCodewordComponent
+    UpdateCodewordComponent,
+    PermernantDelComponent
         
   ],
   bootstrap: [AppComponent]
