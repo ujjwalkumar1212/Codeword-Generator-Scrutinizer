@@ -116,6 +116,29 @@ export class CoursestudentComponent implements OnInit {
 
   }
 
+  deleteCourse(){
+    const dialogRef = this.dialog.open(EditcodewordsetComponent, {
+      width: '500px',
+      data : element
+
+    });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result && result.isCanceled) return true;
+      this.courseservice.updateCourseStudent(result.userData)
+        .subscribe((data) => {
+          console.log(data);
+          console.log('success');
+          this.fetchData();
+        },
+        error => {
+          console.log('Error Occured');
+        });
+    });
+  }
+
 
   deleteContact(element: any): void {
  
