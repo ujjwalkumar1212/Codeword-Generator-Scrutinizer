@@ -14,11 +14,14 @@
   <br>
   <br>
   <div *ngIf="!isFileUploaded" class="row alert-msg">
-    No File is uploaded. Waiting for user to upload the CodeWord Set.
-  </div>
-  <div *ngIf="isFileUploaded" class="row alert-msg">
-    There are {{ codeWordCount }} codewords in the Uploaded set.
-  </div>
+      No File is uploaded. Waiting for user to upload the CodeWord Set.
+    </div>
+    <div *ngIf="isFileUploaded && isFileUploadedValid" class="row alert-msg">
+      There are {{ codeWordCount }} codewords in the Uploaded set.
+    </div>
+    <div *ngIf="isFileUploaded && !isFileUploadedValid" class="row alert-msg">
+        {{fileMsg}}
+      </div>
   <br>
   <mat-toolbar>
     <span class="spacer"></span>

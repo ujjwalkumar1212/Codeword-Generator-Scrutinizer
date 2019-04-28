@@ -35,8 +35,18 @@ let getDataFromXLS = (req, res) => {
             }).then(jsonArray => {
                 console.log(_.map(jsonArray[0],'codeword'))
                 let xlsData = _.map(jsonArray[0],'codeword');
-                
-                return res.status(200).json({ data: _.map(jsonArray[0],'codeword'), count: jsonArray[0].length })
+                if(!xlsData.length){
+                    return res.status(200).json({ code:301, message: "Invalid data with empty or NULL values!"})
+                }
+
+                if(_.filter(xlsData, (v)=> v == "").length){
+                    return res.status(200).json({ code:302, message: "Invalid data with empty or NULL values! "})
+                }
+
+                if(_.filter(xlsData, (v)=> v.length < 5).length){
+                    return res.status(200).json({ code:303, message: "Invalid data with length less than 5! "})
+                }
+                return res.status(200).json({ code : 200, data: _.map(jsonArray[0],'codeword'), count: jsonArray[0].length })
             })
     })
 

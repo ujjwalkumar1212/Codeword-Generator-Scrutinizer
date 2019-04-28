@@ -17,6 +17,8 @@ export class AddUserComponent implements OnInit {
   adduser = '';
   tcodeWordSetData: any
   isFileUploaded = false;
+  isFileUploadedValid = false;
+  fileMsg =''
   codeWordCount = 0;
 
   constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<AddUserComponent>,
@@ -37,10 +39,15 @@ export class AddUserComponent implements OnInit {
     this.codeWordSetService
       .previewFiles(data)
       .subscribe((res: any) => {
-        console.log(res)
         this.isFileUploaded = true;
+        if(res.code == 200){
         this.codeWordCount = res.count;
         this.tcodeWordSetData = res.data;
+        this.isFileUploadedValid = true;
+        }else{
+          this.isFileUploadedValid = false;
+          this.fileMsg = res.message;
+        }
       },
       err => {
         console.log(err)

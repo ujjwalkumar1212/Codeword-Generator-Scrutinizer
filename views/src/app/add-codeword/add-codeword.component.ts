@@ -17,13 +17,15 @@ export class AddCodewordComponent implements OnInit {
   adduser = '';
   tcodeWordSetData: any
   isFileUploaded = false;
+  isFileUploadedValid = false;
+  fileMsg =''
   codeWordCount = 0;
 
   constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<AddCodewordComponent>,
     @Inject(MAT_DIALOG_DATA) public data,
-    public snackBar: MatSnackBar, private codeWordSetService: CodewordsetService) { 
-      this.adduser = { ...data};
-    }
+    public snackBar: MatSnackBar, private codeWordSetService: CodewordsetService) {
+    this.adduser = { ...data };
+  }
 
 
   ngOnInit() {
@@ -38,18 +40,25 @@ export class AddCodewordComponent implements OnInit {
       .subscribe((res: any) => {
         console.log(res)
         this.isFileUploaded = true;
+        if(res.code == 200){
         this.codeWordCount = res.count;
         this.tcodeWordSetData = res.data;
+        this.isFileUploadedValid = true;
+        }else{
+          this.isFileUploadedValid = false;
+          this.fileMsg = res.message;
+        }
       },
-      err => {
-        console.log(err)
-      })
+        err => {
+          console.log(err)
+          this.isFileUploaded = false;
+        })
   }
 
   onNoClick(data): void {
 
-    this.dialogRef.close({isCanceled : true});
-    
+    this.dialogRef.close({ isCanceled: true });
+
   }
 
   save() {
@@ -65,22 +74,23 @@ export class AddCodewordComponent implements OnInit {
       // this.codeWordSetService
       //   .saveCodewordSet(sendData)
       //   .subscribe((res: any) => {
-          this.codeWordSetService
-            .saveCodewords(sendData2)
-            .subscribe((res: any) => {
-      this.snackBar.openFromComponent(AddCodewordSnackBarComponent, {
-      duration: 750,
-    });
-      this.dialogRef.close()},
-      err => {
-        console.log(err)
-      })
-  // }
-  ,
-  err => {
-    console.log(err)
-  }
-// )
+      this.codeWordSetService
+        .saveCodewords(sendData2)
+        .subscribe((res: any) => {
+          this.snackBar.openFromComponent(AddCodewordSnackBarComponent, {
+            duration: 750,
+          });
+          this.dialogRef.close()
+        },
+          err => {
+            console.log(err)
+          })
+        // }
+        ,
+        err => {
+          console.log(err)
+        }
+      // )
     } else {
       this.errFlag = true;
     }
@@ -103,4 +113,4 @@ export class AddCodewordComponent implements OnInit {
     }
   `],
 })
-export class AddCodewordSnackBarComponent {}
+export class AddCodewordSnackBarComponent { }
