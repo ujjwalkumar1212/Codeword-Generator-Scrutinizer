@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -12,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   errFlag = false;
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, 
+    private userService: UserService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -29,6 +32,10 @@ export class LoginComponent implements OnInit {
               .signin(data.value)
               .subscribe((res: any) => {
                 localStorage.setItem('token', res.token)
+                this.snackBar.open("Loggedin succesful", "", {
+                  duration: 2000,
+                  horizontalPosition: 'right'
+                });
                 if( res.isInstructor){
                   this.router.navigate(['/dashboard'])
                 }
@@ -41,7 +48,11 @@ export class LoginComponent implements OnInit {
             )
 
           } else {
-            this.errFlag = true;
+            // this.errFlag = true;
+            this.snackBar.open("Invalid username/password", "", {
+              duration: 2000,
+              horizontalPosition: 'right'
+            });
             data.resetForm();
           }
         },
