@@ -50,6 +50,7 @@ import { DeletecodewordsetComponent } from './deletecodewordset/deletecodewordse
 import {MatNativeDateModule} from '@angular/material';
 import { UpdateCodewordComponent } from './update-codeword/update-codeword.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { PermernantDelComponent } from './permernant-del/permernant-del.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AddCodewordSnackBarComponent,
     EditcodewordsetComponent,
     DeletecodewordsetComponent,
-    UpdateCodewordComponent
+    UpdateCodewordComponent,
+    PermernantDelComponent
    
   ],
   imports: [

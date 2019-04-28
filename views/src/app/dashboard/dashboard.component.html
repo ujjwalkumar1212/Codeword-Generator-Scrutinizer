@@ -21,10 +21,10 @@
             <mat-card-content>
               <mat-toolbar>
                 <p>
-                  {{ element.Startdate }}</p>
+                  {{ element.Startdate | date:'MM-dd-yyyy' }}</p>
                 <span class="spacer"></span>
                 <p>
-                  {{ element.Enddate }}
+                  {{ element.Enddate | date :'MM-dd-yyyy'}}
                 </p>
               </mat-toolbar>
             </mat-card-content>
