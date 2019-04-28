@@ -32,11 +32,13 @@
             <mat-card-content>
               <mat-toolbar>
                 <p>
-                  <a href="{{ element.PreSurveyURL }}">PreSurvey</a>
+                    Acknowledged Status
+                  <!-- <a href="{{ element.PreSurveyURL }}">PreSurvey</a> -->
                 </p>
                 <span class="spacer"></span>
                 <p>
-                  <a href="{{ element.PostSurveyURL }}">PostSurvey</a>
+                    {{ element.ackAval }}/{{ element.totalAck }} ({{  element.ackAval/element.totalAck | percent:'.0-2'}})
+                  <!-- <a href="{{ element.PostSurveyURL }}">PostSurvey</a> -->
                 </p>
               </mat-toolbar>
               <!-- <div class="row">

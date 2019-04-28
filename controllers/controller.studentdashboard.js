@@ -6,46 +6,42 @@ var { CourseModel } = require('../model/model.course');
 
 
 
+let getstudentDetails = (req, res) => {
+    console.log("hhjkhjkhjkhjkh " + req.params.emailID);
 
 
+    CourseStudentModel.find({ EmailKey: req.params.emailID }, function (err, course) {
+        if (err) {
+
+            res.send(err)
+        }
+
+        return res.send(course);
+    });
+}
+
+let updateACK = (req, res) => {
+
+    CourseStudentModel.findOneAndUpdate({ EmailKey: req.params.emailID, CourseNameKey: req.params.CourseNameKey }, { Acknowledged: true }, function (err, course) {
+        if (err) {
+
+            res.send(err)
+        }
+
+        return res.send(course);
+    });
+}
+
+let countACK = (req, res) => {
+    CourseStudentModel.find({ CourseNameKey: req.params.CourseNameKey }, function (err, resp) {
+
+        if (err) { res.send(err) }
 
 
- let getstudentDetails = (req,res) => {
-   console.log("hhjkhjkhjkhjkh "+req.params.emailID);
+        return res.send(resp);
 
- 
-    CourseStudentModel.find({EmailKey: req.params.emailID}, function (err, course) {
-            if(err){
-                
-                res.send(err)
-            }
-            
-            return res.send(course);
-        });
-    } 
-
-let updateACK= (req,res) => {
-      
-     CourseStudentModel.findOneAndUpdate({EmailKey: req.params.emailID,CourseNameKey:req.params.CourseNameKey},{Acknowledged:true},function (err, course) {
-             if(err){
-                 
-                 res.send(err)
-             }
-             
-             return res.send(course);
-         });
-     } 
-
-     let countACK=(req,res)=>{
-        CourseStudentModel.find({CourseNameKey:req.params.CourseNameKey},function(err,resp){
-                
-            if(err){res.send(err)}
-                
-
-                return res.send(resp);
-
-        })
-     }
-     module.exports.updateACK = updateACK;
-     module.exports.countACK = countACK;
+    })
+}
+module.exports.updateACK = updateACK;
+module.exports.countACK = countACK;
 module.exports.getstudentDetails = getstudentDetails;
