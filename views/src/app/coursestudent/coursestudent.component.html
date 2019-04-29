@@ -4,7 +4,7 @@
 <mat-toolbar>
   <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
   <span class="spacer"></span>
-  <button mat-raised-button color="primary"><i class="far fa-edit"></i> Edit</button>
+  <button mat-raised-button color="primary" (click)="editCourse()"><i class="far fa-edit"></i> Edit</button>
   &nbsp;&nbsp;
   <button mat-raised-button color="primary" (click)="deleteCourse()"><i class="fas fa-trash"></i> Delete</button>
 </mat-toolbar> 
@@ -18,9 +18,9 @@
       <h4 class=" float-sm-right">Acknowledged Status:{{ackCount}}/{{totalstudents}} ({{ackCount/totalstudents | percent:'.0-2'}})</h4>
       </div>
     </div>
-    Start Date:{{courseData.Startdate}}
+    Start Date:{{courseData.Startdate| date:'MM-dd-yyyy'}}
     <br>
-      End Date:{{courseData.Enddate}}
+      End Date:{{courseData.Enddate | date:'MM-dd-yyyy'}}
       <br>
       Pre Survey URL:{{courseData.PreSurveyURL}}
        <br>

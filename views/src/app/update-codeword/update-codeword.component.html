@@ -2,10 +2,12 @@
   <h1 mat-dialog-title>Update Codeword</h1>
   <div mat-dialog-content>
               <mat-form-field class="example-full-width">
-                <input name="name" [(ngModel)]="addslot.Codeword" #name="ngModel" matInput placeholder="Name" >
-                <mat-error *ngIf="name.invalid">Please enter name</mat-error>
+                <input name="name" [(ngModel)]="addslot.Codeword" #name="ngModel" pattern="[a-zA-Z]*" matInput placeholder="Name" required >
+                <mat-error *ngIf="name.invalid">
+                  <span *ngIf="name && !name.value.length">Please enter name</span>
+                  <span *ngIf="name && name.value.length">Invalid name (only alphabets allowed)</span>
+                </mat-error>
               </mat-form-field>
-  
   </div>
   <div mat-dialog-actions>
     <button class="mt1" type="submit"  mat-raised-button color="primary" >Save</button>

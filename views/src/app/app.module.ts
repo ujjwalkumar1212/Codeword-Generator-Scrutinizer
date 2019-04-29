@@ -51,6 +51,7 @@ import {MatNativeDateModule} from '@angular/material';
 import { UpdateCodewordComponent } from './update-codeword/update-codeword.component'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PermernantDelComponent } from './permernant-del/permernant-del.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { PermernantDelComponent } from './permernant-del/permernant-del.componen
     EditcodewordsetComponent,
     DeletecodewordsetComponent,
     UpdateCodewordComponent,
-    PermernantDelComponent
+    PermernantDelComponent,
+    EditCourseComponent
    
   ],
   imports: [
@@ -125,7 +127,8 @@ import { PermernantDelComponent } from './permernant-del/permernant-del.componen
     EditcodewordsetComponent,
     DeletecodewordsetComponent,
     UpdateCodewordComponent,
-    PermernantDelComponent
+    PermernantDelComponent,
+    EditCourseComponent
         
   ],
   bootstrap: [AppComponent]

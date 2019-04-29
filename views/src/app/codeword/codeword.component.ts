@@ -24,7 +24,7 @@ export interface PeriodicElement {
 export class CodewordComponent implements OnInit {
   displayedColumns: string[] = ['name', 'btn1', 'btn2'];
   dataSource = new MatTableDataSource;
-
+  isDefaultWord = true;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -43,6 +43,9 @@ export class CodewordComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     if(id == "Large Codeword Set" || id == "Small Codeword Set"){
       this.displayedColumns = ['name']
+      this.isDefaultWord = false;
+    }else{
+      this.isDefaultWord = true;
     }
     this.codewordsetService.getCodewords([{ CodeWordSetName: id }])
       .subscribe((response: any) => {

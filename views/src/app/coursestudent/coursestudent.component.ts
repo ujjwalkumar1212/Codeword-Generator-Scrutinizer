@@ -13,6 +13,7 @@ import { StudentdashboardService } from '../services/studentdashboard.service';
 import { EditcodewordsetComponent } from '../editcodewordset/editcodewordset.component';
 import { DeletecodewordsetComponent } from '../deletecodewordset/deletecodewordset.component';
 import { PermernantDelComponent } from '../permernant-del/permernant-del.component';
+import { EditCourseComponent } from '../edit-course/edit-course.component';
 
 
 export interface PeriodicElement {
@@ -138,6 +139,23 @@ export class CoursestudentComponent implements OnInit {
     //  this.router.navigate(['/dashboard', e.EmailKey])
   }
 
+  editCourse(){
+    const dialogRef = this.dialog.open(EditCourseComponent, {
+      width: '500px',
+      data : this.courseData
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result && result.isCanceled) return true;
+      this.dashboardService.updateCourse(result.data)
+      .subscribe((response: any) => {
+        console.log(response)
+        this.fetchData();
+      })
+     
+    });
+  }
 
   deleteContact(element: any): void {
  

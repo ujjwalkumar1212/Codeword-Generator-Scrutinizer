@@ -86,5 +86,15 @@ export class DashboardService {
             })
     }
 
+    updateCourse(data){
+        return this.httpclient.post("http://localhost:3000/codeword/updateCourseInfo",
+            data,
+            {
+                headers: {
+                    token: window.localStorage.getItem('token')
+                }
+            })
+    }
+
 
 }

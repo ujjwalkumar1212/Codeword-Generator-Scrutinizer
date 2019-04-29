@@ -53,8 +53,11 @@ let getCoursesAckData = (req, res) => {
         _.forEach( req.courses , function(value) {
             let cData= value.toObject()
              let tempData = cRes[value.courseNameKey];
+             if(tempData){
              cData.totalAck = tempData.length;
              cData.ackAval = _.filter(tempData,{Acknowledged : true}).length
+             
+             }
              result.push(cData)
           });
         if (err) { res.send(err) }
@@ -62,6 +65,21 @@ let getCoursesAckData = (req, res) => {
     })
 }
 module.exports.getCoursesAckData = getCoursesAckData;
+
+let updateCourseInfo = (req, res)=> {
+   
+    CourseModel.updateOne({_id: req.body._id}, { $set: { "courseNameKey" : req.body.courseNameKey ,
+        "Startdate" : req.body.Startdate ,
+        "Enddate" : req.body.Enddate ,
+        "PreSurveyURL" : req.body.PreSurveyURL,
+        "PostSurveyURL" : req.body.PostSurveyURL } }, function(err, updatecodeword){
+        if(err){
+            return res.json({ code:200, message:'Course info is updated'});
+        }
+        return res.json({ code: 400, message:true})
+    })
+}
+module.exports.updateCourseInfo = updateCourseInfo;
 
 let deleteCourse = (req, res,next )=> {
     var body = _.pick(req.body, ['CourseNameKey']);

@@ -6,7 +6,7 @@
   <mat-toolbar>
       <button mat-raised-button color="primary" (click)="rowClicked(row)"><i class="fas fa-chevron-left"></i> Back</button>
       <span class="spacer"></span>
-      <button mat-raised-button color="primary" (click)="deleteCodeWordSet()"><i class="fas fa-trash"></i> Delete</button>
+      <button *ngIf="isDefaultWord" mat-raised-button color="primary" (click)="deleteCodeWordSet()"><i class="fas fa-trash"></i> Delete</button>
     </mat-toolbar> 
   <br>
   <button mat-raised-button (click)="openDialog(row)"><i class="fas fa-plus"></i> Add Codewords</button>
