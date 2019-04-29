@@ -4,6 +4,7 @@ import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class CreateCourseComponent implements OnInit {
 
     var signupFormJSON = JSON.stringify(req);
     
-    this.http.post('http://localhost:3000/newcourse', signupFormJSON, { headers: headers })
+    this.http.post( environment.url +   '/newcourse', signupFormJSON, { headers: headers })
     .subscribe(function(response){
       console.log(response);
     })

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class CourseService {
 
     //API calls starts here
     getCourseStudentData(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/getcoursestudent", {
+        return this.httpclient.post(environment.url + "/codeword/getcoursestudent", {
             // courseNameKey: data
             CourseNameValue: data
         }, {
@@ -21,7 +22,7 @@ export class CourseService {
     }
 
     getCoursesData() {
-        return this.httpclient.get("http://localhost:3000/codeword/getCourseList", {
+        return this.httpclient.get(environment.url + "/codeword/getCourseList", {
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -29,7 +30,7 @@ export class CourseService {
     }
 
     deleteStudent(data){
-        return this.httpclient.post("http://localhost:3000/codeword/deletecoursestudent", data, {
+        return this.httpclient.post(environment.url + "/codeword/deletecoursestudent", data, {
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -37,7 +38,7 @@ export class CourseService {
     }
     
     updateCourseStudent(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/updatecoursestudent", data, {
+        return this.httpclient.post(environment.url + "/codeword/updatecoursestudent", data, {
                 headers: {
                     token: window.localStorage.getItem('token')
                 }

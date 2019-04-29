@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class StudentdashboardService {
 
   getStudentDeatils(email){
     console.log("Studentdetails: "+email)
-    return this.httpclient.get("http://localhost:3000/codeword/studentdashboard/"+email)
+    return this.httpclient.get(environment.url+"/codeword/studentdashboard/"+email)
     
   }
   updateACK(email,courseNameKey){
@@ -18,10 +19,10 @@ export class StudentdashboardService {
     console.log(email);
     console.log(courseNameKey);
 
-    return this.httpclient.get("http://localhost:3000/codeword/updateACK/" +email+"/"+courseNameKey)
+    return this.httpclient.get(environment.url+"/codeword/updateACK/" +email+"/"+courseNameKey)
   }
 
   countAck(courseNameKey){
-    return this.httpclient.get("http://localhost:3000/codeword/coursedetails/"+courseNameKey) 
+    return this.httpclient.get(environment.url+"/codeword/coursedetails/"+courseNameKey) 
   }
 }

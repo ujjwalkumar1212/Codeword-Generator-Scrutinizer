@@ -71,7 +71,7 @@ const sendResetEmail = async (username) => {
     const resettoken = jwt.sign({username}, "codewordnwmsu", { expiresIn: '12h' })
 
     ejs.renderFile(path.join(__dirname, '../public/mail.html'),
-    { link: 'http://localhost:3000/codeword/resetpassword?token='+ resettoken },
+    { link: 'https://codewordapp.herokuapp.com/codeword/resetpassword?token='+ resettoken },
      async (err, str) => {
         if(err) throw err("failed")
 

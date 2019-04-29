@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class CodewordsetService {
     constructor(private httpclient: HttpClient) { }
 
     getCodewordSet() {
-        return this.httpclient.get("http://localhost:3000/codeword/getcodewordset", {
+        return this.httpclient.get(environment.url + "/codeword/getcodewordset", {
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -18,7 +19,7 @@ export class CodewordsetService {
     }
 
     getCodewords(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/getCodewords", {
+        return this.httpclient.post(environment.url + "/codeword/getCodewords", {
             CodeWordSetKey: data
           } ,{
             headers: {
@@ -28,11 +29,11 @@ export class CodewordsetService {
     }
 
     previewFiles(data) {
-        return this.httpclient.post('http://localhost:3000/codeword/getdataxlsx', data)
+        return this.httpclient.post(environment.url + '/codeword/getdataxlsx', data)
     }
 
     saveCodewordSet(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/addcodewordset",data ,{
+        return this.httpclient.post(environment.url + "/codeword/addcodewordset",data ,{
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -40,7 +41,7 @@ export class CodewordsetService {
     }
 
     saveCodewords(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/addnewcodewords",data ,{
+        return this.httpclient.post(environment.url + "/codeword/addnewcodewords",data ,{
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -48,7 +49,7 @@ export class CodewordsetService {
     }
 
     updateCodeword(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/updatecodeword",data ,{
+        return this.httpclient.post(environment.url + "/codeword/updatecodeword",data ,{
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -56,7 +57,7 @@ export class CodewordsetService {
     }
 
     deleteCodewords(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/deleteCodewords",data ,{
+        return this.httpclient.post(environment.url + "/codeword/deleteCodewords",data ,{
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -64,7 +65,7 @@ export class CodewordsetService {
     }
 
     deleteCodeWordSet(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/deletecodewordset",data ,{
+        return this.httpclient.post(environment.url + "/codeword/deletecodewordset",data ,{
             headers: {
                 token: window.localStorage.getItem('token')
             }

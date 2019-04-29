@@ -33,6 +33,10 @@ app.post("/register",function(request,response){
 
 });
 
+app.get("/",function(request,response){
+    res.render('index.html', { title: 'Express' });
+});
+
 app.use('/codeword', userRouter);
 
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class DashboardService {
     constructor(private httpclient: HttpClient) { }
 
     getCodewordSet() {
-        return this.httpclient.get("http://localhost:3000/codeword/getcodewordset", {
+        return this.httpclient.get(environment.url + "/codeword/getcodewordset", {
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -18,7 +19,7 @@ export class DashboardService {
     }
 
     getCodewordsList() {
-        return this.httpclient.get("http://localhost:3000/codeword/getCourseList", {
+        return this.httpclient.get(environment.url + "/codeword/getCourseList", {
             headers: {
                 token: window.localStorage.getItem('token')
             }
@@ -26,7 +27,7 @@ export class DashboardService {
     }
 
     addNewCourse(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/addnewCourse",
+        return this.httpclient.post(environment.url + "/codeword/addnewCourse",
             data, {
                 headers: {
                     token: window.localStorage.getItem('token')
@@ -35,7 +36,7 @@ export class DashboardService {
     }
 
     addCourseStudent(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/addcoursestudent",
+        return this.httpclient.post(environment.url + "/codeword/addcoursestudent",
             data,
             {
                 headers: {
@@ -45,7 +46,7 @@ export class DashboardService {
     }
 
     getCourse(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/getcourse", {
+        return this.httpclient.post(environment.url + "/codeword/getcourse", {
             CourseNameValue: data
         }, {
                 headers: {
@@ -54,7 +55,7 @@ export class DashboardService {
             })
     }
     chaithanya(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/chaithanya", {
+        return this.httpclient.post(environment.url + "/codeword/chaithanya", {
             // CourseNamekey: data
             CourseNameValue: data
         }, {
@@ -65,7 +66,7 @@ export class DashboardService {
     }
 
     deletecoursestudent(data) {
-        return this.httpclient.post("http://localhost:3000/codeword/deletecoursestudent", {
+        return this.httpclient.post(environment.url + "/codeword/deletecoursestudent", {
             // CourseNamekey: data
             EmailKey: data
         }, {
@@ -77,7 +78,7 @@ export class DashboardService {
     // }
 
     deleteCourse(data){
-        return this.httpclient.post("http://localhost:3000/codeword/deleteCourse",
+        return this.httpclient.post(environment.url + "/codeword/deleteCourse",
             data,
             {
                 headers: {
@@ -87,7 +88,7 @@ export class DashboardService {
     }
 
     updateCourse(data){
-        return this.httpclient.post("http://localhost:3000/codeword/updateCourseInfo",
+        return this.httpclient.post(environment.url + "/codeword/updateCourseInfo",
             data,
             {
                 headers: {

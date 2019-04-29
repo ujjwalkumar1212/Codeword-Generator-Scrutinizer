@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 
 
@@ -47,7 +48,7 @@ export class RegisterComponent implements OnInit {
 
     var signupFormJSON = JSON.stringify(req);
     
-    this.http.post('http://localhost:3000/register', signupFormJSON, { headers: headers })
+    this.http.post( environment.url +'/register', signupFormJSON, { headers: headers })
     .subscribe(function(response){
       console.log(response);
     })
