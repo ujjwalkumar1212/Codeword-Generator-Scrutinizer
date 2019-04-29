@@ -84,13 +84,24 @@ export class CodewordComponent implements OnInit {
     this.router.navigate(['/codewordset'])
   }
   deleteCodewords(row){
-    this.codewordsetService.deleteCodewords(row)
-    .subscribe((data) => {
-      this.fetchData();
-    },
-    error => {
-      console.log('Error Occured');
+    const dialogRef = this.dialog.open(PermernantDelComponent, {
+      width: '500px',
+      data : {message : 'Are you sure you want to delete codeword? '}
+
     });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      if(result && result.isCanceled) return true;
+      this.codewordsetService.deleteCodewords(row)
+      .subscribe((data) => {
+        this.fetchData();
+      },
+      error => {
+        console.log('Error Occured');
+      });
+      })
+    
   }
 
   editCodeword(row){
