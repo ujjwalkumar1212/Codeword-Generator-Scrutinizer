@@ -33,7 +33,7 @@ app.post("/register",function(request,response){
 
 });
 
-app.get("/",function(request,response){
+app.get("/",function(req,res){
     res.render('index.html', { title: 'Express' });
 });
 
