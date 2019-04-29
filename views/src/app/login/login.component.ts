@@ -33,8 +33,7 @@ export class LoginComponent implements OnInit {
               .subscribe((res: any) => {
                 localStorage.setItem('token', res.token)
                 this.snackBar.open("Loggedin succesful", "", {
-                  duration: 2000,
-                  horizontalPosition: 'right'
+                  duration: 2000
                 });
                 if( res.isInstructor){
                   this.router.navigate(['/dashboard'])
@@ -50,8 +49,7 @@ export class LoginComponent implements OnInit {
           } else {
             // this.errFlag = true;
             this.snackBar.open("Invalid username/password", "", {
-              duration: 2000,
-              horizontalPosition: 'right'
+              duration: 2000
             });
             data.resetForm();
           }

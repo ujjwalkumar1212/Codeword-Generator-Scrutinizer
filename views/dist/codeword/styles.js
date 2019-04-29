@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\s530473\Desktop\GDP-2\Motu\Codeword-Generator-Scrutinizer\views\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! E:\Outsource Work\Ujjawal\Codeword-Generator-Scrutinizer\views\src\styles.css */"./src/styles.css");
 
 
 /***/ })
