@@ -5,7 +5,7 @@
     <mat-card-title id="tittle">Register</mat-card-title>
   </mat-card-header>
 </div>
-  
+  <!-- Registration form -->
   <mat-card-content id="content">
     <mat-form-field>
       <input matInput placeholder="Enter your email" [(ngModel)]="emailid" [formControl]="email" required>
@@ -24,6 +24,8 @@
 
      
   </mat-card-content>
+
+  <!-- registration form action buttons -->
   <mat-card-actions >
     <button mat-raised-button color="primary" id="cfooter" (click)="register(instructor)">REGISTER NOW</button>
     <p id="quest">Already have an account?

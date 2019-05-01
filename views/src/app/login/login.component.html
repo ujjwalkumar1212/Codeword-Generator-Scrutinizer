@@ -1,4 +1,5 @@
 <mat-card class="mat-elevation-z8">
+  <!-- Login form -->
   <form class="example-form" (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm">
     <h2>Login to Codeword App</h2>
 
@@ -14,13 +15,14 @@
     <br>
     <button mat-raised-button color="primary" type="submit">Login</button>
   </form>
-  
+  <!-- routing link for forgot password -->
   <div>
     <br>
     <li>
       <a routerLinkActive="active" routerLink="forgotpassword">Forgot password</a>
     </li>
     <li>
+      <!-- routing link for Sign up -->
       <a routerLink="/signup" >Sign Up</a>
     </li>
   </div>
