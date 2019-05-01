@@ -15,7 +15,7 @@ export class StudentdashboardService {
     
   }
   updateACK(email,courseNameKey){
-    console.log("+++++++++++++++++++++++++");
+    console.log("+++++++++++++++++++++++++++++++++++++++++");
     console.log(email);
     console.log(courseNameKey);
 
